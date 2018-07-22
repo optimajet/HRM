@@ -53,7 +53,7 @@ The sample supports MS SQL and PosgreSQL as storage.<br/>
 1.2.3. CreateObjects.sql<br/>
 1.2.4. FillData.sql<br/>
 2. Open hrm.sln file via Visual Studio 2017 or JetBrains Rider<br/>
-3. Check a connection string in OptimaJet.DWKit.StarterApplication\appsettings.json (You might use MS SQL or PosgreSQL connection string's format)
+3. Check a connection string in OptimaJet.DWKit.StarterApplication\appsettings.json (You might use MS SQL or PosgreSQL connection string's format)<br/>
 4. Run OptimaJet.DWKit.StarterApplication (Press F5 for Visial Studio).
 
 <h2>Users by default:</h2>
