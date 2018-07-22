@@ -17,7 +17,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.6.362" />
-    <PackageReference Include="DWKit-Core" Version="2.2.1" />
+    <PackageReference Include="DWKit-Core" Version="2.2.2" />
     <PackageReference Include="DWKit-ProviderForMSSQL" Version="2.2.1" />
     <PackageReference Include="DWKit-ProviderForPostgreSQL" Version="2.2.1" />
     <PackageReference Include="DWKit-Security" Version="2.2.1" />
