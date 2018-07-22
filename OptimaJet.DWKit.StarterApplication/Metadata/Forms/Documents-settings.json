@@ -1,0 +1,101 @@
+{
+  "name": "Documents",
+  "lastUpdate": "2018-07-04T18:20:52.5275864+03:00",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [
+    {
+      "id": "3c6d0211-36e3-ccc7-4d58-96d8992e83d0",
+      "entityId": "0e01f0a5-499f-4de7-a048-08ba4c062a2d",
+      "control": "grid",
+      "dataMap": [
+        {
+          "id": "bb9214b2-5b99-0645-a83b-f651571d06dc",
+          "attributeId": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "control": "",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "e6b25aaf-46c5-c69b-a5bb-32c12ae61468",
+          "attributeId": "04584ffe-ca47-4fa8-a93a-193c8f696baf",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "efaacf81-2d82-175a-8b91-e69086a1dc49",
+          "attributeId": "06baf863-39df-4ef0-a018-7979c4a4409c",
+          "control": "",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "42677ace-9814-72f8-fb59-34a6335a1e5f",
+          "attributeId": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "2c488992-3923-04e2-784d-649dec99ef44",
+          "attributeId": "603a35ab-9a72-45f8-9415-8d62290c2f25",
+          "control": "",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "183187ca-c307-4b91-5d56-e953fcfe7850",
+          "attributeId": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "47ee3325-1be9-1424-a306-14f22cf1a492",
+          "attributeId": "5e9c1b6e-c0e8-4c6f-a655-c914daa84f1d",
+          "control": "Author",
+          "parentId": "183187ca-c307-4b91-5d56-e953fcfe7850",
+          "isEditable": false,
+          "isLoadable": true
+        },
+        {
+          "id": "bda20a6c-6eba-eb24-8495-44fbe67b7ba1",
+          "attributeId": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "cb5972ec-383e-f349-c07e-9180f1cd1019",
+          "attributeId": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "56be1261-aff6-5f8d-b584-c593f770e465",
+          "attributeId": "78e8d7f6-3013-4107-b018-61accd6b66d7",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "f2060d0e-afb1-73d2-5cb9-c065f1c2e3fe",
+          "attributeId": "0848d957-1e13-4cb2-bdf3-0b495bdd20d2",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "65db0b86-2177-ef95-c115-0baad7096400",
+          "attributeId": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "aff5b718-8fd5-0044-bbcc-85fe182c62c5",
+          "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
+          "isEditable": true,
+          "isLoadable": true
+        }
+      ],
+      "readOnly": true
+    }
+  ],
+  "securityGroup": "Documents"
+}

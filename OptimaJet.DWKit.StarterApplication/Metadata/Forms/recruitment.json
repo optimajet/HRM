@@ -1,0 +1,89 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Recruitment",
+        "url": "/form/recruitments"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "active": true,
+        "actions": [
+          "redirect"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentEdit",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Name",
+              "data-buildertype": "input",
+              "label": "Name",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true
+            },
+            {
+              "key": "Position",
+              "data-buildertype": "input",
+              "label": "Position",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true
+            },
+            {
+              "key": "Email",
+              "data-buildertype": "input",
+              "label": "Email",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true
+            },
+            {
+              "key": "Salary",
+              "data-buildertype": "input",
+              "label": "Salary",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true,
+              "style-width": "150px"
+            },
+            {
+              "key": "Comment",
+              "data-buildertype": "textarea",
+              "label": "Comment",
+              "fluid": true,
+              "autoHeight": true
+            }
+          ],
+          "style-width": ""
+        }
+      ]
+    }
+  }
+]

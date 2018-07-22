@@ -1,0 +1,156 @@
+[
+  {
+    "key": "pageHeader",
+    "data-buildertype": "header",
+    "content": "Settings",
+    "size": "large"
+  },
+  {
+    "key": "container_6",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "btnSave",
+        "data-buildertype": "button",
+        "content": "Save",
+        "primary": true,
+        "events": {
+          "onClick": {
+            "active": true,
+            "actions": [
+              "validate",
+              "save"
+            ],
+            "targets": [],
+            "parameters": []
+          }
+        }
+      }
+    ],
+    "style-marginBottom": "20px"
+  },
+  {
+    "key": "container_1",
+    "data-buildertype": "container",
+    "style-width": "400px",
+    "children": [
+      {
+        "key": "form_1",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "header_1",
+            "data-buildertype": "header",
+            "content": "Departments",
+            "size": "medium",
+            "textAlign": "left"
+          },
+          {
+            "key": "departments",
+            "data-buildertype": "collectioneditor",
+            "idField": "Id",
+            "parentIdField": "ParentId",
+            "columns": [
+              {
+                "key": "name",
+                "name": "Name"
+              }
+            ],
+            "style-width": "",
+            "draggable": true,
+            "hierarchical": false
+          }
+        ]
+      }
+    ],
+    "style-float": "left",
+    "style-customcss": "hrm-block"
+  },
+  {
+    "key": "container_3",
+    "data-buildertype": "container",
+    "style-width": "600px",
+    "children": [
+      {
+        "key": "form_2",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "header_2",
+            "data-buildertype": "header",
+            "content": "Locations",
+            "size": "medium"
+          },
+          {
+            "key": "locations",
+            "data-buildertype": "collectioneditor",
+            "idField": "Id",
+            "parentIdField": "ParentId",
+            "columns": [
+              {
+                "key": "name",
+                "name": "Name"
+              },
+              {
+                "key": "phone",
+                "name": "Phone"
+              },
+              {
+                "key": "address",
+                "name": "Address"
+              }
+            ],
+            "draggable": true
+          }
+        ]
+      }
+    ],
+    "style-float": "left",
+    "style-customcss": "hrm-block"
+  },
+  {
+    "key": "container_2",
+    "data-buildertype": "container",
+    "style-width": "600px",
+    "children": [
+      {
+        "key": "form_3",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "header_3",
+            "data-buildertype": "header",
+            "content": "Tax",
+            "size": "medium"
+          },
+          {
+            "key": "taxGrid",
+            "data-buildertype": "collectioneditor",
+            "idField": "Id",
+            "parentIdField": "ParentId",
+            "columns": [
+              {
+                "key": "DateFrom",
+                "name": "DateFrom",
+                "control": "date"
+              },
+              {
+                "key": "DateTo",
+                "name": "DateTo",
+                "control": "date"
+              },
+              {
+                "key": "AverageTaxRate",
+                "name": "Average Tax Rate (%)",
+                "control": "number"
+              }
+            ],
+            "draggable": true
+          }
+        ]
+      }
+    ],
+    "style-float": "left",
+    "style-customcss": "hrm-block"
+  }
+]

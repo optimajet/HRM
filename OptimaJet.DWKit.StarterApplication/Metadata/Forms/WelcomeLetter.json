@@ -1,0 +1,18 @@
+[
+  {
+    "key": "subject",
+    "data-buildertype": "staticcontent",
+    "content": "HRM: Invitation letter",
+    "isHtml": true
+  },
+  {
+    "key": "container_1",
+    "data-buildertype": "container"
+  },
+  {
+    "key": "body",
+    "data-buildertype": "staticcontent",
+    "content": "Dear {Name}!<br/><br/>\nClick on the <a href=\"http://localhost:48800/account/registration?key={Key}\">link</a> for continue the registration.<br/><br/>\n--<br/>\nDWKit HRM",
+    "isHtml": true
+  }
+]

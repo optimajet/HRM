@@ -1,0 +1,198 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Business Trips",
+        "url": "/form/businesstrips"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "actions": [
+          "redirect"
+        ],
+        "active": true,
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentEdit",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Name",
+              "data-buildertype": "input",
+              "label": "Title",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "readOnly": false,
+              "other-required": true,
+              "defaultValue": "",
+              "style-width": ""
+            },
+            {
+              "key": "Employees",
+              "data-buildertype": "dictionary",
+              "label": "Employees",
+              "fluid": true,
+              "selection": true,
+              "multiple": true,
+              "dataModel": "Employee",
+              "columns": "Name ASC",
+              "events": {
+                "onChange": {
+                  "active": true,
+                  "actions": [
+                    "employeeOnChanged"
+                  ],
+                  "targets": [],
+                  "parameters": []
+                }
+              },
+              "search": true
+            },
+            {
+              "key": "formgroup_3",
+              "data-buildertype": "formgroup",
+              "widths": "equal",
+              "children": [
+                {
+                  "key": "PeopleCount",
+                  "data-buildertype": "input",
+                  "label": "People Count",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "defaultValue": "",
+                  "other-required": true,
+                  "style-width": "",
+                  "type": "number",
+                  "events": {}
+                },
+                {
+                  "key": "Amount",
+                  "data-buildertype": "input",
+                  "label": "Additional expenses",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "number",
+                  "other-required": true,
+                  "style-width": "",
+                  "defaultValue": "0"
+                },
+                {
+                  "key": "NeedHotel",
+                  "data-buildertype": "checkbox",
+                  "label": "Hotel is needed",
+                  "fitted": false,
+                  "indeterminate": false,
+                  "slider": false,
+                  "defaultValue": "1",
+                  "events": {}
+                }
+              ]
+            },
+            {
+              "key": "formgroup_1",
+              "data-buildertype": "formgroup",
+              "widths": "equal",
+              "style-width": "",
+              "children": [
+                {
+                  "key": "DateStart",
+                  "data-buildertype": "input",
+                  "label": "Date Start",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "DateEnd",
+                  "data-buildertype": "input",
+                  "label": "Date End",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "TransportType",
+                  "data-buildertype": "dropdown",
+                  "label": "Transport",
+                  "fluid": true,
+                  "selection": true,
+                  "data-elements": [
+                    {
+                      "key": 1,
+                      "value": "None",
+                      "text": "None"
+                    },
+                    {
+                      "key": 2,
+                      "value": "Flight",
+                      "text": "Flight"
+                    },
+                    {
+                      "key": 3,
+                      "value": "Railway",
+                      "text": "Railway"
+                    },
+                    {
+                      "value": "Car",
+                      "text": "Car"
+                    }
+                  ],
+                  "search": true,
+                  "other-required": true,
+                  "defaultValue": "None",
+                  "style-width": ""
+                }
+              ]
+            },
+            {
+              "key": "Address",
+              "data-buildertype": "input",
+              "label": "Address",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "style-width": "",
+              "defaultValue": ""
+            }
+          ],
+          "style-width": ""
+        },
+        {
+          "key": "form_2",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Comment",
+              "data-buildertype": "textarea",
+              "label": "Comment",
+              "fluid": true,
+              "autoHeight": true,
+              "rows": "3"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

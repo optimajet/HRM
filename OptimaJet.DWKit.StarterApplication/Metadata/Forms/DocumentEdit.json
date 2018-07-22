@@ -1,0 +1,391 @@
+[
+  {
+    "key": "container_9",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "headerPage",
+        "data-buildertype": "container",
+        "style-float": "left",
+        "style-marginTop": "",
+        "style-marginBottom": "10px",
+        "style-marginLeft": "",
+        "children": [
+          {
+            "key": "form_5",
+            "data-buildertype": "form",
+            "children": [
+              {
+                "key": "formgroup_1",
+                "data-buildertype": "formgroup",
+                "widths": "equal",
+                "children": [
+                  {
+                    "key": "documentImage",
+                    "data-buildertype": "image",
+                    "src": "/images/document.svg"
+                  },
+                  {
+                    "key": "pageHeader",
+                    "data-buildertype": "header",
+                    "content": "{Name}",
+                    "size": "medium",
+                    "subheader": "{State}",
+                    "style-marginTop": "5px",
+                    "style-marginLeft": "10px",
+                    "style-source": "overflow: hidden;",
+                    "style-width": "300px"
+                  }
+                ]
+              }
+            ],
+            "style-marginLeft": "7px"
+          }
+        ],
+        "style-source": "",
+        "style-marginRight": "20px"
+      },
+      {
+        "key": "container_7",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "workflow",
+            "data-buildertype": "workflowbar",
+            "events": {
+              "onCommandClick": {
+                "active": true,
+                "actions": [
+                  "validate",
+                  "save",
+                  "workflowExecuteCommand",
+                  "refresh"
+                ],
+                "targets": [],
+                "parameters": []
+              },
+              "onSetStateClick": {
+                "actions": [
+                  "validate",
+                  "save",
+                  "workflowSetState",
+                  "refresh"
+                ],
+                "active": true,
+                "targets": [],
+                "parameters": []
+              },
+              "onReceivedCommands": {
+                "actions": [
+                  "initWorkflow"
+                ],
+                "active": true,
+                "targets": [],
+                "parameters": []
+              }
+            },
+            "style-source": "float:left",
+            "style-marginLeft": "",
+            "style-marginRight": "20px"
+          },
+          {
+            "key": "Save",
+            "data-buildertype": "button",
+            "content": "Save",
+            "floated": "left",
+            "style-marginRight": "",
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "validate",
+                  "save"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            },
+            "primary": true,
+            "other-visibleConition": "checkPermission(\"Edit\")",
+            "style-hidden": true
+          },
+          {
+            "key": "SaveExit",
+            "data-buildertype": "button",
+            "content": "Save & Exit",
+            "secondary": true,
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "validate",
+                  "save",
+                  "exit"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            },
+            "floated": "left",
+            "other-visibleConition": "checkPermission(\"Edit\")",
+            "style-hidden": true
+          }
+        ],
+        "style-float": "left",
+        "style-marginLeft": ""
+      }
+    ],
+    "style-source": "clear: both;\nmaxWidth: 1050;",
+    "style-marginTop": "10px",
+    "style-marginBottom": "",
+    "style-marginLeft": ""
+  },
+  {
+    "key": "container_1",
+    "data-buildertype": "container",
+    "style-source": "clear:both;",
+    "children": [],
+    "style-height": "10px"
+  },
+  {
+    "key": "divDocInfo",
+    "data-buildertype": "container",
+    "style-float": "left",
+    "style-customcss": "hrm-block",
+    "children": [
+      {
+        "key": "form_2",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "formgroup_2",
+            "data-buildertype": "formgroup",
+            "widths": "equal",
+            "children": [
+              {
+                "key": "AuthorId_Name",
+                "data-buildertype": "input",
+                "label": "Created by",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "events": {},
+                "readOnly": true
+              },
+              {
+                "key": "Date",
+                "data-buildertype": "input",
+                "label": "Created on",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "type": "datetime",
+                "readOnly": true
+              },
+              {
+                "key": "LastUpdatedEmployeeId_Name",
+                "data-buildertype": "input",
+                "label": "Modified by",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "readOnly": true
+              },
+              {
+                "key": "LastUpdatedDate",
+                "data-buildertype": "input",
+                "label": "Modified on",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "type": "datetime",
+                "readOnly": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "style-width": "700px"
+  },
+  {
+    "key": "container_5",
+    "data-buildertype": "container",
+    "style-source": "clear:both;"
+  },
+  {
+    "key": "divInformation",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "form_1",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "header_1",
+            "data-buildertype": "header",
+            "content": "Information",
+            "size": "medium"
+          },
+          {
+            "key": "FormFields",
+            "data-buildertype": "customblock",
+            "sourceType": "placeholder",
+            "style-customcss": "",
+            "events": {}
+          }
+        ]
+      }
+    ],
+    "style-customcss": "hrm-block",
+    "style-width": "600px"
+  },
+  {
+    "key": "container_3",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "form_3",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "headerFiles",
+            "data-buildertype": "header",
+            "content": "Attachments",
+            "size": "medium"
+          },
+          {
+            "key": "files",
+            "data-buildertype": "collectioneditor",
+            "idField": "Id",
+            "parentIdField": "ParentId",
+            "columns": [
+              {
+                "key": "Name",
+                "name": "Name",
+                "control": "",
+                "width": "180px"
+              },
+              {
+                "key": "Token",
+                "name": "File",
+                "control": "file2"
+              }
+            ],
+            "events": {},
+            "disableAdd": true,
+            "style-width": ""
+          },
+          {
+            "key": "formDropzone",
+            "data-buildertype": "dropzonecontrol",
+            "showFiletypeIcon": false,
+            "autoProcessQueue": true,
+            "addRemoveLinks": true,
+            "multile": true,
+            "iconFiletypes": "*.pdf, *.docx",
+            "events": {
+              "success": {
+                "active": true,
+                "actions": [
+                  "createElement"
+                ],
+                "targets": [
+                  "files"
+                ],
+                "parameters": []
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "style-width": "450px",
+    "style-customcss": "hrm-block"
+  },
+  {
+    "key": "container_4",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "form_4",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "headerHistory",
+            "data-buildertype": "header",
+            "content": "Document's Transition History",
+            "size": "medium"
+          },
+          {
+            "key": "gridHistory",
+            "data-buildertype": "gridview",
+            "columns": [
+              {
+                "key": "InitialState",
+                "name": "From",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": ""
+              },
+              {
+                "key": "DestinationState",
+                "name": "To",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "key": "Command",
+                "name": "Command",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "key": "Executor",
+                "name": "Executor",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "key": "TransitionTime",
+                "name": "Date",
+                "type": "datetime",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": 90
+              },
+              {
+                "name": "Availiable for",
+                "key": "AllowedToEmployeeNames",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              }
+            ],
+            "rowKey": "id",
+            "disableSort": true,
+            "autoHeight": false,
+            "resizecolumns": true,
+            "events": {},
+            "minHeight": "250px",
+            "offSet": "620px",
+            "defaultSort": "Order ASC"
+          }
+        ]
+      }
+    ],
+    "style-width": "100%",
+    "style-customcss": "hrm-block",
+    "events": {}
+  },
+  {
+    "key": "container_8",
+    "data-buildertype": "container",
+    "style-source": "clear:both;"
+  }
+]

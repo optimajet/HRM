@@ -1,0 +1,99 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Compensation",
+        "url": "/form/compensations"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "active": true,
+        "actions": [
+          "redirect"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentEdit",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Name",
+              "data-buildertype": "input",
+              "label": "Title",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true
+            },
+            {
+              "key": "EmployeeId",
+              "data-buildertype": "dictionary",
+              "label": "Employee",
+              "fluid": true,
+              "selection": true,
+              "dataModel": "Employee",
+              "columns": "Name ASC",
+              "search": true,
+              "other-required": true
+            },
+            {
+              "key": "formgroup_1",
+              "data-buildertype": "formgroup",
+              "widths": "custom",
+              "children": [
+                {
+                  "key": "ExpenseDate",
+                  "data-buildertype": "input",
+                  "label": "Expense Date",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "Amount",
+                  "data-buildertype": "input",
+                  "label": "Amount",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "number",
+                  "other-required": true,
+                  "style-width": "150px"
+                }
+              ],
+              "widthsCustom": "26"
+            },
+            {
+              "key": "Comment",
+              "data-buildertype": "textarea",
+              "label": "Comment",
+              "fluid": true,
+              "autoHeight": true
+            }
+          ],
+          "style-width": ""
+        }
+      ]
+    }
+  }
+]

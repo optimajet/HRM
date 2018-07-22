@@ -1,0 +1,113 @@
+{
+  "name": "compensations",
+  "lastUpdate": "2018-07-02T15:32:43.5235861+03:00",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [
+    {
+      "id": "2b150830-1c0d-3213-60ca-0cb1f883dc3e",
+      "entityId": "609e4855-f74d-0eb3-e0ee-6d0d01467ed6",
+      "filter": "FilterFields",
+      "parameter": "{Type: \"Compensation\"}",
+      "control": "grid",
+      "dataMap": [
+        {
+          "id": "f7c28f05-6c07-7416-089e-e95f992eafb3",
+          "attributeId": "82403b63-b682-c43c-0898-d5308cb53093",
+          "control": "ExpenseDate",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "b02e2241-afea-4adf-1774-9ad9306f7c6a",
+          "attributeId": "b80300c9-ed06-f31f-ecbf-3c54a830cf2d",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "76544595-262b-02eb-04c7-a98b9b101269",
+          "attributeId": "5e9c1b6e-c0e8-4c6f-a655-c914daa84f1d",
+          "control": "Employee",
+          "parentId": "b02e2241-afea-4adf-1774-9ad9306f7c6a",
+          "isEditable": false,
+          "isLoadable": true
+        },
+        {
+          "id": "b78ac2bb-40e0-dbc2-caee-cc3eff132a1e",
+          "attributeId": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "c7f68e5b-aff4-ce8a-0cc5-81124d2d31c4",
+          "attributeId": "04584ffe-ca47-4fa8-a93a-193c8f696baf",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "02daca2f-24e8-707e-a5c5-70a266261f71",
+          "attributeId": "06baf863-39df-4ef0-a018-7979c4a4409c",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "de430f1d-4b7f-c473-ee3f-655f8fa973c1",
+          "attributeId": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "7c039f39-13a8-84c1-ed29-28911f0cb8b0",
+          "attributeId": "603a35ab-9a72-45f8-9415-8d62290c2f25",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "def56e49-a7a8-92a8-39d4-176a90923b1f",
+          "attributeId": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "871538af-195b-cbf7-2899-faf4df21bd48",
+          "attributeId": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "93e4a4d6-df2c-6683-6bca-897e701458db",
+          "attributeId": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "05829561-3050-da37-3f93-e8aa7727d7cc",
+          "attributeId": "78e8d7f6-3013-4107-b018-61accd6b66d7",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "da6609b4-523f-0e19-be48-9b0445ccb8c6",
+          "attributeId": "0848d957-1e13-4cb2-bdf3-0b495bdd20d2",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "3331ce7c-986d-ad21-1c6e-51ea82cd94d0",
+          "attributeId": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "isEditable": true,
+          "isLoadable": true
+        },
+        {
+          "id": "d9149857-df97-51b1-bee3-5d69d34a70c2",
+          "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
+          "isEditable": true,
+          "isLoadable": true
+        }
+      ],
+      "readOnly": false
+    }
+  ],
+  "securityGroup": "Documents"
+}

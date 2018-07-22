@@ -1,0 +1,101 @@
+[
+  {
+    "key": "divLoginPage",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "formLogin",
+        "data-buildertype": "form",
+        "children": [
+          {
+            "key": "divLogo",
+            "data-buildertype": "container",
+            "children": [
+              {
+                "key": "image_1",
+                "data-buildertype": "image",
+                "src": "/images/logo.svg",
+                "style-height": "51px",
+                "style-marginLeft": "auto",
+                "style-marginRight": "auto"
+              }
+            ],
+            "style-width": "",
+            "style-marginLeft": "auto",
+            "style-marginRight": "auto",
+            "style-height": "",
+            "style-marginBottom": "50px",
+            "style-marginTop": ""
+          },
+          {
+            "key": "header_1",
+            "data-buildertype": "header",
+            "content": "Registration",
+            "size": "medium"
+          },
+          {
+            "key": "cbCustom",
+            "data-buildertype": "checkbox",
+            "label": "Login/Password Authorization"
+          },
+          {
+            "key": "customAuthGroup",
+            "data-buildertype": "formgroup",
+            "widths": "equal",
+            "children": [
+              {
+                "key": "Login",
+                "data-buildertype": "input",
+                "label": "Login",
+                "fluid": true
+              },
+              {
+                "key": "Password",
+                "data-buildertype": "input",
+                "label": "Password",
+                "fluid": true,
+                "type": "password"
+              }
+            ],
+            "style-hidden": false
+          },
+          {
+            "key": "cbDomain",
+            "data-buildertype": "checkbox",
+            "label": "Domain Authorization"
+          },
+          {
+            "key": "DomainLogin",
+            "data-buildertype": "input",
+            "label": "Domain Login",
+            "fluid": true,
+            "style-hidden": false
+          },
+          {
+            "key": "btnSave",
+            "data-buildertype": "button",
+            "content": "Save",
+            "fluid": true,
+            "primary": true,
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "save"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            }
+          }
+        ],
+        "style-width": ""
+      }
+    ],
+    "style-width": "450px",
+    "style-marginLeft": "auto",
+    "style-marginRight": "auto",
+    "style-source": "",
+    "style-height": ""
+  }
+]

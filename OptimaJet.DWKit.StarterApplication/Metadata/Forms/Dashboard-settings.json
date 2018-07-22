@@ -1,0 +1,10 @@
+{
+  "name": "Dashboard",
+  "lastUpdate": "2018-07-21T13:21:14.1283249+03:00",
+  "dataUrl": "/data/dashboard",
+  "dataSourceType": "url",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": []
+}
