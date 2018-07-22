@@ -16,6 +16,23 @@ Besides, it enables employees to create and manage dynamic events and view infor
 </ul>
 
 <h2>Screenshots:</h2>
+<table>
+<tr>
+	<td>
+<img src="https://raw.githubusercontent.com/optimajet/HRM/master/Resources/Dashboard.png" alt="Dashboard" width="200" style="
+    border: 1px solid;
+    border-color: #3e4d5c;">
+</td><td>
+<img src="https://raw.githubusercontent.com/optimajet/HRM/master/Resources/EmployyeProfile.png" alt="Emloyee's profile" width="200" style="
+	    border: 1px solid;
+	    border-color: #3e4d5c;">
+</td><td>
+<img src="https://github.com/optimajet/HRM/blob/master/Resources/BusinessTrip.png" alt="Business Trip" width="200" style="
+	    border: 1px solid;
+	    border-color: #3e4d5c;">
+		</td>
+</tr>
+</table>
 
 <h2>Development:</h2>
 <ul>
@@ -25,17 +42,17 @@ Besides, it enables employees to create and manage dynamic events and view infor
 </ul>
 
 <h2>How to run:</h2>
-The sample supports MS SQL and PosgreSQL as storage.
-1. You need to set up Database, restore backup OR (!!!) execute script.
-1.1. Backup
-1.1.1. MSSQL: DB\MSSQL\backup.bak
-1.1.2. PostgreSQL: DB\PostgreSQL\backup.sql
-1.2. The order of execution of scripts:
-1.2.1. DWKitScript.sql
-1.2.2. Workflow_CreatePersistenceObjects.sql
-1.2.3. CreateObjects.sql
-1.2.4. FillData.sql
-2. Open hrm.sln file via Visual Studio 2017 or JetBrains Rider
+The sample supports MS SQL and PosgreSQL as storage.<br/>
+1. You need to set up Database, restore backup OR (!!!) execute script.<br/>
+1.1. Backup<br/>
+1.1.1. MSSQL: DB\MSSQL\backup.bak<br/>
+1.1.2. PostgreSQL: DB\PostgreSQL\backup.sql<br/>
+1.2. The order of execution of scripts:<br/>
+1.2.1. DWKitScript.sql<br/>
+1.2.2. Workflow_CreatePersistenceObjects.sql<br/>
+1.2.3. CreateObjects.sql<br/>
+1.2.4. FillData.sql<br/>
+2. Open hrm.sln file via Visual Studio 2017 or JetBrains Rider<br/>
 3. Check a connection string in OptimaJet.DWKit.StarterApplication\appsettings.json (You might use MS SQL or PosgreSQL connection string's format)
 4. Run OptimaJet.DWKit.StarterApplication (Press F5 for Visial Studio).
 
