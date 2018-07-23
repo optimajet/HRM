@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS "Document"
 (
   "Id" uuid NOT NULL,
   "NumberId" SERIAL NOT NULL,
-  "Date" date NULL,
-  "LastUpdatedDate" date NULL,
+  "Date" timestamp NULL,
+  "LastUpdatedDate" timestamp NULL,
   "Type" character varying(50) NOT NULL,
   "Name" character varying(256) NOT NULL,
   "AuthorId" uuid NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS "DocumentTransitionHistory"
   "DocumentId" uuid NOT NULL REFERENCES "Document" ON DELETE CASCADE,
   "EmployeeId" uuid NULL REFERENCES "dwSecurityUser",
   "AllowedToEmployeeNames" character varying(1024) NULL,
-  "TransitionTime" date NULL,
+  "TransitionTime" timestamp NULL,
   "Order" SERIAL NOT NULL,
   "InitialState" character varying(256) NOT NULL,
   "DestinationState" character varying(256) NOT NULL,
@@ -124,8 +124,8 @@ CREATE TABLE IF NOT EXISTS "EmployeeSalary"
 CREATE TABLE IF NOT EXISTS "InvitationLetter"
 (
   "Id" uuid NOT NULL,
-  "Date" date NOT NULL,
-  "DateExpired" date NOT NULL,
+  "Date" timestamp NOT NULL,
+  "DateExpired" timestamp NOT NULL,
   "EmployeeId" uuid NOT NULL,
   CONSTRAINT "InvitationLetter_pkey" PRIMARY KEY ("Id")
 );

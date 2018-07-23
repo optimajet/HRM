@@ -9,6 +9,44 @@ BEGIN;
 UPDATE "dwAppSettings" SET "Value" = 'DWKit HRM' WHERE "Name" = 'ApplicationName';
 UPDATE "dwAppSettings" SET "Value" = 'Human resource management' WHERE "Name" = 'ApplicationDesc';
 
+DO $AppSettingsValueMailServer$
+BEGIN
+	IF NOT EXISTS(SELECT 1 FROM "dwAppSettings" WHERE "Name" = N'MailServer') THEN
+		INSERT INTO "dwAppSettings" ("Name","GroupName","ParamName","Value","Order","EditorType","IsHidden") VALUES ('MailServer','Mail','Mail Server','',0,'0',false::boolean);
+	END IF;
+END $AppSettingsValueMailServer$;
+
+DO $AppSettingsValueMailServerPort$
+BEGIN
+	IF NOT EXISTS(SELECT 1 FROM "dwAppSettings" WHERE "Name" = N'MailServerPort') THEN
+		INSERT INTO "dwAppSettings" ("Name","GroupName","ParamName","Value","Order","EditorType","IsHidden") VALUES ('MailServerPort','Mail','Mail Server Port','',1,'0',false::boolean);
+	END IF;
+END $AppSettingsValueMailServerPort$;
+
+DO $AppSettingsValueMailServerLogin$
+BEGIN
+	IF NOT EXISTS(SELECT 1 FROM "dwAppSettings" WHERE "Name" = N'MailServerLogin') THEN
+		INSERT INTO "dwAppSettings" ("Name","GroupName","ParamName","Value","Order","EditorType","IsHidden") values('MailServerLogin','Mail','Mail Login','',2,'0', false::boolean);
+	END IF;
+END $AppSettingsValueMailServerLogin$;
+
+DO $AppSettingsValueMailServerPass$
+BEGIN
+	IF NOT EXISTS(SELECT 1 FROM "dwAppSettings" WHERE "Name" = N'MailServerPass') THEN
+		INSERT INTO "dwAppSettings" ("Name","GroupName","ParamName","Value","Order","EditorType","IsHidden") VALUES('MailServerPass', 'Mail', 'Mail Password','',3,'password', false::boolean);
+	END IF;
+END $AppSettingsValueMailServerPass$;
+
+
+
+DO $AppSettingsValueMailServerSsl$
+BEGIN
+	IF NOT EXISTS(SELECT 1 FROM "dwAppSettings" WHERE "Name" = N'MailServerSsl') THEN
+		INSERT INTO "dwAppSettings" ("Name","GroupName","ParamName","Value","Order","EditorType","IsHidden") VALUES('MailServerSsl', 'Mail','EnableSsl','',4,'checkbox',false::boolean );
+	END IF;
+END $AppSettingsValueMailServerSsl$;
+
+
 INSERT INTO "dwSecurityRole"("Id", "Code", "Name") VALUES ('8d378ebe-0666-46b3-b7ab-1a52480fd12a', 'Big Boss', 'BigBoss');
 INSERT INTO "dwSecurityRole"("Id", "Code", "Name") VALUES ('412174c2-0490-4101-a7b3-830de90bcaa0', 'Accountant', 'Accountant');
 
@@ -159,6 +197,7 @@ INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES (
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('F354C02D-963E-46C0-BEE6-B3DE1417385F','HR Director','HR Director', '2018-01-01', 1000);
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('C9E3717C-0C31-4270-B49B-FA3C94CBD081','HR Manager','HR Manager', '2018-01-01', 1000);
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('44A58535-CE41-4679-AC5B-90C1BCB3E4A2','Director','Director', '2018-01-01', 1000);
+INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('3634F5B0-3A56-405F-9143-D49E36229AAA','Accountant','Accountant', '2018-01-01', 1000);
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('E342A33E-00B1-4B9D-BE9C-0CC2BE32FD45','User 1','User 1', '2018-01-01', 1000);
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('FAAFDE15-2954-4D77-B635-14649DF6454A','User 2','User 2', '2018-01-01', 1000);
 INSERT INTO "Employee"("Id", "FirstName", "Name", "DateJoin", "Salary") VALUES ('AFECCF3E-03AB-45BB-854B-90A669AC9651','User 3','User 3', '2018-01-01', 1000);
@@ -175,6 +214,7 @@ INSERT INTO "dwSecurityCredential"("Id", "PasswordHash", "PasswordSalt", "Securi
 INSERT INTO "dwSecurityCredential"("Id", "PasswordHash", "PasswordSalt", "SecurityUserId", "Login", "AuthenticationType") VALUES ('02BD0858-FA48-48EC-BBC1-9E862EDBDA3E','rS5I94OIvwTfEEELS+hrJVw/W7Q=','4VVRWKUTnqeH9rCw6LVHgQ==','AFECCF3E-03AB-45BB-854B-90A669AC9651','user3','0');
 INSERT INTO "dwSecurityCredential"("Id", "PasswordHash", "PasswordSalt", "SecurityUserId", "Login", "AuthenticationType") VALUES ('81D9AF3C-0541-4DD9-86FF-3C24BEEFBB9B','6v70HUcKJkVDfKhmmmmGZzRqS0Q=','xHB/K2KPjwLFryIhE6e6IQ==','FAAFDE15-2954-4D77-B635-14649DF6454A','user4','0');
 INSERT INTO "dwSecurityCredential"("Id", "PasswordHash", "PasswordSalt", "SecurityUserId", "Login", "AuthenticationType") VALUES ('14324B96-25D0-456C-B5E5-0821883107C2','0VqC5LzO8EUtLqIx1Gf0k65gAI0=','v0gwdspvtOYDzNkzq1IUtg==','0A0C67B1-38A1-4E9F-88AA-E180E547EE8A','user5','0');
+INSERT INTO "dwSecurityCredential"("Id", "PasswordHash", "PasswordSalt", "SecurityUserId", "Login", "AuthenticationType") VALUES ('FE43192E-AA51-4D28-A4CC-6268224D0837','Mvu3tZiE+Vz0emwCD7JpNpM+P/E=','Bw6A2G6KQkKgmTmIKhvOCw==','3634F5B0-3A56-405F-9143-D49E36229AAA','accountant','0');
 
 INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('DF3E8935-70A9-4892-9033-5ACC3DBF7A45','955625EF-5DAF-F133-2275-12813908312D','E342A33E-00B1-4B9D-BE9C-0CC2BE32FD45');
 INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('54E84F68-03C8-4AF2-82C5-63A45C27CAF8','DD266FD4-C0B5-D53C-EEA2-F57935F3E4D7','E342A33E-00B1-4B9D-BE9C-0CC2BE32FD45');
@@ -188,6 +228,8 @@ INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUser
 INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('0DC71D36-10CE-40ED-A13D-C509C3780AC1','955625EF-5DAF-F133-2275-12813908312D','0A0C67B1-38A1-4E9F-88AA-E180E547EE8A');
 INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('3401605F-3660-4C02-B456-ED70559A1E5F','955625EF-5DAF-F133-2275-12813908312D','C9E3717C-0C31-4270-B49B-FA3C94CBD081');
 INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('B2F3554C-EB0A-424C-8224-EDD3B09502E9','E826DC76-A231-4AC4-9D40-A103395D62B8','C9E3717C-0C31-4270-B49B-FA3C94CBD081');
+INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('F5F365F3-19D7-4CBF-8F15-45D2548C6524','D0E0B7BE-5D69-8AB6-3261-1F922875DFF9','3634F5B0-3A56-405F-9143-D49E36229AAA');
+INSERT INTO "dwSecurityUserToSecurityRole"("Id", "SecurityRoleId", "SecurityUserId") VALUES ('F755A8DF-18B9-435C-8A60-7F3FD4AA0155','955625EF-5DAF-F133-2275-12813908312D','3634F5B0-3A56-405F-9143-D49E36229AAA');
 
 --WorkflowScheme
 INSERT INTO "WorkflowScheme"("Code", "Scheme") VALUES ('BusinessTrip', '
