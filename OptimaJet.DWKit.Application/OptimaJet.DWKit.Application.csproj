@@ -12,7 +12,7 @@
     <Copyright>OptimaJet DWKit 2018</Copyright>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DWKit-Core" Version="2.2.2" />
+    <PackageReference Include="DWKit-Core" Version="2.2.3" />
     <PackageReference Include="DWKit-ProviderForMSSQL" Version="2.2.0" />
     <PackageReference Include="DWKit-ProviderForPostgreSQL" Version="2.2.0" />
     <PackageReference Include="DWKit-Security" Version="2.2.0" />

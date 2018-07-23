@@ -62,6 +62,7 @@ The sample supports MS SQL and PosgreSQL as storage.<br/>
 <li>HR Director (login - hrdirector, password - 1)</li>
 <li>HR Manager (login - manager, password - 1)</li>
 <li>Director (login - director, password - 1)</li>
+<li>Accountant (login - accountant, password - 1)</li>
 <li>User 1 (login - user1, password - 1)</li>
 <li>User 2 (login - user2, password - 1)</li>
 <li>User 3 (login - user3, password - 1)</li>

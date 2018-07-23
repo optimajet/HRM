@@ -66,10 +66,13 @@ namespace OptimaJet.HRM
                     if (trip.Amount == null || trip.Amount == 0)
                         continue;
                     
-                    res.UserBusinessTripExpenses += (decimal)trip.Amount;
                     if (WorkflowReport.FinalStates.Contains(trip.State))
                     {
                         res.UserBusinessTripExpensesApproved += (decimal)trip.Amount;
+                    }
+                    else
+                    {
+                        res.UserBusinessTripExpenses += (decimal)trip.Amount;
                     }
                 }
 
@@ -80,10 +83,13 @@ namespace OptimaJet.HRM
                     if (c.Amount == null || c.Amount == 0)
                         continue;
 
-                    res.UserCompensationAmount += (decimal)c.Amount;
                     if (WorkflowReport.FinalStates.Contains(c.State))
                     {
                         res.UserCompensationAmountApproved += (decimal)c.Amount;
+                    }
+                    else
+                    {
+                        res.UserCompensationAmount += (decimal)c.Amount;
                     }
                 }
 
@@ -106,11 +112,13 @@ namespace OptimaJet.HRM
             var vacationFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Vacation));
             var compenstationFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Compensation));
             var recruitmentFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Recruitment));
+
+            var outboxProcessIds = (await historyModel.GetAsync(Filter.And.Equal(userId.ToString(), "ExecutorIdentityId"))).Select(c => (Guid)c["ProcessId"]).Distinct().ToList();
             
             return new
             {
                 inbox = await inboxModel.GetCountAsync(Filter.And.Equal(userId, "IdentityId")),
-                outbox = await historyModel.GetCountAsync(Filter.And.Equal(userId.ToString(), "ExecutorIdentityId")),
+                outbox = await Document.GetCountAsync(Filter.And.In(outboxProcessIds, "Id")),
                 trip = await Document.GetDocumentTypeCountAsync(DocumentTypes.BusinessTrip, tripFilter),
                 sickleave = await Document.GetDocumentTypeCountAsync(DocumentTypes.SickLeave, sickLeaveFilter),
                 vacation = await Document.GetDocumentTypeCountAsync(DocumentTypes.Vacation, vacationFilter),
