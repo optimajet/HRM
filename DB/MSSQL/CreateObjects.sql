@@ -36,13 +36,13 @@ BEGIN
 	  [Date] datetime NULL,
 	  LastUpdatedDate datetime NULL,
 	  [Type] nvarchar(50) NOT NULL,
-	  [Name] nvarchar(256) NOT NULL,
+	  [Name] nvarchar(256) NULL,
 	  AuthorId uniqueidentifier NOT NULL,
 	  ManagerId uniqueidentifier NULL,
 	  Comment nvarchar(max) NULL,
 	  [Extensions] nvarchar(max) NULL,
 	  [State] nvarchar(256) NULL,
-	  [Amount] money NOT NULL CONSTRAINT DF_Document_Amount DEFAULT (0),
+	  [Amount] money NULL,
 	  LastUpdatedEmployeeId uniqueidentifier NULL,
 	  CONSTRAINT PK_Document PRIMARY KEY (Id)	  
 	)

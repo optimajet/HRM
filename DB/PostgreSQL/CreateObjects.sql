@@ -29,13 +29,13 @@ CREATE TABLE IF NOT EXISTS "Document"
   "Date" timestamp NULL,
   "LastUpdatedDate" timestamp NULL,
   "Type" character varying(50) NOT NULL,
-  "Name" character varying(256) NOT NULL,
+  "Name" character varying(256) NULL,
   "AuthorId" uuid NOT NULL,
   "ManagerId"  uuid NULL,
   "Comment" character varying(1024) NULL,
   "Extensions" jsonb NULL,
   "State" character varying(256) NOT NULL DEFAULT 'Draft',
-  "Amount" numeric NOT NULL DEFAULT 0::numeric,
+  "Amount" numeric NULL,
   "LastUpdatedEmployeeId" uuid NULL,
   CONSTRAINT "Document_pkey" PRIMARY KEY ("Id")
 );
