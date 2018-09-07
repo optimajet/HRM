@@ -3,7 +3,8 @@
       
   },
   
-  generate: function ({data}){
+  generate: function (args){
+    var data = args.data;
     var url = '/report/workflow';
     url += "?datefrom=" + data.dateFrom;
     url += "&dateto=" + data.dateTo;

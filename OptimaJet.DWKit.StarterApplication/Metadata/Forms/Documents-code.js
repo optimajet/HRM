@@ -19,7 +19,8 @@
     return {};
   },
 
-  edit: function ({parameters}){
+  edit: function (args){
+    var parameters = args.parameters;
     var type = parameters.row.Type;
     var form = undefined;
     form = type.toLowerCase();  

@@ -1,5 +1,7 @@
 {
-  init: function({data, state}){
+  init: function(args){
+    var data = args.data;
+    var state = args.state;
     var gridName = "grid";
     var controlName = "employedFlag";
 
@@ -27,19 +29,14 @@
     filterItem.nextValue = false;
     filterItem.value = false;
    
-    return {
-        app: {
-            form: {
-                filters: {
-                    main : {
-                        [gridName]: filter
-                    }
-                }
-            }
-        }
-    };
+    var res = {app: { form: { filters: { main : {} } } }};
+    res.app.form.filters.main[gridName] = filter;
+    
+    return res; 
   },
-  employeedFilter: function ({data, state}){
+  employeedFilter: function (args){
+    var data = args.data;
+    var state = args.state;
     var gridName = "grid";
     var controlName = "employedFlag";
     var filter = (state.app.form.filters != undefined || state.app.form.filters.main == undefined) ? 
@@ -66,16 +63,9 @@
     filterItem.nextValue = !data.employedFlag;
     filterItem.value = !data.employedFlag;
     
-    return {
-        app: {
-            form: {
-                filters: {
-                    main : {
-                        [gridName]: filter
-                    }
-                }
-            }
-        }
-    };
+    var res = {app: { form: { filters: { main : {} } } }};
+    res.app.form.filters.main[gridName] = filter;
+    
+    return res; 
   }
 }

@@ -1,5 +1,6 @@
 {
-  opentrip: function ({parameters}){
+  opentrip: function (args){
+    var parameters = args.parameters;
     var url = '/form/businesstrip/' + parameters.row.Id;
     return {
         router: {
@@ -7,7 +8,8 @@
         }
     };
   },
-  init: function({data}){
+  init: function(args){
+      var data = args.data;
       var numberWithCommas = function(x) {
             x = x.toString();
             var pattern = /(-?\d+)(\d{3})/;

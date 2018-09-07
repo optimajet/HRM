@@ -15,7 +15,8 @@
       };
   },
   
-  generate: function ({data}){
+  generate: function (args){
+    var data = args.data;
     var errors = {main: {}};
     if(data === null)
         data = {};
@@ -62,7 +63,8 @@
     });
     return {};
   },
-  edit: function ({parameters}){
+  edit: function (args){
+    var parameters = args.parameters;
     return {
         router: {
             push: '/form/employee/' + parameters.row.Id

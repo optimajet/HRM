@@ -17,7 +17,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.6.362" />
-    <PackageReference Include="DWKit-Core" Version="2.2.3" />
+    <PackageReference Include="DWKit-Core" Version="2.2.4" />
     <PackageReference Include="DWKit-ProviderForMSSQL" Version="2.2.1" />
     <PackageReference Include="DWKit-ProviderForPostgreSQL" Version="2.2.1" />
     <PackageReference Include="DWKit-Security" Version="2.2.1" />
@@ -45,7 +45,69 @@
     <ProjectReference Include="..\OptimaJet.HRM\OptimaJet.HRM.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Metadata\Forms\businesstrip-code.js" />
+    <None Remove="Metadata\Forms\compensation-code.js" />
+    <None Remove="Metadata\Forms\Dashboard-code.js" />
+    <None Remove="Metadata\Forms\DocumentEdit-code.js" />
+    <None Remove="Metadata\Forms\Documents-code.js" />
+    <None Remove="Metadata\Forms\Employee-code.js" />
+    <None Remove="Metadata\Forms\EmployeeReport-code.js" />
+    <None Remove="Metadata\Forms\Employees-code.js" />
+    <None Remove="Metadata\Forms\header-code.js" />
+    <None Remove="Metadata\Forms\recruitment-code.js" />
+    <None Remove="Metadata\Forms\Settings-code.js" />
+    <None Remove="Metadata\Forms\sickleave-code.js" />
+    <None Remove="Metadata\Forms\top-code.js" />
+    <None Remove="Metadata\Forms\vacation-code.js" />
+    <None Remove="Metadata\Forms\WorkflowReport-code.js" />
     <None Remove="wwwroot\js\login.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Metadata\Forms\businesstrip-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\compensation-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\Dashboard-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\DocumentEdit-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\Documents-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\Employee-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\EmployeeReport-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\Employees-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\header-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\recruitment-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\Settings-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\sickleave-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\top-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\vacation-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Metadata\Forms\WorkflowReport-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Update="Metadata\Forms\compensation-settings.json">
@@ -129,6 +191,18 @@
     <Content Update="Metadata\Forms\recruitments.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Metadata\Forms\Registration-settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Metadata\Forms\Registration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Metadata\Forms\RegistrationComplete-settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Metadata\Forms\RegistrationComplete.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Metadata\Forms\Settings-settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -183,6 +257,12 @@
     <Content Update="Metadata\Forms\vacations.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Metadata\Forms\WelcomeLetter-settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Metadata\Forms\WelcomeLetter.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Metadata\Forms\WorkflowReport-settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -197,49 +277,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Metadata\Forms\compensation-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\Dashboard-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Metadata\Forms\Dashboard2-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\DocumentEdit-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\Documents-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\Employee-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\EmployeeReport-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\Employees-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\header-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\recruitment-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\sickleave-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\top-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\businesstrip-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\vacation-code.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Metadata\Forms\WorkflowReport-code.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

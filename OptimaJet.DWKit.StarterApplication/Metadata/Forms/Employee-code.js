@@ -1,5 +1,7 @@
 {
-  sendinvitation: function({state, data}){
+  sendinvitation: function(args){
+    var state = args.state;
+    var data = args.data;
     if(state.app.form.data.original.Email == null ||
         state.app.form.data.original.Email == ""){
         throw {
@@ -46,7 +48,8 @@
         }
     },
   
-  opensecurityprofile({data}){
+  opensecurityprofile: function(args){
+      var data = args.data;
       window.open('/admin?apanel=users&aid=' + data.Id);
   },
   

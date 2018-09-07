@@ -92,6 +92,10 @@ class Login extends React.Component {
                             password: true}
                         });
                     }
+                },
+                error: function (jqXHR, exception) {
+                    var msg = "Error on the server! Please, check server's configuration and the connection to DB. More information in the application log or Event Viewer.";
+                    alert(msg);
                 }
             });
         }

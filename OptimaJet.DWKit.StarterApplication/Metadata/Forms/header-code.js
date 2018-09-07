@@ -1,5 +1,6 @@
 {
-  selectEmployee: function ({parameters}){
+  selectEmployee: function (args){
+    var parameters = args.parameters;
     if(parameters.id == null)
         return {};
         

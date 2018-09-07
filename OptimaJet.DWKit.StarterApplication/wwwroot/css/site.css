@@ -1,4 +1,9 @@
-﻿.dwkit-application-container {
+﻿.jquery-loading-modal__bg {
+    top: 0px;
+    left: 0px;
+}
+
+.dwkit-application-container {
     display: flex;
     align-items: stretch;
     min-height: calc(100% - 50px);

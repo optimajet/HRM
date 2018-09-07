@@ -1,5 +1,6 @@
 {
- validate: function ({data, originalData, state, component, formName, index, controlRef, eventArgs, isChild}){
+ validate: function (args){
+    var data = args.data;
     var errors = {};
     var hasError = false;
     if(Array.isArray(data.taxGrid)){
