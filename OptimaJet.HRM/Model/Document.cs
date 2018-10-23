@@ -12,18 +12,19 @@ namespace OptimaJet.HRM.Model
 {
     public struct DocumentTypes
     {
-        public static string BusinessTrip = "BusinessTrip";
-        public static string Compensation = "Compensation";
-        public static string SickLeave = "SickLeave";
-        public static string Vacation = "Vacation";
-        public static string Recruitment = "Recruitment";
+        public const string BusinessTrip = "BusinessTrip";
+        public const string Compensation = "Compensation";
+        public const string SickLeave = "SickLeave";
+        public const string Vacation = "Vacation";
+        public const string Recruitment = "Recruitment";
 
         public static Filter GetFilter(string type)
         {
             return Filter.And.Equal(type, "Type");
         }
     }
-
+    
+  
     public class Document: DbObject<Document>
     {
         public Document() : base(true)
@@ -141,7 +142,18 @@ namespace OptimaJet.HRM.Model
             return res;
         }
 
-        public async static Task<Filter> GetViewFilterForCurrentUser(EntityModel model)
+
+        public static Filter GetViewFilterForUser(Guid userId, EntityModel model)
+        {
+            if (DWKitRuntime.Security.CheckPermission(userId, "Documents", "ViewAll"))
+            {
+                return Filter.Empty;
+            }
+
+            return GetViewFilterForUserPrivate(model, userId);
+        }
+
+        public static Filter GetViewFilterForCurrentUser(EntityModel model)
         {
             if (DWKitRuntime.Security.CheckPermission("Documents", "ViewAll"))
             {
@@ -149,18 +161,24 @@ namespace OptimaJet.HRM.Model
             }
             
             var userId = DWKitRuntime.Security.CurrentUser?.GetOperationUserId();
+            
+            return GetViewFilterForUserPrivate(model, userId);
+        }
+
+        private static Filter GetViewFilterForUserPrivate(EntityModel model, Guid? userId)
+        {
             var filter = Filter.Or.Equal(userId, "AuthorId");
             var filter2 = Filter.Empty;
-            if (model.Attributes.Where(c => c.Name == "EmployeeId").Count() > 0)
+            if (model.Attributes.Any(c => c.Name == "EmployeeId"))
             {
                 filter2 = filter2.Merge(Filter.Or.Equal(userId, "EmployeeId"));
             }
 
-            if (model.Attributes.Where(c => c.Name == "Employees").Count() > 0)
+            if (model.Attributes.Any(c => c.Name == "Employees"))
             {
                 filter2 = filter2.Merge(Filter.Or.LikeRightLeft(userId.ToString(), "Employees"));
             }
-        
+
             return filter.Merge(filter2);
         }
     }

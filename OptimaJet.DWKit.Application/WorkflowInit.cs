@@ -88,25 +88,37 @@ namespace OptimaJet.DWKit.Application
             await documentModel.UpdateSingleAsync(document as DynamicEntity);
 
             var newActors = await Runtime.GetAllActorsForDirectCommandTransitionsAsync(args.ProcessId);
+           
             var newInboxes = new List<dynamic>();
+            
+           
             foreach (var newActor in newActors)
             {
                 var newInboxItem = new DynamicEntity() as dynamic;
                 newInboxItem.Id = Guid.NewGuid();
-                newInboxItem.IdentityId = new Guid(newActor);
+                newInboxItem.IdentityId = newActor;
                 newInboxItem.ProcessId = args.ProcessId;
                 newInboxes.Add(newInboxItem);
             }
+            
+            var userIdsForNotification = new List<string>();
+            userIdsForNotification.AddRange(newInboxes.Select(a => (string) (a as dynamic).IdentityId));
+
 
             using (var shared = new SharedTransaction())
             {
                 var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
-
-                var existingInboxes = (await inboxModel.GetAsync(Filter.And.Equal(args.ProcessId, "ProcessId"))).Select(i => i.GetId()).ToList();
-                await inboxModel.DeleteAsync(existingInboxes);
+                var existingInboxes = (await inboxModel.GetAsync(Filter.And.Equal(args.ProcessId, "ProcessId")));
+                userIdsForNotification.AddRange(existingInboxes.Select(a => (string) (a as dynamic).IdentityId));
+                var existingInboxesIds = existingInboxes.Select(i => i.GetId()).ToList();
+                await inboxModel.DeleteAsync(existingInboxesIds);
                 await inboxModel.InsertAsync(newInboxes);
                 shared.Commit();
             }
+            
+            userIdsForNotification = userIdsForNotification.Distinct().ToList();
+            Func<Task> task = async () => { await ClientNotifiers.NotifyClientsAboutInboxStatus(userIdsForNotification); };
+            task.FireAndForgetWithDefaultExceptionLogger();
         }
     }
 }

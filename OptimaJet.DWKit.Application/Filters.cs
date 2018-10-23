@@ -111,7 +111,7 @@ namespace OptimaJet.DWKit.Application
             var userId = DWKitRuntime.Security.CurrentUser.ImpersonatedUserId.HasValue ? DWKitRuntime.Security.CurrentUser.ImpersonatedUserId.Value :
                 DWKitRuntime.Security.CurrentUser.Id;
             var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
-            var currentUserInbox = (await inboxModel.GetAsync(Filter.And.Equal(userId, "IdentityId"))).Select(e => (Guid) (e as dynamic).ProcessId).ToList();
+            var currentUserInbox = (await inboxModel.GetAsync(Filter.And.Equal(userId.ToString(), "IdentityId"))).Select(e => (Guid) (e as dynamic).ProcessId).ToList();
             return Filter.And.In(currentUserInbox, "Id");
         }
 
@@ -139,14 +139,14 @@ namespace OptimaJet.DWKit.Application
             #region Document View Filter
             if(model.TableName == "Document")
             {
-                filter.Merge(await Document.GetViewFilterForCurrentUser(model));
+                filter.Merge(Document.GetViewFilterForCurrentUser(model));
             }
-            else if(model.TableName == null && model.Attributes.Count() == 0 && model.Collections.Count() > 0)
+            else if(model.TableName == null && !model.Attributes.Any() && model.Collections.Any())
             {
                 foreach(var coll in model.Collections)
                 {
                     if (coll.Model.TableName == "Document")
-                        filter.Merge(await Document.GetViewFilterForCurrentUser(coll.Model));
+                        filter.Merge(Document.GetViewFilterForCurrentUser(coll.Model));
                 }
             }
             #endregion

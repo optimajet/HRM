@@ -26,7 +26,7 @@
         "title": "Documents",
         "children": [
           {
-            "title": "Business trips <div class=\"ui label\">{trip}</div>",
+            "title": "Business trips <div class=\"ui label\">{businesstrip}</div>",
             "target": "/form/businesstrips"
           },
           {
@@ -38,7 +38,7 @@
             "target": "/form/vacations"
           },
           {
-            "title": "Compensation <div class=\"ui label\">{compenstation}</div>",
+            "title": "Compensation <div class=\"ui label\">{compensation}</div>",
             "target": "/form/compensations"
           },
           {

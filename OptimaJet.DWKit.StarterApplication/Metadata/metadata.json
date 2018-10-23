@@ -382,7 +382,7 @@
         {
           "id": "bdb077c7-518f-42ab-8662-b692336b49f7",
           "name": "IdentityId",
-          "type": "Guid",
+          "type": "String",
           "typeId": 0,
           "isNullable": false,
           "isVirtual": false,

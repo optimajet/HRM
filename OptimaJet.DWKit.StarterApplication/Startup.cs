@@ -13,6 +13,8 @@ using React.AspNet;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using OptimaJet.DWKit.Core;
 
 namespace OptimaJet.DWKit.StarterApplication
 {
@@ -52,6 +54,8 @@ namespace OptimaJet.DWKit.StarterApplication
                                 NoStore = true
                             }));
             });
+            services.AddSignalR();
+            services.AddSingleton<IUserIdProvider, SignalRIdProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,10 +92,16 @@ namespace OptimaJet.DWKit.StarterApplication
                     name: "default",
                     template: "{controller=StarterApplication}/{action=Index}/");
             });
+            
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ClientNotificationHub>("/hubs/notifications");
+            });
 
             //DWKIT Init
             Configurator.Configure(
                 (IHttpContextAccessor)app.ApplicationServices.GetService(typeof(IHttpContextAccessor)),
+                (IHubContext<ClientNotificationHub>)app.ApplicationServices.GetService(typeof(IHubContext<ClientNotificationHub>)),
                 Configuration);
         }
     }

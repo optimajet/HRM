@@ -99,37 +99,5 @@ namespace OptimaJet.HRM
 
             return res;
         }
-
-        public async static Task<object> GetMenuData()
-        {
-            var userId = DWKitRuntime.Security.CurrentUser.ImpersonatedUserId.HasValue ? DWKitRuntime.Security.CurrentUser.ImpersonatedUserId.Value :
-                    DWKitRuntime.Security.CurrentUser.Id;
-            var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
-            var historyModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowProcessTransitionHistory");
-
-            var tripFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.BusinessTrip));
-            var sickLeaveFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.SickLeave));
-            var vacationFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Vacation));
-            var compenstationFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Compensation));
-            var recruitmentFilter = await Document.GetViewFilterForCurrentUser(await MetadataToModelConverter.GetEntityModelByModelAsync(DocumentTypes.Recruitment));
-
-            var outboxProcessIds = (await historyModel.GetAsync(Filter.And.Equal(userId.ToString(), "ExecutorIdentityId"))).Select(c => (Guid)c["ProcessId"]).Distinct().ToList();
-            
-            return new
-            {
-                inbox = await inboxModel.GetCountAsync(Filter.And.Equal(userId, "IdentityId")),
-                outbox = await Document.GetCountAsync(Filter.And.In(outboxProcessIds, "Id")),
-                trip = await Document.GetDocumentTypeCountAsync(DocumentTypes.BusinessTrip, tripFilter),
-                sickleave = await Document.GetDocumentTypeCountAsync(DocumentTypes.SickLeave, sickLeaveFilter),
-                vacation = await Document.GetDocumentTypeCountAsync(DocumentTypes.Vacation, vacationFilter),
-                compenstation = await Document.GetDocumentTypeCountAsync(DocumentTypes.Compensation, compenstationFilter),
-                recruitment = await Document.GetDocumentTypeCountAsync(DocumentTypes.Recruitment, recruitmentFilter),
-                employeeform = DWKitRuntime.Security.CheckPermission("Employee", "View"),
-                documentsform = DWKitRuntime.Security.CheckPermission("Documents", "View"),
-                workflowreport = DWKitRuntime.Security.CheckPermission("WorkflowReport", "View"),
-                employeereport = DWKitRuntime.Security.CheckPermission("EmployeeReport", "View"),
-                workcalendar = DWKitRuntime.Security.CheckPermission("WorkCalendar", "View")
-            };            
-        }
     }
 }

@@ -30,19 +30,6 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
           
         }
 
-        [Route("data/sidemenu")]
-        public async Task<ActionResult> SideMenu()
-        {
-            try
-            {
-                return Json(await HRM.Dashboard.GetMenuData());
-            }
-            catch (Exception e)
-            {
-                return Json(new FailResponse(e));
-            }
-        }
-
         [Route("data/search")]
         public async Task<ActionResult> Search(string term)
         {

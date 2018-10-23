@@ -26,7 +26,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 {
                     throw new Exception("Access denied!");
                 }
-                
+
                 string filterActionName = null;
                 string idValue = null;
                 var filterItems = new List<ClientFilterItem>();
@@ -39,8 +39,13 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     }
                     catch
                     {
-                        if (DWKitRuntime.ServerActions.ContainsFilter(urlFilter))
-                            filterActionName = urlFilter;
+                        var filterActions = DWKitRuntime.ServerActions.GetFilterNames().Where(n => n.Equals(urlFilter, StringComparison.OrdinalIgnoreCase)).ToList();
+                        string filterAction = null;
+                        filterAction = filterActions.Count == 1 ? filterActions.First() 
+                            : filterActions.FirstOrDefault(n => n.Equals(urlFilter, StringComparison.Ordinal));
+                        
+                        if (!string.IsNullOrEmpty(filterAction))
+                            filterActionName = filterAction;
                         else
                         {
                             idValue = urlFilter;
@@ -53,7 +58,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     filterItems.AddRange(JsonConvert.DeserializeObject<List<ClientFilterItem>>(filter));
                 }
 
-                
+
                 var getRequest = new GetDataRequest(name)
                 {
                     RequestingControlName = control,
@@ -87,7 +92,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 }
 
                 var data = await DataSource.GetDataForFormAsync(getRequest).ConfigureAwait(false);
-
+                
                 if (data.IsFromUrl && FailResponse.IsFailResponse(data.Entity, out FailResponse fail))
                 {
                     return Json(fail);
@@ -111,7 +116,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 {
                     throw new Exception("Access denied!");
                 }
-                
+
                 var res = await DataSource.ChangeData(new ChangeDataRequest(name, data));
                 if (res.Succeess)
                     return Json(new SuccessResponse(res.id?.ToString()));
@@ -133,7 +138,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 {
                     throw new Exception("Access denied!");
                 }
-                
+
                 var res = await DataSource.DeleteData(new ChangeDataRequest(name, data, requestingControl));
                 if (res.Succeess)
                     return Json(new SuccessResponse("Data was deleted successfully"));
@@ -146,7 +151,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
         }
 
         [Route("data/dictionary")]
-        public async Task<ActionResult> GetDictionary(string name, string sort, string columns)
+        public async Task<ActionResult> GetDictionary(string name, string sort, string columns, string paging, string filter)
         {
             try
             {
@@ -154,19 +159,38 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 {
                     throw new Exception("Access denied!");
                 }
-                
-                var getRequest = new GetDictionaryRequest(name);
+
+                var filterItems = new List<ClientFilterItem>();
+
+                if (NotNullOrEmpty(filter))
+                {
+                    filterItems.AddRange(JsonConvert.DeserializeObject<List<ClientFilterItem>>(filter));                   
+                }
+
+                var getRequest = new GetDictionaryRequest(name)
+                {
+                    Filter = filterItems
+                };
+
                 if (NotNullOrEmpty(sort))
                 {
                     getRequest.Sort = JsonConvert.DeserializeObject<List<ClienSortItem>>(sort);
                 }
+
                 if (NotNullOrEmpty(columns))
                 {
                     getRequest.Columns = JsonConvert.DeserializeObject<List<string>>(columns);
                 }
 
+                if (NotNullOrEmpty(paging))
+                {
+                    getRequest.Paging = JsonConvert.DeserializeObject<ClientPaging>(paging);
+                }
+                
                 var data = await DataSource.GetDictionaryAsync(getRequest).ConfigureAwait(false);
-                return Json(new ItemSuccessResponse<List<KeyValuePair<object, string>>>(data.ToList()));
+                var res = new ItemSuccessResponse<List<KeyValuePair<object, string>>>(data.Item1.ToList());
+                res.Count = data.Item2;
+                return Json(res);
             }
             catch (Exception e)
             {
@@ -188,7 +212,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 var token = await DWKitRuntime.ContentProvider.AddAsync(stream, properties);
                 return Json(new SuccessResponse(token));
             }
-            
+
             return Json(new FailResponse("No any files in the request!"));
         }
 

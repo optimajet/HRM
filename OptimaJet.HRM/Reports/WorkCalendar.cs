@@ -70,7 +70,7 @@ namespace OptimaJet.HRM.Reports
             var employees = await employeeModel.GetAsync(Filter.Empty);
             var businessTripFilter = DocumentTypes.GetFilter(DocumentTypes.BusinessTrip)
                 .Merge(filter)
-                .Merge(await Document.GetViewFilterForCurrentUser(businessTripModel));
+                .Merge(Document.GetViewFilterForCurrentUser(businessTripModel));
             var businessTrips = await businessTripModel.GetAsync(businessTripFilter);
             businessTrips.ForEach((item) =>
             {
@@ -90,13 +90,13 @@ namespace OptimaJet.HRM.Reports
 
             var sickLeaveFilter = DocumentTypes.GetFilter(DocumentTypes.SickLeave)
                 .Merge(filter)
-                .Merge(await Document.GetViewFilterForCurrentUser(sickLeaveModel));
+                .Merge(Document.GetViewFilterForCurrentUser(sickLeaveModel));
                 
             var sickLeaves = await sickLeaveModel.GetAsync(sickLeaveFilter);
 
             var vacationFilter = DocumentTypes.GetFilter(DocumentTypes.Vacation)
                 .Merge(filter)
-                .Merge(await Document.GetViewFilterForCurrentUser(vacationModel));
+                .Merge(Document.GetViewFilterForCurrentUser(vacationModel));
             var vacations = await vacationModel.GetAsync(vacationFilter);
 
             var res = new List<WorkCalendarEvent>();

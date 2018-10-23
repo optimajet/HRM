@@ -70,7 +70,8 @@
 }
 
 .dwkit-formbuilder-toolbox > ul{
-    -webkit-padding-start: 0px
+    -webkit-padding-start: 0px;
+    padding-left: 0px;
 }
 
 .dwkit-formbuilder-toolbox > ul > li

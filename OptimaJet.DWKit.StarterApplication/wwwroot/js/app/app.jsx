@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { DWKitForm } from "./../../scripts/optimajet-form.js"
 import {ApplicationRouter, NotificationComponent, FormContent, 
-    FlowContent, Thunks, Store, Actions, API
+    FlowContent, Thunks, Store, Actions, API, StateBindedForm, SignalRConnector
 } from './../../scripts/optimajet-app.js'
 import Calendar from "./pages/calendar.jsx"
 
@@ -42,10 +42,12 @@ class App extends React.Component {
         return <div className="dwkit-application" key={this.state.pagekey}>
             <DWKitForm {...sectorprops} formName="header" modelurl="/ui/form/header" data={user} />
             <div className="dwkit-application-container">
-                <div className="dwkit-application-menu">
-                    <DWKitForm {...sectorprops} formName="sidemenu" modelurl="/ui/form/sidemenu" dataurl="/data/sidemenu" />
-                </div>
-                <div className="dwkit-application-basecontent">
+                 <Provider store={Store}>
+                    <div className="dwkit-application-menu">
+                        <StateBindedForm {...sectorprops} formName="sidemenu" stateDataPath="app.sidemenu" modelurl="/ui/form/sidemenu" />
+                    </div>
+                 </Provider>
+                   <div className="dwkit-application-basecontent">
                     <DWKitForm {...sectorprops} formName="top" data={{ currentEmployee: currentEmployee }} modelurl="/ui/form/top" />
                     <div class="dwkit-application-top"></div>
                     <div className="dwkit-application-content">
@@ -100,7 +102,8 @@ class App extends React.Component {
         Store.resetForm();
         this.setState({
             pagekey: this.state.pagekey + 1
-        })
+        });
+        SignalRConnector.Connect(Store);
     }
 
     actionsFetch(args){
@@ -115,6 +118,8 @@ class App extends React.Component {
         ));
     }
 }
+
+SignalRConnector.Connect(Store);
 
 render(<App/>,document.getElementById('content'));
 
