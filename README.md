@@ -73,7 +73,7 @@ The sample supports MS SQL and PosgreSQL as storage.<br/>
 <h2>Information:</h2>
 <b>Official web-site</b> - <a href="https://dwkit.com/solutions/hrm/">https://dwkit.com/solutions/hrm/</a><br/>
 <b>Documentation</b> - <a href="https://dwkit.com/documentation/">https://dwkit.com/documentation/</a><br/><br/>
-<b>Demo</b> - <a href="https://hr.dwkit.com/">https://hr.dwkit.com/</a><br/>
+<b>Demo</b> - <a href="https://hr.dwkit.com/">http://hr.dwkit.com/</a><br/>
 <br/><br/>
 
 For commercial use, please contact <a href="mailto:sales@optimajet.com?subject=DWKit question from github">sales@optimajet.com</a><br/>
