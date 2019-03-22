@@ -1,5 +1,6 @@
 {
-  init: function(){
+    init: function() {
+        return {};
   },
   
   generate: function (args){
