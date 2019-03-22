@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
@@ -17,10 +17,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="BundlerMinifier.Core" Version="2.6.362" />
-    <PackageReference Include="DWKit-Core" Version="2.3.2" />
-    <PackageReference Include="DWKit-ProviderForMSSQL" Version="2.3.2" />
-    <PackageReference Include="DWKit-ProviderForPostgreSQL" Version="2.3.2" />
-    <PackageReference Include="DWKit-Security" Version="2.3.2" />
+    <PackageReference Include="DWKit-Core" Version="2.5.3" />
+    <PackageReference Include="DWKit-ProviderForMSSQL" Version="2.5.0" />
+    <PackageReference Include="DWKit-ProviderForPostgreSQL" Version="2.5.0" />
+    <PackageReference Include="DWKit-Security" Version="2.5.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.0.1" />
@@ -179,6 +179,12 @@
     <Content Update="Metadata\Forms\login.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="Metadata\Forms\Profile-settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Metadata\Forms\Profile.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Metadata\Forms\recruitment-settings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -278,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Update="Metadata\Forms\Dashboard2-code.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Metadata\Forms\Profile-code.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,6 +1,18 @@
 {
   init: function(){
-      
+      var date = new Date();
+      return {
+          app:{
+            form:{
+                data:{
+                    modified:{
+                        dateFrom: date.getFullYear() + "-" + (date.getMonth() - 4 + 1) + "-" + 1,
+                        dateTo: date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate(),
+                    }
+                }
+            }
+          }
+      };
   },
   
   generate: function (args){

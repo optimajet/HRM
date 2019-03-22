@@ -16,8 +16,13 @@ export default class Calendar extends Component {
     }
 
     render() {
+        var title = "Work Calendar";
+        if (DWKitLang != undefined && DWKitLang.forms != undefined &&
+            DWKitLang.forms.WorkCalendar != undefined &&
+            DWKitLang.forms.WorkCalendar.title != undefined)
+            title = DWKitLang.forms.WorkCalendar.title;
         return <div>
-            <h1>Work Calendar</h1>
+            <h1>{title}</h1>
             <div style={{ height: "900px" }}>
                 <BigCalendar
                     events={this.state.events}

@@ -1,6 +1,6 @@
 {
   "name": "Documents",
-  "lastUpdate": "2018-07-04T18:20:52.5275864+03:00",
+  "lastUpdate": "2019-03-22T18:54:31.6661855+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -92,9 +92,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "28480e7e-a2a1-8eb5-ed12-db3d7dca4da9",
+          "attributeId": "0613d2e2-6da4-478d-af81-c943eaebf11e",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": true
+      "readOnly": true,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

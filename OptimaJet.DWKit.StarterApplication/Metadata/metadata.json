@@ -2185,7 +2185,7 @@
       "name": "EmployeeTrigger",
       "definedOnServer": false,
       "type": 2,
-      "source": "//Check Left flag\r\nforeach (var emp in entities)\r\n{\r\n    emp.IsLeft = emp.DateLeft != null;\r\n}\r\nreturn (string.Empty, false);",
+      "source": "//Check Left flag\r\nforeach (var emp in entities)\r\n{\r\n    emp.IsLeft = emp.DateLeft != null;\r\n}\r\nreturn TriggerResult.Success();",
       "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
       "isAsync": true
     }

@@ -3,7 +3,8 @@
     "key": "header_1",
     "data-buildertype": "header",
     "content": "Dashboard",
-    "size": "huge"
+    "size": "huge",
+    "subheader": ""
   },
   {
     "key": "container_1",

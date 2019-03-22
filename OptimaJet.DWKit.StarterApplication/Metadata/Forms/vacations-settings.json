@@ -1,6 +1,6 @@
 {
   "name": "vacations",
-  "lastUpdate": "2018-07-02T15:37:19.429105+03:00",
+  "lastUpdate": "2019-03-22T18:54:41.5454911+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -115,9 +115,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "e23d0a77-9787-f848-ddce-a0e1a2edf586",
+          "attributeId": "89bdf351-c9bf-4c5a-8946-d6651acca734",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": false
+      "readOnly": false,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

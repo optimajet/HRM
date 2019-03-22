@@ -65,7 +65,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     FilterActionName = filterActionName,
                     IdValue = idValue,
                     Filter = filterItems,
-                    BaseUrl = string.Format("{0}://{1}", Request.Scheme, Request.Host.Value),
+                    BaseUrl = $"{Request.Scheme}://{Request.Host.Value}",
                     GetHeadersForLocalRequest = () =>
                     {
                         var dataUrlParameters = new Dictionary<string, string>();
@@ -117,10 +117,23 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     throw new Exception("Access denied!");
                 }
 
-                var res = await DataSource.ChangeData(new ChangeDataRequest(name, data));
-                if (res.Succeess)
-                    return Json(new SuccessResponse(res.id?.ToString()));
-                return Json(new FailResponse(res.Message));
+                var postRequest = new ChangeDataRequest(name, data)
+                {
+                    BaseUrl = $"{Request.Scheme}://{Request.Host.Value}",
+                    GetHeadersForLocalRequest = () =>
+                    {
+                        var dataUrlParameters = new Dictionary<string, string>();
+                        dataUrlParameters.Add("Cookie",
+                            string.Join(";",
+                                Request.Cookies.Select(c => $"{c.Key}={c.Value}")));
+                        return dataUrlParameters;
+                    }
+                };
+
+                var res = await DataSource.ChangeData(postRequest);
+                if (res.success != null)
+                    return Json(res.success);
+                return Json(res.fail);
             }
             catch (Exception e)
             {
@@ -139,10 +152,23 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     throw new Exception("Access denied!");
                 }
 
-                var res = await DataSource.DeleteData(new ChangeDataRequest(name, data, requestingControl));
-                if (res.Succeess)
-                    return Json(new SuccessResponse("Data was deleted successfully"));
-                return Json(new FailResponse(res.Message));
+                var deleteRequest = new ChangeDataRequest(name, data, requestingControl)
+                {
+                    BaseUrl = $"{Request.Scheme}://{Request.Host.Value}",
+                    GetHeadersForLocalRequest = () =>
+                    {
+                        var dataUrlParameters = new Dictionary<string, string>();
+                        dataUrlParameters.Add("Cookie",
+                            string.Join(";",
+                                Request.Cookies.Select(c => $"{c.Key}={c.Value}")));
+                        return dataUrlParameters;
+                    }
+                };
+
+                var res = await DataSource.DeleteData(deleteRequest);
+                if (res.success != null)
+                    return Json(res.success);
+                return Json(res.fail);
             }
             catch (Exception e)
             {
@@ -151,7 +177,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
         }
 
         [Route("data/dictionary")]
-        public async Task<ActionResult> GetDictionary(string name, string sort, string columns, string paging, string filter)
+        public async Task<ActionResult> GetDictionary(string name, string sort, string columns, string paging, string filter, string parent)
         {
             try
             {
@@ -160,37 +186,21 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                     throw new Exception("Access denied!");
                 }
 
-                var filterItems = new List<ClientFilterItem>();
+                var data = await DataSource.GetDictionaryAsync(name, sort, columns, paging, filter, parent).ConfigureAwait(false);
 
-                if (NotNullOrEmpty(filter))
+                ItemSuccessResponse<IEnumerable<object>> result = null;
+
+                if(NotNullOrEmpty(parent))
                 {
-                    filterItems.AddRange(JsonConvert.DeserializeObject<List<ClientFilterItem>>(filter));                   
+                    result = new ItemSuccessResponse<IEnumerable<object>>(data.Item1.Select(x => new { Id = x.Item1, Name = x.Item2, Parent = x.Item3, HasChild = x.Item4 }));
+                }else
+                {
+                    result = new ItemSuccessResponse<IEnumerable<object>>(data.Item1.Select(x => new { Key = x.Item1, Value = x.Item2 }));
                 }
 
-                var getRequest = new GetDictionaryRequest(name)
-                {
-                    Filter = filterItems
-                };
-
-                if (NotNullOrEmpty(sort))
-                {
-                    getRequest.Sort = JsonConvert.DeserializeObject<List<ClienSortItem>>(sort);
-                }
-
-                if (NotNullOrEmpty(columns))
-                {
-                    getRequest.Columns = JsonConvert.DeserializeObject<List<string>>(columns);
-                }
-
-                if (NotNullOrEmpty(paging))
-                {
-                    getRequest.Paging = JsonConvert.DeserializeObject<ClientPaging>(paging);
-                }
+                result.Count = data.Item2;
                 
-                var data = await DataSource.GetDictionaryAsync(getRequest).ConfigureAwait(false);
-                var res = new ItemSuccessResponse<List<KeyValuePair<object, string>>>(data.Item1.ToList());
-                res.Count = data.Item2;
-                return Json(res);
+                return Json(result);
             }
             catch (Exception e)
             {
@@ -202,15 +212,22 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
         [Route("data/upload")]
         public async Task<ActionResult> UploadFile()
         {
-            if (Request.Form.Files.Count > 0)
+            try
             {
-                var file = Request.Form.Files[0];
-                Dictionary<string, string> properties = new Dictionary<string, string>();
-                properties.Add("Name", file.FileName);
-                properties.Add("ContentType", file.ContentType);
-                var stream = file.OpenReadStream();
-                var token = await DWKitRuntime.ContentProvider.AddAsync(stream, properties);
-                return Json(new SuccessResponse(token));
+                if (Request.Form.Files.Count > 0)
+                {
+                    var file = Request.Form.Files[0];
+                    Dictionary<string, string> properties = new Dictionary<string, string>();
+                    properties.Add("Name", file.FileName);
+                    properties.Add("ContentType", file.ContentType);
+                    var stream = file.OpenReadStream();
+                    var token = await DWKitRuntime.ContentProvider.AddAsync(stream, properties);
+                    return Json(new SuccessResponse(token));
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new FailResponse(ex));
             }
 
             return Json(new FailResponse("No any files in the request!"));

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using OptimaJet.DWKit.Core;
 using OptimaJet.DWKit.Core.Model;
 using OptimaJet.DWKit.Core.View;
+using Newtonsoft.Json.Linq;
 
 namespace OptimaJet.DWKit.StarterApplication.Controllers
 {
@@ -54,6 +55,47 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
             catch (Exception e)
             {
                 return Json(new FailResponse(e));
+            }
+        }
+
+        [Route("data/profile")]
+        public async Task<ActionResult> Profile(string data)
+        {
+            var isPost = Request.Method.Equals("POST", StringComparison.OrdinalIgnoreCase);
+            if (!isPost)
+            {
+                var cu = DWKitRuntime.Security.CurrentUser;
+                if (cu == null)
+                    return Json(new FailResponse("The current user is not found!"));
+
+                object obj = null;
+                obj = new
+                {
+                    cu.Name,
+                    cu.Email,
+                    cu.Localization,
+                    Roles = string.Join(", ", cu.Roles),
+                    Groups = string.Join(", ", cu.Groups)
+                };
+                return Json(obj);
+            }
+            else
+            {
+                var cu = DWKitRuntime.Security.CurrentUser;
+                if (cu == null)
+                    return Json(new FailResponse("The current user is not found!"));
+
+                var su = await Core.Metadata.DbObjects.SecurityUser.SelectByKey(DWKitRuntime.Security.CurrentUser.Id);
+                su.StartTracking();
+                if (su == null)
+                    return Json(new FailResponse("The current user is not found!"));
+
+                var dataJson = JToken.Parse(data);
+
+                su.Email = dataJson["email"].ToString();
+                su.Localization = dataJson["localization"].ToString();
+                await su.ApplyAsync();
+                return Json(new SuccessResponse());
             }
         }
     }

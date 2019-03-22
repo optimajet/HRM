@@ -16,7 +16,6 @@
                     }
                 }
             };
-            console.log(data.Employees.length);
         }
         
         return {};

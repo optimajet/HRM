@@ -1,13 +1,11 @@
-﻿using OptimaJet.DWKit.Core;
-using OptimaJet.DWKit.Core.Metadata.DbObjects;
+﻿using OptimaJet.DWKit.Core.Metadata.DbObjects;
 using OptimaJet.DWKit.Core.ORM;
 using OptimaJet.HRM.Model;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using OptimaJet.DWKit.Core.Utils.OptimaJet.Common;
+using OptimaJet.DWKit.Core.Utils;
 
 namespace OptimaJet.HRM
 {

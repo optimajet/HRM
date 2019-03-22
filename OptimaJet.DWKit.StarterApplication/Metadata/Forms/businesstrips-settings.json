@@ -1,6 +1,6 @@
 {
-  "name": "trips",
-  "lastUpdate": "2018-07-12T15:51:28.989923+03:00",
+  "name": "businesstrips",
+  "lastUpdate": "2019-03-22T18:54:23.9481409+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -149,9 +149,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "a2e1c404-4ca2-b223-73d7-1e0db0a5a79c",
+          "attributeId": "03b172df-8a4b-4105-a8df-558116d4ca38",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": false
+      "readOnly": false,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

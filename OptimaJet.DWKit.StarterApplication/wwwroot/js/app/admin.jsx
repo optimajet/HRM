@@ -26,6 +26,7 @@ render(
         apiUrl="/configapi"
         workflowApi="/workflow/designerapi"
         imageFolder="/images/"
+        localizationFolder="/localization/"
         deltaWidth={0}
         deltaHeight={0}
         controlActions={globalActions}

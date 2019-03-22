@@ -15,11 +15,11 @@ namespace OptimaJet.DWKit.Application
     {
         #region IServerActionsProvider implementation
 
-        private Dictionary<string, Func<EntityModel, List<dynamic>, dynamic, (string Message, bool IsCancelled)>> _triggers
-            = new Dictionary<string, Func<EntityModel, List<dynamic>, dynamic, (string Message, bool IsCancelled)>>();
+        private Dictionary<string, Func<EntityModel, List<dynamic>, TriggerExecutionContext, dynamic, TriggerResult>> _triggers
+            = new Dictionary<string, Func<EntityModel, List<dynamic>, TriggerExecutionContext, dynamic, TriggerResult>>();
 
-        private Dictionary<string, Func<EntityModel, List<dynamic>, dynamic, Task<(string Message, bool IsCancelled)>>> _triggersAsync
-            = new Dictionary<string, Func<EntityModel, List<dynamic>, dynamic, Task<(string Message, bool IsCancelled)>>>();
+        private Dictionary<string, Func<EntityModel, List<dynamic>, TriggerExecutionContext, dynamic, Task<TriggerResult>>> _triggersAsync
+            = new Dictionary<string, Func<EntityModel, List<dynamic>, TriggerExecutionContext, dynamic, Task<TriggerResult>>>();
 
         public List<string> GetFilterNames()
         {
@@ -61,21 +61,22 @@ namespace OptimaJet.DWKit.Application
             return _triggersAsync.ContainsKey(name) || _triggers.ContainsKey(name);
         }
 
-        public (string Message, bool IsCancelled) ExecuteTrigger(string name, EntityModel model, List<dynamic> entities, dynamic options)
+        public TriggerResult ExecuteTrigger(string name, EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
             if (_triggers.ContainsKey(name))
-                return _triggers[name](model, entities, options);
+                return _triggers[name](model, entities, context, options);
 
             throw new System.NotImplementedException();
         }
 
-        public Task<(string Message, bool IsCancelled)> ExecuteTriggerAsync(string name, EntityModel model, List<dynamic> entities, dynamic options)
+        public Task<TriggerResult> ExecuteTriggerAsync(string name, EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
             if (_triggersAsync.ContainsKey(name))
-                return _triggersAsync[name](model, entities, options);
+                return _triggersAsync[name](model, entities, context, options);
 
             throw new System.NotImplementedException();
         }
+
 
         public List<string> GetActionNames()
         {
@@ -111,7 +112,7 @@ namespace OptimaJet.DWKit.Application
             _triggersAsync.Add("CheckLinkedSecurityUser", CheckLinkedSecurityUser);
         }
 
-        public async Task<(string Message, bool IsCancelled)> SetFields(EntityModel model, List<dynamic> entities, dynamic options)
+        public async Task<TriggerResult> SetFields(EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
             DynamicEntity fields = options as DynamicEntity;
             if (fields != null)
@@ -125,10 +126,10 @@ namespace OptimaJet.DWKit.Application
                 }
             }
 
-            return (null, false);
+            return TriggerResult.Success();
         }
 
-        public async Task<(string Message, bool IsCancelled)> InitFields(EntityModel model, List<dynamic> entities, dynamic options)
+        public async Task<TriggerResult> InitFields(EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
             DynamicEntity fields = options as DynamicEntity;
             if (fields != null)
@@ -144,7 +145,7 @@ namespace OptimaJet.DWKit.Application
                     }
                 }
             }
-            return (null, false);
+            return TriggerResult.Success();
         }
 
         public static async Task<object> ReplaceVariable(object val, EntityModel model)
@@ -176,7 +177,7 @@ namespace OptimaJet.DWKit.Application
             return val;
         }
 
-        public async Task<(string Message, bool IsCancelled)> CheckLinkedSecurityUser(EntityModel model, List<dynamic> entities, dynamic options)
+        public async Task<TriggerResult> CheckLinkedSecurityUser(EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
             foreach (var entity in entities)
             {
@@ -205,7 +206,7 @@ namespace OptimaJet.DWKit.Application
 
                 await EmployeeBusiness.CheckDefaultRole(user.Id, "Users");
             }
-            return (null, false);
+            return TriggerResult.Success();
         }
     }
 }

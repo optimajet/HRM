@@ -1,13 +1,19 @@
 {
-  init: function (args /*{data, originalData, state, component, formName, index, controlRef, eventArgs, isChild}*/){
+  init: function (args){
     var path = args.state.router.location.pathname.split('/');
     var filter = path[path.length - 1];
     var header = undefined;
     if(filter === "inbox"){
-        header = "Inbox";
+        header = DWKitLang != undefined && DWKitLang.forms != undefined && 
+                DWKitLang.forms.Documents != undefined && 
+                DWKitLang.forms.Documents.inbox != undefined ?
+            DWKitLang.forms.Documents.inbox : "Inbox";
     }
     else if(filter === "outbox"){
-        header = "Outbox";
+        header = DWKitLang != undefined && DWKitLang.forms != undefined && 
+                DWKitLang.forms.Documents != undefined && 
+                DWKitLang.forms.Documents.outbox != undefined ?
+            DWKitLang.forms.Documents.outbox : "Outbox";
     }
     
     if(header !== undefined){

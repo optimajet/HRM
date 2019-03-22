@@ -60,6 +60,10 @@
             "defaultValue": "User",
             "items": [
               {
+                "target": "/form/profile",
+                "title": "Profile"
+              },
+              {
                 "target": "/admin",
                 "title": "Admin panel"
               },

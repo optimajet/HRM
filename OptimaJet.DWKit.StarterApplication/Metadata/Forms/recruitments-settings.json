@@ -1,6 +1,6 @@
 {
   "name": "recruitments",
-  "lastUpdate": "2018-07-12T15:51:52.4060506+03:00",
+  "lastUpdate": "2019-03-22T18:54:34.8045551+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -12,12 +12,6 @@
       "parameter": "{Type: \"Recruitment\"}",
       "control": "grid",
       "dataMap": [
-        {
-          "id": "a516f307-43cf-63a2-aa00-c4b437c4c747",
-          "attributeId": "58a3b90d-c374-ffa3-6778-3b352c9453bb",
-          "isEditable": true,
-          "isLoadable": true
-        },
         {
           "id": "c1607d28-07c9-59f9-626d-800952c5a2f3",
           "attributeId": "cb140c29-2013-9a7a-5790-fc57c6d84064",
@@ -107,9 +101,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "89dd9b0c-e1a3-3c98-8094-c1f0e0d92eda",
+          "attributeId": "27ebbb45-dfcf-4200-9f5c-6c0821c222b4",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": false
+      "readOnly": false,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

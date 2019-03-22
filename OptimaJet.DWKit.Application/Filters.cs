@@ -62,14 +62,14 @@ namespace OptimaJet.DWKit.Application
             return false;
         }
 
-        public (string Message, bool IsCancelled) ExecuteTrigger(string name, EntityModel model, List<dynamic> entities, dynamic options)
+        public TriggerResult ExecuteTrigger(string name, EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public async Task<(string Message, bool IsCancelled)> ExecuteTriggerAsync(string name, EntityModel model, List<dynamic> entities, dynamic options)
+        public Task<TriggerResult> ExecuteTriggerAsync(string name, EntityModel model, List<dynamic> entities, TriggerExecutionContext context, dynamic options)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public List<string> GetActionNames()

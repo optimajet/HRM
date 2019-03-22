@@ -1,6 +1,6 @@
 {
   "name": "compensations",
-  "lastUpdate": "2018-07-02T15:32:43.5235861+03:00",
+  "lastUpdate": "2019-03-22T18:54:28.7220971+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -104,9 +104,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "7cbcf69b-ddc4-d92f-5ef6-cff150cba6a1",
+          "attributeId": "c1584289-aed5-415a-9eb3-e5eccea7f20e",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": false
+      "readOnly": false,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

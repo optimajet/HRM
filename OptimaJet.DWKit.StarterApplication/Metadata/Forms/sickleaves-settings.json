@@ -1,6 +1,6 @@
 {
   "name": "sickleaves",
-  "lastUpdate": "2018-07-02T15:36:55.7921981+03:00",
+  "lastUpdate": "2019-03-22T18:54:38.3281834+03:00",
   "isTemplate": false,
   "triggers": [],
   "dataMap": [],
@@ -131,9 +131,16 @@
           "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
           "isEditable": true,
           "isLoadable": true
+        },
+        {
+          "id": "b77adeab-3c30-9e99-e660-47256d590780",
+          "attributeId": "ba533215-5b1d-439b-bdf0-0fd3253d72e9",
+          "isEditable": false,
+          "isLoadable": true
         }
       ],
-      "readOnly": false
+      "readOnly": false,
+      "triggers": []
     }
   ],
   "securityGroup": "Documents"

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -22,10 +19,10 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
             try
             {
                 var form = DWKitRuntime.Metadata.GetForm(name);
-                if(form == null)
+                if (form == null)
                     throw new Exception("This form is not found!");
 
-                return await getForm(form, wrapResult, enableSecurity);
+                return await GetForm(form, wrapResult, enableSecurity);
             }
             catch (Exception e)
             {
@@ -34,44 +31,51 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
                 throw;
             }
         }
-        
+
         [Route("ui/flow/{name}")]
         public async Task<ActionResult> GetFlow(string name, string urlFilter)
         {
-            Guid? id = null;
-            if (!string.IsNullOrEmpty(urlFilter))
+            try
             {
-                if (Guid.TryParse(urlFilter, out Guid entityId))
-                    id = entityId;
-            }
-            
-            var form = await BusinessFlow.GetForm(name, id);
-            if(form != null)
-            {
-                return await getForm(form, true, true);
-            }
+                Guid? id = null;
+                if (!string.IsNullOrEmpty(urlFilter))
+                {
+                    if (Guid.TryParse(urlFilter, out Guid entityId))
+                        id = entityId;
+                }
 
-            return Json(new FailResponse("The form is not found for this BusinessFlow!"));
+                var form = await BusinessFlow.GetForm(name, id);
+                if (form != null)
+                {
+                    return await GetForm(form, true, true);
+                }
+                
+                return Json(new FailResponse("The form is not found for this BusinessFlow!"));
+            }
+            catch (Exception e)
+            {
+                return Json(new FailResponse(e));
+            }
         }
 
         [Route("ui/localization.js")]
         public ActionResult GetLocalization()
         {
             var cu = DWKitRuntime.Security.CurrentUser;
-            if(cu == null)
+            if (cu == null)
             {
                 return Content("");
             }
             var localization = cu.Localization;
             return Content(DWKitRuntime.Metadata.GetLocalizationScript(localization));
         }
-        
+
         [Route("ui/form/businessobjects.js")]
-        public  ActionResult GetFormsBusinesscode()
+        public ActionResult GetFormsBusinesscode()
         {
             return Content(DWKitRuntime.Metadata.GetFormsBusinessCode());
         }
-        
+
         [AllowAnonymous]
         [Route("ui/login")]
         public async Task<ActionResult> Login()
@@ -93,7 +97,7 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
             return await GetForm("registrationcomplete");
         }
 
-        private async Task<ActionResult> getForm(Form form, bool wrapResult, bool enableSecurity)
+        private async Task<ActionResult> GetForm(Form form, bool wrapResult, bool enableSecurity)
         {
             if (!await DWKitRuntime.Security.CheckFormPermissionAsync(form, "View"))
             {
@@ -133,4 +137,3 @@ namespace OptimaJet.DWKit.StarterApplication.Controllers
         }
     }
 }
-    
