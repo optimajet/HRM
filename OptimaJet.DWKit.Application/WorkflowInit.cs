@@ -8,6 +8,7 @@ using System.Xml.Linq;
 using OptimaJet.DWKit.Core;
 using OptimaJet.DWKit.Core.Model;
 using OptimaJet.DWKit.Core.Utils;
+using OptimaJet.DWKit.Core.View;
 using OptimaJet.DWKit.MSSQL;
 using OptimaJet.Workflow.Core.Builder;
 using OptimaJet.Workflow.Core.Bus;
@@ -25,15 +26,16 @@ namespace OptimaJet.DWKit.Application
 
         public static WorkflowRuntime Runtime => LazyRuntime.Value;
 
-        public static string ConnectionString { get; set;}
-
         private static WorkflowRuntime InitWorkflowRuntime()
         {
             var runtime = DWKitRuntime.CreateWorkflowRuntime()
                 .WithActionProvider(new ActionProvider())
                 .WithRuleProvider(new RuleProvider())
                 .WithTimerManager(new TimerManager());
-
+            
+            //events subscription
+            runtime.ProcessActivityChanged +=  (sender, args) => {  ActivityChanged(args, runtime).Wait(); };
+            runtime.ProcessStatusChanged += (sender, args) => { };
             runtime.OnWorkflowError += (sender, args) =>
             {
                 if (Debugger.IsAttached)
@@ -48,18 +50,18 @@ namespace OptimaJet.DWKit.Application
                     errorBuilder.Append($"StackTrace: {info.StackTrace}");
                     Debug.WriteLine(errorBuilder);
                 }
-
+              
                 //TODO Add exceptions logging here
             };
-
-            //events subscription
-            runtime.ProcessActivityChanged +=  (sender, args) => {  ActivityChanged(args, runtime).Wait(); };
-            runtime.ProcessStatusChanged += (sender, args) => { };
+            
+            //It is necessery to have this assembly for compile code with dynamic
+            runtime.RegisterAssemblyForCodeActions(typeof(Microsoft.CSharp.RuntimeBinder.Binder).Assembly,true); 
+           
             
             //TODO If you have planned to use Code Actions functionality that required references to external assemblies you have to register them here
             //runtime.RegisterAssemblyForCodeActions(Assembly.GetAssembly(typeof(SomeTypeFromMyAssembly)));
             //starts the WorkflowRuntime
-            //TODO If you have planned use Timers the best way to start WorkflowRuntime is somwhere outside of this function in Global.asax for example
+            //TODO If you have planned use Timers the best way to start WorkflowRuntime is somewhere outside of this function in Global.asax for example
             runtime.Start();
 
             return runtime;
@@ -71,7 +73,8 @@ namespace OptimaJet.DWKit.Application
                 return;
 
             var historyModel = await MetadataToModelConverter.GetEntityModelByModelAsync("DocumentTransitionHistory");
-            var emptyHistory = (await historyModel.GetAsync(Filter.And.Equal(Null.Value, "EmployeeId").Equal(args.ProcessId, "DocumentId"))).Select(h => h.GetId()).ToList();
+            var emptyHistory = (await historyModel.GetAsync(Filter.And.Equal(Null.Value, "EmployeeId").Equal(args.ProcessId, "DocumentId")
+                .Equal(Null.Value, "TransitionTime"))).Select(h => h.GetId()).ToList();
             await historyModel.DeleteAsync(emptyHistory);
 
             await runtime.PreExecuteFromCurrentActivityAsync(args.ProcessId);
@@ -88,10 +91,7 @@ namespace OptimaJet.DWKit.Application
             await documentModel.UpdateSingleAsync(document as DynamicEntity);
 
             var newActors = await Runtime.GetAllActorsForDirectCommandTransitionsAsync(args.ProcessId);
-           
             var newInboxes = new List<dynamic>();
-            
-           
             foreach (var newActor in newActors)
             {
                 var newInboxItem = new DynamicEntity() as dynamic;
@@ -100,26 +100,34 @@ namespace OptimaJet.DWKit.Application
                 newInboxItem.ProcessId = args.ProcessId;
                 newInboxes.Add(newInboxItem);
             }
-            
+
             var userIdsForNotification = new List<string>();
+
             userIdsForNotification.AddRange(newInboxes.Select(a => (string) (a as dynamic).IdentityId));
 
-
+            var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
             using (var shared = new SharedTransaction())
             {
                 await shared.BeginTransactionAsync();
-                var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
-                var existingInboxes = (await inboxModel.GetAsync(Filter.And.Equal(args.ProcessId, "ProcessId")));
-                userIdsForNotification.AddRange(existingInboxes.Select(a => (string) (a as dynamic).IdentityId));
-                var existingInboxesIds = existingInboxes.Select(i => i.GetId()).ToList();
-                await inboxModel.DeleteAsync(existingInboxesIds);
+                
+                var existingInbox = (await inboxModel.GetAsync(Filter.And.Equal(args.ProcessId, "ProcessId")));
+                userIdsForNotification.AddRange(existingInbox.Select(a => (string) (a as dynamic).IdentityId));
+                var existingInboxIds = existingInbox.Select(i => i.GetId()).ToList();
+                await inboxModel.DeleteAsync(existingInboxIds);
                 await inboxModel.InsertAsync(newInboxes);
+                
                 await shared.CommitAsync();
             }
-            
+
             userIdsForNotification = userIdsForNotification.Distinct().ToList();
             Func<Task> task = async () => { await ClientNotifiers.NotifyClientsAboutInboxStatus(userIdsForNotification); };
             task.FireAndForgetWithDefaultExceptionLogger();
         }
+
+        public static void ForceInit()
+        {
+            var r = Runtime;
+        }
+
     }
 }

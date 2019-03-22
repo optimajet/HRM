@@ -11,16 +11,19 @@ namespace OptimaJet.DWKit.Application
 {
     public static class ClientNotifiers
     {
-     
-        
         public static async Task NotifyClientsAboutInboxStatus (string userId)
         {
             var inboxModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowInbox");
             var historyModel = await MetadataToModelConverter.GetEntityModelByModelAsync("WorkflowProcessTransitionHistory");
-             var inboxCount = await inboxModel.GetCountAsync(Filter.And.Equal(userId.ToString(), "IdentityId"));
-            var outboxProcessIds = (await historyModel.GetAsync(Filter.And.Equal(userId, "ExecutorIdentityId"))).Select(e => (Guid) (e as dynamic).ProcessId).Distinct();
-            var outboxCount = outboxProcessIds.Count();
-            
+            long inboxCount = string.IsNullOrWhiteSpace(userId) ? 0L : await inboxModel.GetCountAsync(Filter.And.Equal(userId, "IdentityId"));
+
+            long outboxCount = 0L;
+            if (!string.IsNullOrWhiteSpace(userId))
+            {
+                var outboxProcessIds = (await historyModel.GetAsync(Filter.And.Equal(userId, "ExecutorIdentityId"))).Select(e => (Guid)(e as dynamic).ProcessId).Distinct();
+                outboxCount = outboxProcessIds.Count();
+            }
+
             await SendInboxOutboxCountNotification(userId, inboxCount, outboxCount);
         }
 
@@ -53,7 +56,7 @@ namespace OptimaJet.DWKit.Application
                 {"outbox", outboxCount}
             });
         }
-        
+
         public static async Task DeleteWokflowAndNotifyClients(EntityModel model, List<ChangeOperation> changes)
         {
             var processIds = changes.Select(c => (Guid) c.Entity.GetId()).ToList();

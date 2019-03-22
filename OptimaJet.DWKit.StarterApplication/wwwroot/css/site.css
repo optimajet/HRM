@@ -169,54 +169,18 @@
     padding-bottom: 0px;
 }
 
-.hrm-block .ui.form .ui.input {
-    border-style: solid;
-    border-color: rgba(34, 36, 38, 0.15);
-    border-width: 1px;
-    border-radius: 2px;
-}
-
-.hrm-block .ui.form textarea {
-    border-style: solid;
-    border-color: rgba(34, 36, 38, 0.15);
-    border-width: 1px;
-    border-radius: 2px;
-    padding-left: 10px;
-}
-
-.hrm-block .ui.form .ui.input input {
-    border-bottom: none;
-    padding-left: 10px;
-}
 
 .hrm-block .ui.form .fields .ui.checkbox {
     margin-top: 27px;
-}
-.hrm-block .ui.form .ui.dropdown {
-    border-style: solid;
-    border-color: rgba(34, 36, 38, 0.15);
-    border-width: 1px;
-    border-radius: 2px;
 }
 
 .hrm-block .ui.form .ui.dropdown .search{
     padding-left: 10px;
 }
     
-    
 .hrm-block .ui.form .ui.dropdown.multiple {
     padding-left: 10px;
 } 
-
-.hrm-block .ui.form .ui.dropdown dropdown {
-    border-bottom: none;
-    padding-left: 10px;
-}
-
-.hrm-block .ui.form .ui.dropdown .text {
-    border-bottom: none;
-    padding-left: 10px;
-}
 
 .filepicker.dropzone {
     background: #F6F7FB;
