@@ -78,7 +78,7 @@ The sample supports MS SQL and PosgreSQL as storage.<br/>
 
 For commercial use, please contact <a href="mailto:sales@optimajet.com?subject=DWKit question from github">sales@optimajet.com</a><br/>
 
-<b>Demo license (valid until 31.12.2018):</b>
+<b>Demo license (valid until 31.12.2019):</b>
 <ul>
 <li>Instances: 1</li>
 <li>Users: 20</li>
