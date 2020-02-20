@@ -19,11 +19,11 @@ Besides, it enables employees to create and manage dynamic events and view infor
 <table>
 <tr>
 	<td>
-<img src="https://raw.githubusercontent.com/optimajet/HRM/master/Resources/dashboard.png" alt="Dashboard" width="200" style="
+<img src="https://raw.githubusercontent.com/optimajet/HRM/master/Resources/Dashboard.png" alt="Dashboard" width="200" style="
     border: 1px solid;
     border-color: #3e4d5c;">
 </td><td>
-<img src="https://github.com/optimajet/HRM/blob/master/Resources/businesstrip.png" alt="Business Trip" width="200" style="
+<img src="https://github.com/optimajet/HRM/blob/master/Resources/Businesstrip.png" alt="Business Trip" width="200" style="
 	    border: 1px solid;
 	    border-color: #3e4d5c;">
 		</td><td>
