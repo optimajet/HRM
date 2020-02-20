@@ -1,0 +1,14 @@
+{
+  "name": "WorkflowReport",
+  "lastUpdate": "2020-02-12T13:57:52.774651+03:00",
+  "dataGetAction": "ReportWorkflow",
+  "dataSourceType": "",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [],
+  "securityGroup": "WorkflowReport",
+  "actionHandlers": [
+    "generate"
+  ]
+}

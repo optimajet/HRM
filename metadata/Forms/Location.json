@@ -1,0 +1,284 @@
+[
+  {
+    "key": "title",
+    "data-buildertype": "header",
+    "content": "Location",
+    "size": "large"
+  },
+  {
+    "key": "buttonbar",
+    "data-buildertype": "container",
+    "style-float": "",
+    "children": [
+      {
+        "key": "btnNew",
+        "data-buildertype": "button",
+        "content": "New",
+        "style-customcss": "",
+        "secondary": true,
+        "events": {
+          "onClick": {
+            "actions": [
+              "redirect"
+            ],
+            "active": true,
+            "targets": [],
+            "parameters": [
+              {
+                "__id": "CLIENT_07c1dd30-42b9-11ea-a66a-35a7058d1577",
+                "name": "target",
+                "value": "/form/location/"
+              }
+            ]
+          }
+        },
+        "style-adaptive": true,
+        "style-renderwhen": "desktop",
+        "other-visibleConition": ""
+      },
+      {
+        "key": "btnDelete",
+        "data-buildertype": "button",
+        "content": "Delete",
+        "style-customcss": "",
+        "secondary": true,
+        "events": {
+          "onClick": {
+            "actions": [
+              "confirm",
+              "gridDelete",
+              "resetForm"
+            ],
+            "active": true,
+            "targets": [
+              "grid"
+            ],
+            "parameters": []
+          }
+        },
+        "style-adaptive": true,
+        "style-renderwhen": "desktop",
+        "other-visibleConition": ""
+      },
+      {
+        "key": "btnRefresh",
+        "data-buildertype": "button",
+        "content": "Refresh",
+        "style-customcss": "",
+        "secondary": true,
+        "events": {
+          "onClick": {
+            "actions": [
+              "gridRefresh"
+            ],
+            "active": true,
+            "targets": [
+              "grid"
+            ],
+            "parameters": []
+          }
+        },
+        "style-adaptive": true,
+        "style-renderwhen": "desktop"
+      },
+      {
+        "key": "btnExport",
+        "data-buildertype": "button",
+        "content": "Export",
+        "style-customcss": "",
+        "secondary": true,
+        "events": {
+          "onClick": {
+            "actions": [
+              "gridExport"
+            ],
+            "active": true,
+            "targets": [
+              "grid"
+            ],
+            "parameters": []
+          }
+        },
+        "style-adaptive": true,
+        "style-renderwhen": "desktop"
+      }
+    ],
+    "style-marginRight": "",
+    "style-display": "flex",
+    "style-marginBottom": "10px"
+  },
+  {
+    "key": "container_2",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "gridContainer",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "grid",
+            "data-buildertype": "gridview",
+            "columns": [
+              {
+                "key": "Name",
+                "name": "Name",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "__id": "CLIENT_b7811640-434b-11ea-b533-2fe62a178316",
+                "key": "Phone",
+                "name": "Phone",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              }
+            ],
+            "events": {
+              "onRowClick": {
+                "active": true,
+                "actions": [
+                  "loadRecord"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            },
+            "defaultSort": "Name ASC",
+            "rowKey": "Id",
+            "pagerType": "server",
+            "multiselect": true,
+            "autoHeight": true,
+            "offSet": "250px"
+          }
+        ],
+        "style-width": "450px",
+        "style-float": "left",
+        "style-marginRight": "20px"
+      },
+      {
+        "key": "container_3",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "formEdit",
+            "data-buildertype": "form",
+            "children": [
+              {
+                "key": "Name",
+                "data-buildertype": "input",
+                "label": "Name",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "events": {},
+                "other-required": true
+              },
+              {
+                "key": "Phone",
+                "data-buildertype": "input",
+                "label": "Phone",
+                "fluid": true,
+                "onChangeTimeout": 200,
+                "events": {},
+                "other-required": false
+              },
+              {
+                "key": "Address",
+                "data-buildertype": "textarea",
+                "label": "Address",
+                "fluid": true,
+                "rows": "4"
+              },
+              {
+                "key": "container_1",
+                "data-buildertype": "container",
+                "children": [
+                  {
+                    "key": "btnCreate",
+                    "data-buildertype": "button",
+                    "content": "Create",
+                    "style-customcss": "",
+                    "primary": true,
+                    "events-onClick": true,
+                    "events-onClick-actions": [
+                      "gridAdd"
+                    ],
+                    "events": {
+                      "onClick": {
+                        "active": true,
+                        "actions": [
+                          "validate",
+                          "save",
+                          "resetForm"
+                        ],
+                        "targets": [],
+                        "parameters": []
+                      }
+                    },
+                    "other-visibleConition": "data.Id == undefined"
+                  },
+                  {
+                    "key": "btnSave",
+                    "data-buildertype": "button",
+                    "content": "Save",
+                    "events": {
+                      "onClick": {
+                        "active": true,
+                        "actions": [
+                          "validate",
+                          "save",
+                          "refreshMainGrid"
+                        ],
+                        "targets": [],
+                        "parameters": []
+                      }
+                    },
+                    "primary": true,
+                    "other-visibleConition": "data.Id != undefined"
+                  },
+                  {
+                    "key": "btnDeleteItem",
+                    "data-buildertype": "button",
+                    "content": "Delete",
+                    "events": {
+                      "onClick": {
+                        "active": true,
+                        "actions": [
+                          "confirm",
+                          "delete",
+                          "resetForm"
+                        ],
+                        "targets": [],
+                        "parameters": [
+                          {
+                            "__id": "CLIENT_fbc47aa0-434a-11ea-b533-2fe62a178316"
+                          }
+                        ]
+                      }
+                    },
+                    "other-visibleConition": "data.Id != undefined",
+                    "secondary": true
+                  }
+                ],
+                "style-display": "flex",
+                "style-display-horizontalalign": "flex-end",
+                "style-customcss": "",
+                "style-marginTop": "10px"
+              }
+            ],
+            "style-marginLeft": "",
+            "style-width": "",
+            "style-source": "padding: 10px;\nborder: 1px solid rgba(34,36,38,.15);"
+          }
+        ],
+        "style-float": "left",
+        "style-source": "minWidth: 300px"
+      }
+    ],
+    "style-source": "minWidth: 800px",
+    "style-display": "",
+    "style-display-horizontalalign": "flex-start",
+    "style-display-verticalalign": "flex-start"
+  }
+]

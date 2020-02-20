@@ -1,0 +1,129 @@
+{
+  "name": "Documents",
+  "lastUpdate": "2020-02-19T16:11:45.9656966+00:00",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [
+    {
+      "id": "3c6d0211-36e3-ccc7-4d58-96d8992e83d0",
+      "entityId": "0e01f0a5-499f-4de7-a048-08ba4c062a2d",
+      "filter": "DocumentFilter",
+      "parameter": "{\n\tDataModelName: {\n\t\tterm: \"in\",\n\t\tvalue: [\n\t\t\t\"BusinessTrip\",\n\t\t\t\"Compensation\",\n\t\t\t\"Recruitment\",\n\t\t\t\"SickLeave\",\n\t\t\t\"Vacation\"\n\t\t]\n\t}\n}",
+      "dataMap": [
+        {
+          "id": "89636385-9284-fe30-8387-2a8e7b843f73",
+          "attributeId": "04584ffe-ca47-4fa8-a93a-193c8f696baf",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "d08b97fd-be61-ca12-f563-1391cda73e4f",
+          "attributeId": "06baf863-39df-4ef0-a018-7979c4a4409c",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "a38afda1-0e5f-3ce7-d6af-1100cd8a4bcd",
+          "attributeId": "a5ad08da-1099-85da-c294-76911ce9cdfa",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "5af61fe6-cf11-2cc1-d83d-ee8e4e18fc2b",
+          "attributeId": "98ee0d27-881d-f930-1449-3f994ac3a37b",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "662eb80b-d82b-8a7e-c9c9-bd1499cb4a58",
+          "attributeId": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "a16ef6a7-2187-8442-b81f-c67f402a91fe",
+          "attributeId": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "343fd860-b866-d1b9-878f-836915282414",
+          "attributeId": "8e8f7855-7342-426e-84f8-b02bbbb8d0d6",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "8ea9a495-3c09-8e61-7fc1-7e33e133c537",
+          "attributeId": "f14ab72b-11ca-5849-22b2-d5f868ea6c55",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "6f4f662d-d75a-aaa8-a9b2-bddc7f38b62e",
+          "attributeId": "efc74d4f-a34f-d983-8fc5-235b2a2ff7e6",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "0b943f2a-1beb-0f33-1b33-1595c7e2d8d0",
+          "attributeId": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "19bc0f4b-77e1-223b-4484-6e250a8e6fdd",
+          "attributeId": "78e8d7f6-3013-4107-b018-61accd6b66d7",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "d7210c61-663f-6593-92f7-e55bf131c602",
+          "attributeId": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "5c8b9e1f-25e5-be4a-25c3-09553aa04316",
+          "attributeId": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "e0b02b48-9bcb-ee1c-3765-603722c3b63e",
+          "attributeId": "9be7c406-311c-46e5-b732-d844aa71eb63",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "8a45cfd5-a8ba-7778-7905-0acd80eee388",
+          "attributeId": "29d3c632-82d1-4f51-96d2-82dfba411f3b",
+          "parentId": "a16ef6a7-2187-8442-b81f-c67f402a91fe",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        }
+      ],
+      "readOnly": true,
+      "triggers": []
+    }
+  ],
+  "securityGroup": "Documents",
+  "actionHandlers": [
+    "edit"
+  ]
+}

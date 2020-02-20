@@ -1,0 +1,1701 @@
+{
+  "dataModel": [
+    {
+      "id": "0e01f0a5-499f-4de7-a048-08ba4c062a2d",
+      "name": "Document",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "f14ab72b-11ca-5849-22b2-d5f868ea6c55",
+          "name": "Created",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "8e8f7855-7342-426e-84f8-b02bbbb8d0d6",
+          "name": "Changed",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "98ee0d27-881d-f930-1449-3f994ac3a37b",
+          "name": "StateName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "a5ad08da-1099-85da-c294-76911ce9cdfa",
+          "name": "State",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "efc74d4f-a34f-d983-8fc5-235b2a2ff7e6",
+          "name": "DataModelName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "04584ffe-ca47-4fa8-a93a-193c8f696baf",
+          "name": "Id",
+          "type": "Guid",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "06baf863-39df-4ef0-a018-7979c4a4409c",
+          "name": "Name",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "78e8d7f6-3013-4107-b018-61accd6b66d7",
+          "name": "Extensions",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "9be7c406-311c-46e5-b732-d844aa71eb63",
+          "name": "Type",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "mode": 0
+    },
+    {
+      "id": "1b535314-d142-4421-900a-93917ffd5515",
+      "name": "dwSecurityUser",
+      "dbObjectName": "dwSecurityUser",
+      "schemaName": "",
+      "attributes": [
+        {
+          "id": "709b447a-a303-40c6-8728-78577495a60e",
+          "name": "DecimalSeparator",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "6f3b3111-8dbd-4b41-a441-ef7e18271b68",
+          "name": "Email",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "b25a4d34-6adb-4f98-b9e4-9ccde76bae86",
+          "name": "ExternalId",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "09fd1ca6-bb53-4d29-8548-dd1146e1343e",
+          "name": "Id",
+          "type": "Guid",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "6b19c771-889d-42c8-9ca9-0364a42140ed",
+          "name": "Localization",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "29d3c632-82d1-4f51-96d2-82dfba411f3b",
+          "name": "Name",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "46d7ba68-f43c-40a9-9e6f-19567ab77834",
+          "name": "StartPage",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "91752447-aa10-4ff7-aa30-4b443fab78b0",
+          "name": "Timezone",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "cb81443c-fb2a-4479-bea7-f93e49fe42dc",
+          "name": "IsLocked",
+          "type": "Boolean",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "808a8254-478b-49f7-87b6-34b590a1ac8a",
+          "name": "IsRTL",
+          "type": "Boolean",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        },
+        {
+          "id": "603400ee-de12-45b8-a217-a7a1c036ed28",
+          "name": "PageSize",
+          "type": "Int32",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": false
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "mode": 0
+    },
+    {
+      "id": "368214ad-4035-4aa0-a4a9-117cfc90d0f5",
+      "name": "DocumentFiles",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "4f29bcf9-8d67-4aff-80a7-cb6e18fee0f4",
+          "name": "Size",
+          "type": "Int32",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "47279e1e-57ad-4013-aad7-7d675b38f317",
+          "name": "Token",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+      "name": "Employee",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "dc0de216-7a05-452c-d3a6-202874727778",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "8131bfe8-85a9-6a3c-719a-5f92cfb0fba6",
+          "name": "PhotoToken",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "3e4a5697-0d35-4f41-b1bd-4a313a36c491",
+          "name": "Address",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "593bb537-70fd-431c-a7a3-ff65bd569be4",
+          "name": "BirthDate",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "83da4131-3180-4862-8415-67f407d6ec32",
+          "name": "DateJoin",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "80d11da3-5acd-4278-8255-5b82ba46e6f9",
+          "referenceEntityId": "165ac69f-7625-4ae9-822f-80af9cf9e0f5",
+          "name": "DepartmentId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "94de1327-973f-4391-b0af-6cef6a968fc6",
+          "name": "Email",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "60b2f2df-878f-47e9-9a75-a0f5460d351d",
+          "name": "FirstName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "6e707cfc-c6f1-4772-b884-1bcac2bbe3af",
+          "name": "Groups",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7db597ea-9f5d-448c-89fa-d11987af16ec",
+          "name": "LastName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f1f08210-e142-4472-9d19-f0b228daf4b2",
+          "referenceEntityId": "f93c2645-b9ee-45e0-a94c-407fd579fe27",
+          "name": "LocationId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "3334defd-b8e8-4539-ab79-fb5e315f02d8",
+          "name": "MiddleName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "4e7dea3f-16d2-4472-99f0-ec3a6ebc23b8",
+          "name": "OtherEmail",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "6dd0eb60-9122-407f-bc35-5dac7606d5f1",
+          "name": "PhoneMobile",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b57cd5f7-425d-473b-9300-82154c2e54e0",
+          "name": "PhoneWork",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "4da2c89e-008c-4dc9-8bbc-cbdf238404f8",
+          "name": "SeatingLocation",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "02b1e87d-a1a5-4082-8fee-ffdbeb0936c0",
+          "name": "Skills",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "10c5e3f3-7737-42e0-9e23-902bca2e1e68",
+          "name": "SourceHire",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0e6ba54f-e018-4363-9043-3cd610e921bb",
+          "name": "Type",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "cb3812e0-49f3-4c68-9941-24a61bde4cd9",
+          "name": "Title",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "8a0ee21d-222d-4afc-b45e-2ccdc1420c46",
+          "name": "Rate",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a0d27274-c46c-4e8a-a391-5732668b1ac2",
+          "name": "Salary",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a1fc5af8-dca8-4103-be87-f9463f26b248",
+          "name": "AverageTaxRate",
+          "type": "Double",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "c88ab5a6-3f60-43a3-80a8-c8bc3640c2fb",
+          "name": "DateLeft",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "f93c2645-b9ee-45e0-a94c-407fd579fe27",
+      "name": "Location",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "ab627755-6e2c-4b96-a732-6a17dd045269",
+          "name": "Address",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f3c9f80-b926-4a80-a81c-b2b3c02a1077",
+          "name": "Phone",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "165ac69f-7625-4ae9-822f-80af9cf9e0f5",
+      "name": "Department",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "23748686-b84f-44d8-8b8c-647bcb403b77",
+      "name": "EmployeeFiles",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "f59517e2-88d3-46de-bedf-124275c238fb",
+          "name": "Size",
+          "type": "Int32",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f21074a0-e4c8-463c-abc9-50473ae9fb70",
+          "name": "Token",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "af53e4ba-a2ab-a35e-7448-9af096b10867",
+      "name": "BusinessTrip",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "14953ae0-e6ef-b615-07b3-a4c77d3d0367",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "34648ae0-dcf2-bdce-98eb-c115b77b2476",
+          "name": "Employees",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f93c7c79-4e7c-7df3-3f82-8b369cafffca",
+          "name": "Address",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a6dad6da-fa98-4951-e2dc-162bfabfa4f4",
+          "name": "PeopleCount",
+          "type": "Int32",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0362a5a8-2801-653e-14e7-60e511931d05",
+          "name": "TransportType",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "d8018d7f-ef22-e106-6135-d58995f1dd70",
+          "name": "NeedHotel",
+          "type": "Boolean",
+          "typeId": 0,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "dae3c31f-044a-7caf-cee6-49f01e896283",
+          "name": "DateStart",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a2aa2c51-ab0c-0317-8294-c1c92ba81b40",
+          "name": "DateEnd",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "61af645b-fed3-5d6c-29b0-60be8bddcb13",
+      "name": "SickLeave",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "e413a24b-ca27-e0cd-f816-85db5afbd7d7",
+          "name": "NumberId",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "11164f0d-97a0-a101-b370-6e6c8b8f72d8",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "EmployeeId",
+          "type": "String",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "76029a2b-635d-5ef5-f456-41d89fa4627b",
+          "name": "CompensationType",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "dae3c31f-044a-7caf-cee6-49f01e896283",
+          "name": "DateStart",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a2aa2c51-ab0c-0317-8294-c1c92ba81b40",
+          "name": "DateEnd",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "f6085c30-aa5a-59ca-844a-56387a39b56c",
+      "name": "Vacation",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "8fc9e917-7e7e-5d9a-1ae9-dce77eaa5bf4",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "EmployeeId",
+          "type": "String",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "08bba5c5-9827-502f-fd88-1586bb232bb1",
+          "name": "CompensationType",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "59668f0d-9482-6f4a-a631-7c7674e85e1a",
+          "name": "DateEnd",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "a5f2f9e1-d2fb-608d-59ab-4279f3a219e3",
+          "name": "DateStart",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "609e4855-f74d-0eb3-e0ee-6d0d01467ed6",
+      "name": "Compensation",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "82403b63-b682-c43c-0898-d5308cb53093",
+          "name": "ExpenseDate",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b80300c9-ed06-f31f-ecbf-3c54a830cf2d",
+          "referenceEntityId": "1b535314-d142-4421-900a-93917ffd5515",
+          "name": "EmployeeId",
+          "type": "String",
+          "typeId": 1,
+          "isNullable": false,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0848d957-1e13-4cb2-bdf3-0b495bdd20d2",
+          "name": "LastUpdatedDate",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "e7848d38-9622-415f-3ca6-694e3523d0f0",
+      "name": "Recruitment",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "cb140c29-2013-9a7a-5790-fc57c6d84064",
+          "name": "Position",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "305db2e7-59cf-8556-5db8-6b2efbda5b2d",
+          "name": "Salary",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "27ed6e00-4098-63e5-6ade-9b65678d6163",
+          "name": "Email",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "name": "Amount",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "AuthorId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "referenceEntityId": "90f5b4a5-b51f-4509-97d3-935d2b38e223",
+          "name": "ManagerId",
+          "type": "Guid",
+          "typeId": 1,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "name": "Date",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "name": "NumberId",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "be339d66-7607-4f69-8ac7-58b0af75e3db",
+      "name": "EmployeeSalary",
+      "dbObjectName": "dwEntities",
+      "schemaName": "",
+      "triggers": [],
+      "attributes": [
+        {
+          "id": "4acf008f-1f06-439f-8d06-634de30149b3",
+          "name": "DateFrom",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "797c0902-776a-4f01-8478-545c4f3284c0",
+          "name": "DateTo",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f4df405a-b77d-4492-bfcf-8a30e10a7f72",
+          "name": "Rate",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "27c82bc3-2381-432f-a582-169a60d46d0b",
+          "name": "Salary",
+          "type": "Decimal",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "54b12361-b949-4a26-b047-d79e6505b0f5",
+          "name": "AverageTaxRate",
+          "type": "Double",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "workflowSchemeAttribute": "SchemeName",
+      "mode": 1
+    },
+    {
+      "id": "20f6207d-c56b-4379-a7ca-3b485647a97f",
+      "name": "EntityTransitionHistory",
+      "dbObjectName": "dwEntities",
+      "attributes": [
+        {
+          "id": "0f7ae653-df50-4079-a4da-aa53cc9fd543",
+          "name": "ObjectId",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "be891efa-0b2e-4afa-a15d-2404d3e64726",
+          "name": "ProcessId",
+          "type": "Guid",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "fc510faf-3701-450b-9c1a-0ead707816f8",
+          "name": "InitialState",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "cfbab7bb-a16c-4c98-aa19-396e49f89190",
+          "name": "DestinationState",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "878eb1c2-8d37-40b2-9754-8ee3864d254d",
+          "name": "Command",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f536d1c3-d468-4572-b479-26e6d8078e9a",
+          "name": "TransitionTime",
+          "type": "DateTime",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "bceccf9c-9dfe-42bb-a830-d920d5da4ac3",
+          "name": "IdentityId",
+          "type": "Guid",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "4e9b49c6-dd90-4c72-b3ca-85038cdbbb5b",
+          "name": "IdentityName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "d355b42d-77fa-4b87-b93b-f1b5eb57b865",
+          "name": "ImpersonatedIdentityId",
+          "type": "Guid",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "1a3aaa7d-44cc-4f29-bc45-771c8b42453b",
+          "name": "ImpersonatedIdentityName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "24fa2888-b34a-4733-8409-13943cb4d684",
+          "name": "ApproverName",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "dcc77ed8-aff0-459b-88c1-3ae3c39f1caf",
+          "name": "AllowedToIdentityNames",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "f94516a5-6620-470d-9084-2c3a49a2e3fd",
+          "name": "Order",
+          "type": "Int64",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        },
+        {
+          "id": "3952b9ce-ee65-4477-8bc2-042aeb56870a",
+          "name": "Comment",
+          "type": "String",
+          "typeId": 0,
+          "isNullable": true,
+          "isVirtual": false,
+          "isCalculated": false,
+          "isExtension": true
+        }
+      ],
+      "primaryKeyAttribute": "Id",
+      "extensionsContainerAttribute": "Extensions",
+      "mode": 1
+    }
+  ],
+  "codeActions": [
+    {
+      "id": "2b0b63a3-7fa0-8f6d-80cf-1e2a12309a4b",
+      "name": "DocumentFilter",
+      "definedOnServer": false,
+      "type": 0,
+      "source": "var types = new List<string>() { \n    \"BusinessTrip\", \n    \"Compensation\", \n    \"Recruitment\", \n    \"SickLeave\", \n    \"Vacation\" };\n    \nvar filter = Filter.And.In(types, \"DataModelName\");\nreturn filter;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": false
+    },
+    {
+      "id": "8c8dcee5-1e73-60ff-9cc7-4c5565f87ac1",
+      "name": "WorkflowReport",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "var types = new List<string>() { \n    \"BusinessTrip\", \n    \"Compensation\", \n    \"Recruitment\", \n    \"SickLeave\", \n    \"Vacation\" };\n    \nvar filterTypes = Filter.And.In(types, \"DataModelName\");\n\nDateTime? datefrom = null;\nDateTime? dateto = null;\n\nif(request != null && request.Data is DynamicEntity)\n{\n    if(request.Data.Dictionary.ContainsKey(\"DateFrom\")){\n        if(DateTime.TryParseExact(request.Data[\"DateFrom\"], \"yyyy-MM-dd\", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime tmp)){\n            datefrom = tmp;\n        }\n    }\n    if(request.Data.Dictionary.ContainsKey(\"DateTo\")){\n        if(DateTime.TryParseExact(request.Data[\"DateTo\"], \"yyyy-MM-dd\", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out DateTime tmp2)){\n            dateto = tmp2;\n        }\n    }\n}\n\nvar filter = Filter.Empty;\nvar filter2 = Filter.Empty;\nif (datefrom.HasValue)\n{\n    filter = Filter.And.GreaterOrEqual(datefrom.Value, \"Created\");\n    filter2 = Filter.And.GreaterOrEqual(datefrom.Value, \"Created\");\n}\n\nif (dateto.HasValue)\n{\n    filter = filter.Merge(Filter.And.LessOrEqual(dateto.Value, \"Created\"));\n    filter2 = filter2.Merge(Filter.And.LessOrEqual(dateto.Value, \"Created\"));\n}\n\nvar documentModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"Document\").ConfigureAwait(false);\nvar workflowHistoryModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"EntityTransitionHistory\").ConfigureAwait(false);\n\nvar documents = await documentModel.GetAsync(filterTypes.Merge(filter)).ConfigureAwait(false);\nfilter2 = filter2.Merge(Filter.And.NotEqual(Null.Value, \"TransitionTime\"));\nvar documentTransitions = await workflowHistoryModel.GetAsync(filter2).ConfigureAwait(false);\n\nvar res = new Dictionary<string, dynamic>();\nvar DraftStates = new List<string>(){ \"Draft\" };\nvar FinalStates = new List<string>(){ \"Agreed\", \"Final\", \"Approved\" };\nvar stats = new Dictionary<string, List<TimeSpan>>();\nforeach (DynamicEntity d in documents)\n{\n    Guid documentId = (Guid)d[documentModel.PrimaryKeyAttributeName];\n    string type = d[\"DataModelName\"]?.ToString();\n    string state = d[\"StateName\"]?.ToString();\n    \n    if(string.IsNullOrEmpty(type))\n        continue;\n    \n    if (!res.ContainsKey(type)){\n        var item = new DynamicEntity() as dynamic;\n        item.Type = type;\n        item.Count = 0;\n        item.DraftDocCount = 0;\n        item.FinalDocCount = 0;\n        item.OtherDocCount = 0;\n        item.AvrApprovalStr = \"\";\n        item.MinApprovalStr = \"\";\n        item.MaxApprovalStr = \"\";\n        item.AvrApprovalTime = new TimeSpan(0);\n        item.MinApprovalTime = new TimeSpan(0);\n        item.MaxApprovalTime = new TimeSpan(0);\n        res[type] = item;\n    }\n    \n    res[type].Count++;\n\n    if (DraftStates.Contains(state))\n        res[type].DraftDocCount += 1;\n    else if (FinalStates.Contains(state))\n    {\n        res[type].FinalDocCount += 1;\n        var history = documentTransitions.Where(c => (c[\"ReferenceId\"] as Guid?) == documentId && c[\"IdentityId\"] != null);\n        var minDate = history.Min(c => (DateTime)c[\"TransitionTime\"]);\n        var maxDate = history.Max(c => (DateTime)c[\"TransitionTime\"]);\n        var delta = maxDate - minDate;\n        if (!stats.ContainsKey(type))\n            stats[type] = new List<TimeSpan>();\n\n        stats[type].Add(delta);\n\n        if (res[type].MinApprovalTime == null || res[type].MinApprovalTime.Ticks == 0 || res[type].MinApprovalTime > delta)\n            res[type].MinApprovalTime = delta;\n\n        if (res[type].MaxApprovalTime == null || res[type].MaxApprovalTime < delta)\n            res[type].MaxApprovalTime = delta;\n    }\n    else\n    {\n        res[type].OtherDocCount += 1;\n    }\n}\n\nFunc<TimeSpan, string> timeSpanFormat = (p) => {\n    var str = new System.Text.StringBuilder();\n    bool f = false;\n    if (p.Days > 0)\n    {\n        str.AppendFormat(\"{0}d\", p.Days);\n        f = true;\n    }\n    if (f || p.Hours > 0)\n    {\n        str.AppendFormat(\"{0}{1}h\", f ? \" \" : \"\", p.Hours);\n        f = true;\n    }\n    if (f || p.Minutes > 0)\n    {\n        str.AppendFormat(\"{0}{1}m\", f ? \" \" : \"\", p.Minutes);\n        f = true;\n    }\n    if (f || p.Seconds > 0)\n        str.AppendFormat(\"{0}{1}s\", f ? \" \" : \"\", p.Seconds);\n\n    return str.ToString();\n};\n\n\nforeach(var s in stats)\n{\n    var sumSpan = new TimeSpan();\n    s.Value.ForEach(c => { sumSpan += c; });\n    res[s.Key].AvrApprovalTime = new TimeSpan((long) (sumSpan.Ticks / s.Value.Count));\n    res[s.Key].MinApprovalStr = timeSpanFormat(res[s.Key].MinApprovalTime);\n    res[s.Key].MaxApprovalStr = timeSpanFormat(res[s.Key].MaxApprovalTime);\n    res[s.Key].AvrApprovalStr = timeSpanFormat(res[s.Key].AvrApprovalTime);\n}\n\nvar data = res.OrderBy(c=>c.Key).Select(c => (c.Value as DynamicEntity).ToDictionary()).ToList();\nreturn new {\n    stateDelta = new { \n        app = new {\n            form = new {\n                data = new {\n                    modified = new {\n                        grid = data\n                    }\n                }\n            }\n        }\n    } \n};",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "06cbe8cb-3da1-c08d-1552-25dac7a7edca",
+      "name": "DashboardGenerate",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "dynamic res = new DynamicEntity();\nvar DraftStates = new List<string>(){ \"Draft\" };\nvar FinalStates = new List<string>(){ \"Agreed\", \"Final\", \"Approved\" };\n\nvar employeeModel = (await MetadataToModelConverter.GetEntityModelByModelAsync(\"Employee\"));\nvar businessTripModel = (await MetadataToModelConverter.GetEntityModelByModelAsync(\"BusinessTrip\"));\nvar compensationModel = (await MetadataToModelConverter.GetEntityModelByModelAsync(\"Compensation\"));\n\nFilter notDraft = Filter.And.NotIn(DraftStates, \"State\");\nres.BusinessTripCount = await (await MetadataToModelConverter.GetEntityModelByModelAsync(\"BusinessTrip\").ConfigureAwait(false)).GetCountAsync(notDraft).ConfigureAwait(false);\nres.SickLeaveCount = await (await MetadataToModelConverter.GetEntityModelByModelAsync(\"SickLeave\").ConfigureAwait(false)).GetCountAsync(notDraft).ConfigureAwait(false);\nres.VacationCount = await (await MetadataToModelConverter.GetEntityModelByModelAsync(\"Vacation\").ConfigureAwait(false)).GetCountAsync(notDraft).ConfigureAwait(false);\nres.CompensationCount = await (await MetadataToModelConverter.GetEntityModelByModelAsync(\"Compensation\").ConfigureAwait(false)).GetCountAsync(notDraft).ConfigureAwait(false);\nres.RecruitmentCount = await (await MetadataToModelConverter.GetEntityModelByModelAsync(\"Recruitment\").ConfigureAwait(false)).GetCountAsync(notDraft).ConfigureAwait(false);\n\nif (DWKitRuntime.Security.CurrentUser != null)\n{\n    Guid id = DWKitRuntime.Security.CurrentUser.Id;\n    Filter userBusinessTripFilter = Filter.And.NotIn(DraftStates, \"State\").LikeRightLeft(id.ToString(), \"Employees\");\n    var trips = await businessTripModel.GetAsync(userBusinessTripFilter, Order.StartAsc(\"DateStart\"));\n\n    Filter userCompenstationFilter = Filter.And.NotIn(DraftStates, \"State\").Equal(id, \"EmployeeId\");\n    var compensations = await compensationModel.GetAsync(userCompenstationFilter);\n    \n    res.UserBusinessTripExpenses = 0;\n    res.UserBusinessTripExpensesApproved = 0;\n    foreach(dynamic trip in trips)\n    {\n        if (trip.Amount == null || trip.Amount == 0)\n            continue;\n        \n        if (FinalStates.Contains(trip.State))\n        {\n            res.UserBusinessTripExpensesApproved += (decimal)trip.Amount;\n        }\n        else\n        {\n            res.UserBusinessTripExpenses += (decimal)trip.Amount;\n        }\n    }\n\n    res.UserCompensationAmount = 0;\n    res.UserCompensationAmountApproved = 0;\n    foreach (dynamic c in compensations)\n    {\n        if (c.Amount == null || c.Amount == 0)\n            continue;\n\n        if (FinalStates.Contains(c.State))\n        {\n            res.UserCompensationAmountApproved += (decimal)c.Amount;\n        }\n        else\n        {\n            res.UserCompensationAmount += (decimal)c.Amount;\n        }\n    }\n\n    res.UserBusinessTrips = trips.Where(c => ((dynamic)c).DateEnd > DateTime.Now).Select(c=> c.ToDictionary(true)).ToList();\n\n}\n\nreturn res;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "ecab3cae-5839-471d-7afd-e2aa7962ed74",
+      "name": "EmployeeReport",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "int period = int.Parse(request.Data[\"Period\"]);\nstring parameter = request.Data[\"Parameter\"];\nDateTime dateFrom = DateTime.ParseExact(request.Data[\"DateFrom\"], \"yyyy-MM-dd\", System.Globalization.CultureInfo.InvariantCulture);\nDateTime dateTo = DateTime.ParseExact(request.Data[\"DateTo\"], \"yyyy-MM-dd\", System.Globalization.CultureInfo.InvariantCulture);\n\nEntityModel employeeSalaryModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"EmployeeSalary\", 0);\nEntityModel employee = await MetadataToModelConverter.GetEntityModelByModelAsync(\"Employee\").ConfigureAwait(false);\n\nvar employees = await employee.GetAsync(Filter.Empty, Order.StartAsc(\"DepartmentId_Name\").Asc(\"LocationId_Name\").Asc(\"Name\")).ConfigureAwait(false);\nvar employeeSalaryList = await employeeSalaryModel.GetAsync(Filter.Empty);\n\nDateTime start, end;\nif(period == 0)// month\n{\n    start = new DateTime(dateFrom.Year, dateFrom.Month, 1);\n    end = new DateTime(dateTo.Year, dateTo.Month, 1).AddMonths(1).AddSeconds(-1);\n}\nelse //year\n{\n    start = new DateTime(dateFrom.Year, 1, 1, 0, 0, 0);\n    end = new DateTime(dateFrom.Year, 1, 1, 0, 0, 0).AddYears(1).AddSeconds(-1);\n}\n\nEntityModel businessTripModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"BusinessTrip\", 1);\nEntityModel sickLeaveModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"SickLeave\", 1);\nEntityModel compensationModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"Compensation\", 1);\nEntityModel vacationModel = await MetadataToModelConverter.GetEntityModelByModelAsync(\"Vacation\", 1);\n\nvar periodFilter = Filter.And.LessOrEqual(end, \"DateStart\").GreaterOrEqual(start, \"DateEnd\");\nvar dateFilter = Filter.And.GreaterOrEqual(start, \"Date\").LessOrEqual(end, \"Date\");\n\nvar FinalStates = new List<string>(){ \"Agreed\", \"Final\", \"Approved\" };\nvar periodAndStateFilter = Filter.And.In(FinalStates, \"State\").Merge(periodFilter);\nvar dateAndStateFilter = Filter.And.In(FinalStates, \"State\").Merge(dateFilter);\nvar businessTrips = await businessTripModel.GetAsync(periodAndStateFilter);\nbusinessTrips.ForEach((item) =>\n{\n    var i = (dynamic)item;\n    if (!string.IsNullOrEmpty(i.Employees))\n    {\n        i.EmployeesList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Guid>>(i.Employees);\n    }\n});\n\nvar sickLeaves = await sickLeaveModel.GetAsync(periodAndStateFilter).ConfigureAwait(false);\nvar compensations = await compensationModel.GetAsync(dateAndStateFilter).ConfigureAwait(false);\nvar vacations = await vacationModel.GetAsync(periodAndStateFilter).ConfigureAwait(false);\n\nFunc<DateTime?, DateTime?, DateTime, int, bool> InPeriod = (_dateFrom, _dateTo, _date, _period) =>\n{\n    if(_dateFrom == null)\n        _dateFrom = DateTime.MinValue;\n    \n    if(_dateTo == null)\n        _dateTo = DateTime.MaxValue;\n    \n    if (_period == 0)\n    {\n        var k1 = _dateFrom.Value.Year * 12 + _dateFrom.Value.Month;\n        var k2 = _dateTo.Value.Year * 12 + _dateTo.Value.Month;\n        var p = _date.Year * 12 + _date.Month;\n        if (k1 <= p && p <= k2)\n        {\n            return true;\n        }\n    }\n    else if (_period == 1)\n    {\n        if (_dateFrom.Value.Year <= _date.Year && _date.Year <= _dateTo.Value.Year)\n            return true;\n    }\n\n    return false;\n};\n\nFunc<DateTime, DateTime?, int, bool> InPeriod2 = (_date, _periodDate, _period) =>\n{\n    if (_periodDate == null) return false;\n\n    return _period == 0 && _date.Year == _periodDate.Value.Year && _date.Month == _periodDate.Value.Month ||\n           _period == 1 && _date.Year == _periodDate.Value.Year;\n};\n\nFunc<DateTime, DateTime, DateTime, int, int> GetDaysInPeriod = (_dateStart, _dateEnd, _date, _period) =>\n{\n    DateTime _start, _end;\n    if (_period == 0)\n    {\n        _start = new DateTime(_date.Year, _date.Month, 1, 0, 0, 0);\n        _end = new DateTime(_date.Year, _date.Month, 1, 0, 0, 0).AddMonths(1).AddSeconds(-1);\n    }\n    else\n    {\n        _start = new DateTime(_date.Year, 1, 1);\n        _end = new DateTime(_date.Year, 1, 1).AddYears(1).AddSeconds(-1);\n    }\n\n    if (_dateEnd < _start || _dateStart > _end) return 0;\n    if (_dateStart > _start) _start = _dateStart;\n\n    if (_dateEnd < _end) _end = _dateEnd;\n    var funcRes = (_end - _start).Days + 1;\n    if (funcRes < 0) funcRes = 0;\n    return funcRes;\n};\n\nFunc<Guid, List<DynamicEntity>, DateTime, int, int> GetDays = (_id, _items, _date, _period) =>\n{\n    int days = 0;\n    _items.ForEach((item) =>\n    {\n        dynamic i = item as dynamic;\n        if (i.EmployeeId == _id)\n        {\n            if (i.DateStart != null && i.DateEnd != null && i.DateEnd > i.DateStart)\n            {\n                days += GetDaysInPeriod(i.DateStart, i.DateEnd, _date, _period);\n            }\n        }\n    });\n    return days;\n};\n\nFunc<Guid, List<DynamicEntity>, DateTime, int, decimal> GetCompensation =\n    (_id, _compensations, _date, _period) =>\n    {\n        decimal compensationValue = 0;\n        _compensations.ForEach((item) =>\n        {\n            dynamic i = item as dynamic;\n            if (i.EmployeeId == _id)\n            {\n                if (i.Date != null && i.Amount != null && InPeriod2(i.Date, _date, _period))\n                    compensationValue += i.Amount;\n            }\n        });\n        return compensationValue;\n    };\n\nFunc<dynamic, List<DynamicEntity>, DateTime, int, decimal> GetTax = null;\nGetTax = (emp, _salaryList, _date, _period) =>\n{\n    decimal tax = 0;\n    if (!InPeriod(emp.DateJoin, emp.DateLeft, _date, _period))\n        return tax;\n    \n    if (_period == 1)\n    {\n        for (int i = 1; i <= 12; i++)\n            tax += GetTax(emp, _salaryList, new DateTime(_date.Year, i, 1, 0, 0, 0), 0);\n    }\n    else\n    {\n        decimal salary = emp.Salary != null ? (decimal) emp.Salary : 0;\n        decimal taxRate = emp.AverageTaxRate != null ? (decimal) emp.AverageTaxRate : 0;\n\n        var sl = _salaryList\n            .Select(c => (dynamic) c).FirstOrDefault(item =>\n                item[\"EmployeeId\"] == emp.Id && InPeriod(item.DateFrom, item.DateTo, _date, 0));\n        if (sl != null)\n        {\n            if (sl.Salary != null) salary = (decimal) sl.Salary;\n            if (sl.AverageTaxRate != null) taxRate = (decimal) (double) sl.AverageTaxRate;\n        }\n        \n        int daysInMonth = DateTime.DaysInMonth(_date.Year, _date.Month);\n        int paidDays = daysInMonth;\n        if (emp.DateJoin != null && emp.DateJoin.Year == _date.Year && emp.DateJoin.Month == _date.Month)\n        {\n            paidDays -= emp.DateJoin.Day - 1;\n        }\n        \n        if (emp.DateLeft != null && emp.DateLeft.Year == _date.Year && emp.DateLeft.Month == _date.Month)\n        {\n            paidDays -= daysInMonth - emp.DateLeft.Day;\n        }\n\n        if (daysInMonth != paidDays)\n        {\n            salary = salary * (decimal)paidDays / (decimal)daysInMonth;\n        }\n\n        tax = salary * (taxRate / 100);\n    }\n\n    return tax;\n};\n\nFunc<dynamic, List<DynamicEntity>, DateTime, int, decimal> GetSalary = null;\nGetSalary = (emp, _salaryList, _date, _period) =>\n{\n    decimal salary = 0;\n\n    if (!InPeriod(emp.DateJoin, emp.DateLeft, _date, _period))\n        return salary;\n\n    if (_period == 1)\n    {\n        for (int i = 1; i <= 12; i++)\n        {\n            salary += GetSalary(emp, _salaryList, new DateTime(_date.Year, i, 1, 0, 0, 0), 0);\n        }\n    }\n    else\n    {\n        salary = emp.Salary != null ? (decimal) emp.Salary : 0;\n        var sl = _salaryList\n            .Select(c => (dynamic) c).FirstOrDefault(item =>\n                item[\"EmployeeId\"] == emp.Id && emp.Salary != null &&\n                InPeriod(item.DateFrom, item.DateTo, _date, 0));\n        if (sl != null)\n        {\n            salary = (decimal) sl.Salary;\n        }\n\n        int daysInMonth = DateTime.DaysInMonth(_date.Year, _date.Month);\n        int paidDays = daysInMonth;\n        if (emp.DateJoin != null && emp.DateJoin.Year == _date.Year && emp.DateJoin.Month == _date.Month)\n        {\n            paidDays -= emp.DateJoin.Day - 1;\n        }\n        \n        if (emp.DateLeft != null && emp.DateLeft.Year == _date.Year && emp.DateLeft.Month == _date.Month)\n        {\n            paidDays -= daysInMonth - emp.DateLeft.Day;\n        }\n\n        if (daysInMonth != paidDays)\n        {\n            salary = salary * (decimal)paidDays / (decimal)daysInMonth;\n        }\n    }\n\n    return salary;\n};\n\nvar res = new List<Dictionary<string, object>>();\nforeach (dynamic emp in employees)\n{\n    var item = new Dictionary<string, object>();\n    item[\"Id\"] = emp.Id;\n    item[\"Department\"] = emp.DepartmentId_Name;\n    item[\"Location\"] = emp.LocationId_Name;\n    item[\"Name\"] = emp.Name;\n    item[\"Title\"] = emp.Title;\n\n    DateTime currentDate = period == 0 ? \n        new DateTime(dateFrom.Year, dateFrom.Month, 1) : \n        new DateTime(dateFrom.Year, 1, 1);\n    while (currentDate < dateTo)\n    {\n        var key = period == 0 ? currentDate.ToString(\"MM/yy\") : currentDate.ToString(\"yyyy\") + \"Y\";\n        switch (parameter)\n        {\n            case \"totalamount\":\n                var salary = GetSalary(emp, employeeSalaryList, currentDate, period);\n                var tax = GetTax(emp, employeeSalaryList, currentDate, period);\n                var compensation = GetCompensation(emp.Id, compensations, currentDate, period);\n                item[key] = (salary + tax + compensation).ToString(\"N\");\n                break;\n            case \"salary\":\n                item[key] = GetSalary(emp, employeeSalaryList, currentDate, period).ToString(\"N\");\n                break;\n            case \"tax\":\n                item[key] = GetTax(emp, employeeSalaryList, currentDate, period).ToString(\"N\");\n                break;\n            case \"compensation\":\n                item[key] = GetCompensation(emp.Id, compensations, currentDate, period).ToString(\"N\");\n                break;\n            case \"tripdays\":\n                item[key] = GetDays(emp.Id, businessTrips, currentDate, period);\n                break;\n            case \"sickleavedays\":\n                item[key] = GetDays(emp.Id, sickLeaves, currentDate, period);\n                break;\n            case \"vacationdays\":\n                item[key] = GetDays(emp.Id, vacations, currentDate, period);\n                break;\n        }\n        currentDate = period == 0 ? currentDate.AddMonths(1) : currentDate.AddYears(1);\n    }\n\n    res.Add(item);\n}\n\nreturn new {\n    stateDelta = new { \n        app = new {\n            form = new {\n                data = new {\n                    modified = new {\n                        grid = res\n                    }\n                }\n            }\n        }\n    } \n};",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "7094fdf7-e898-84ff-41da-86cad7881a96",
+      "name": "EmoloyeeChangeAuth",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "Guid userId = DWKitRuntime.Security.CurrentUser.Id;\nvar credentialModel = OptimaJet.DWKit.Core.Metadata.DbObjects.SecurityCredential.Model;\nvar userFilter = Filter.And.Equal(userId, \"SecurityUserId\");\nvar customCredFilter = Filter.And.Equal(0, \"AuthenticationType\").Merge(userFilter);\nvar data = (DynamicEntity)request.Data;\nif (data.Dictionary.ContainsKey(\"cbCustom\") && request.Data.cbCustom)\n{\n    dynamic credential = null;\n    var credentials = await credentialModel.GetAsync(customCredFilter).ConfigureAwait(false);\n    if (credentials.Count > 0)\n    {\n        credential = credentials[0];\n    }\n    else\n    {\n        credential = new DynamicEntity();\n        credential.Id = Guid.NewGuid();\n        credential.SecurityUserId = userId;\n        credential.AuthenticationType = 0;\n        credential.Login = request.Data.Login;\n    }\n\n    if (data.Dictionary.ContainsKey(\"Password\") && !string.IsNullOrEmpty(request.Data.Password))\n    {\n        var password = request.Data.Password;\n        credential.PasswordSalt = OptimaJet.DWKit.Core.Utils.HashHelper.GenerateSalt();\n        credential.PasswordHash =\n            OptimaJet.DWKit.Core.Utils.HashHelper.GenerateStringHash(password, credential.PasswordSalt);\n        \n        await credentialModel.UpdateSingleAsync((DynamicEntity) credential).ConfigureAwait(false);\n    }\n}\nelse\n{\n    await credentialModel.SimpleDeleteByFilterAsync(customCredFilter).ConfigureAwait(false);\n}\n\nvar domainCredFilter = Filter.And.Equal(1, \"AuthenticationType\").Merge(userFilter);\nif (data.Dictionary.ContainsKey(\"cbDomain\") && \n    request.Data.cbDomain && data.Dictionary.ContainsKey(\"DomainLogin\"))\n{\n    dynamic credential = null;\n    var credentials = await credentialModel.GetAsync(domainCredFilter).ConfigureAwait(false);\n    if (credentials.Count > 0)\n    {\n        credential = credentials[0];\n    }\n    else\n    {\n        credential = new DynamicEntity();\n        credential.Id = Guid.NewGuid();\n        credential.SecurityUserId = userId;\n        credential.AuthenticationType = 1;\n    }\n\n    credential.Login = request.Data.DomainLogin;\n    await credentialModel.UpdateSingleAsync((DynamicEntity) credential).ConfigureAwait(false);\n}\nelse\n{\n    await credentialModel.SimpleDeleteByFilterAsync(domainCredFilter).ConfigureAwait(false);\n}\n\nreturn null;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "d8054e1e-fd7f-078c-b0ee-8123ca0bbc37",
+      "name": "EmployeeGetAuth",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "dynamic res = new DynamicEntity();\n\nvar credentials = await OptimaJet.DWKit.Core.Metadata.DbObjects.SecurityUser.GetCredentialByUserId(DWKitRuntime.Security\n    .CurrentUser.Id).ConfigureAwait(false);\nres.cbCustom = false;\nres.Login = \"\";\nres.DomainLogin = \"\";\nres.cbDomain = false;\n\nforeach(var c in credentials){\n    if (c.AuthenticationType == 0)\n    {\n        res.cbCustom = true;\n        res.Login = c.Login;\n    }\n    else\n    {\n        res.cbDomain = true;\n        res.DomainLogin = c.Login;\n    }\n}\n\nreturn res;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "29962b12-1451-1385-34a2-e5ce7d703be9",
+      "name": "SyncLinkedSecurityUser",
+      "definedOnServer": false,
+      "type": 2,
+      "source": "foreach (var entity in entities)\n{\n    entity.Name = entity.FirstName + \" \" + entity.LastName;\n    await OptimaJet.DWKit.Core.Security.User.CheckSecurityUser(entity.Id, entity.Name, entity.Email, \"Users\").ConfigureAwait(false);\n}\nreturn TriggerResult.Success();",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "05aa6d1d-1d60-3f87-c3ba-d8697f77f00c",
+      "name": "EmployeeSendPassword",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "var emp = await OptimaJet.DWKit.Core.Metadata.DbObjects.SecurityUser.SelectByKey(request.Data.Id).ConfigureAwait(false);\nif (emp == null)\n    throw new Exception(\"The employee is not found!\");\n\nvar credentialModel = OptimaJet.DWKit.Core.Metadata.DbObjects.SecurityCredential.Model;\nvar credentialFilter = Filter.And.Equal((Guid)emp.Id, \"SecurityUserId\").Equal(0, \"AuthenticationType\");\nawait credentialModel.SimpleDeleteByFilterAsync(credentialFilter).ConfigureAwait(false);;\n\ndynamic credential = new DynamicEntity();\ncredential.Id = Guid.NewGuid();\ncredential.SecurityUserId = emp.Id;\ncredential.AuthenticationType = 0;\ncredential.Login = emp.Email;\nvar password = Guid.NewGuid().ToString(\"d\").Substring(1, 6);\ncredential.PasswordSalt = OptimaJet.DWKit.Core.Utils.HashHelper.GenerateSalt();\ncredential.PasswordHash = OptimaJet.DWKit.Core.Utils.HashHelper.GenerateStringHash(password, credential.PasswordSalt);\nawait credentialModel.UpdateSingleAsync((DynamicEntity)credential).ConfigureAwait(false);\n\nvar parameters = new Dictionary<string, string>();\nparameters.Add(\"Id\", emp.Id.ToString());\nparameters.Add(\"Name\", emp.Name);\nparameters.Add(\"Email\", emp.Email);\nparameters.Add(\"Login\", emp.Email);\nparameters.Add(\"Password\", password);\n\nvar basicPlugin = DWKitRuntime.Plugins.FirstOrDefault(c => c is OptimaJet.DWKit.Core.Plugins.BasicPlugin) as OptimaJet.DWKit.Core.Plugins.BasicPlugin;\nif (basicPlugin == null)\n    throw new Exception(\"BasicPlugin is not found!\");\n\nif(!basicPlugin.Enabled || string.IsNullOrWhiteSpace(basicPlugin.Setting_Mailserver))\n    throw new Exception(\"Fill Mail Server settings in BasicPlugin!\");\n\nvar email = emp.Email;\nawait basicPlugin.SendEmailAsync(\"EmployeeSendPassword\", email, parameters).ConfigureAwait(false);\n\nreturn null;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    },
+    {
+      "id": "73b854bd-9205-18f6-fd37-2e8edadba9c9",
+      "name": "EmptyFilter",
+      "definedOnServer": false,
+      "type": 0,
+      "source": "//TODO: Replace the emplty filter to your filter;\nreturn Filter.Empty;",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": false
+    },
+    {
+      "id": "94027791-9ec7-53b1-6366-2788ae31896f",
+      "name": "SidebarLoadPermissions",
+      "definedOnServer": false,
+      "type": 1,
+      "source": "var department = await DWKitRuntime.Security.CheckFormPermissionAsync(\"Department\", \"View\");\nvar location = await DWKitRuntime.Security.CheckFormPermissionAsync(\"Location\", \"View\");\nvar employeereport = await DWKitRuntime.Security.CheckFormPermissionAsync(\"EmployeeReport\", \"View\");\nvar workflowreport = await DWKitRuntime.Security.CheckFormPermissionAsync(\"WorkflowReport\", \"View\");\n\nreturn new {\n    department,\n    location,\n    employeereport,\n    workflowreport\n};",
+      "usings": "System;\nSystem.Collections;\nSystem.Collections.Generic;\nSystem.Linq;\nSystem.Threading;\nSystem.Threading.Tasks;\nOptimaJet.Workflow;\nOptimaJet.Workflow.Core.Runtime;\nOptimaJet.Workflow.Core.Model;\nOptimaJet.DWKit.Core;\nOptimaJet.DWKit.Core.Model;",
+      "isAsync": true
+    }
+  ],
+  "businessFlow": [],
+  "modules": [],
+  "settings": [
+    {
+      "name": "DefaultForm",
+      "value": ""
+    },
+    {
+      "name": "RTL",
+      "value": ""
+    },
+    {
+      "name": "DefaultTheme",
+      "value": "sky"
+    }
+  ],
+  "commandForms": [
+    {
+      "id": "044fca17-2b09-8e27-1b75-2ea2422409fe",
+      "name": "Reject",
+      "schemes": [
+        "BusinessTrip",
+        "Compensation",
+        "Recruitment",
+        "SickLeave",
+        "Vacation"
+      ],
+      "map": [
+        {
+          "commands": [
+            {
+              "scheme": "BusinessTrip",
+              "name": "Reject"
+            },
+            {
+              "scheme": "Compensation",
+              "name": "Reject"
+            },
+            {
+              "scheme": "Recruitment",
+              "name": "Reject"
+            },
+            {
+              "scheme": "Recruitment",
+              "name": "To Director"
+            },
+            {
+              "scheme": "Recruitment",
+              "name": "To HR Director"
+            },
+            {
+              "scheme": "SickLeave",
+              "name": "To HR Director"
+            },
+            {
+              "scheme": "SickLeave",
+              "name": "To Director"
+            },
+            {
+              "scheme": "SickLeave",
+              "name": "Reject"
+            },
+            {
+              "scheme": "Vacation",
+              "name": "Reject"
+            }
+          ],
+          "form": "WorkflowComment"
+        }
+      ]
+    }
+  ],
+  "plugins": [
+    {
+      "name": "BasicPlugin",
+      "enabled": true,
+      "pluginSettings": {
+        "MailServerPort": 25,
+        "MailServerSsl": true,
+        "MailServer": "smtp.yandex.ru",
+        "MailServerLogin": "dmelnikov@theopenbanking.com",
+        "MailServerFrom": "dmelnikov@theopenbanking.com",
+        "MailServerPass": "destre19",
+        "DeleteCascadeList": [
+          {
+            "ParentDataModel": "Employee",
+            "ChildDataModel": "dwSecurityUser",
+            "RefColumn": "Id"
+          },
+          {
+            "ParentDataModel": "Employee",
+            "ChildDataModel": "EmployeeSalary"
+          },
+          {
+            "ParentDataModel": "Employee",
+            "ChildDataModel": "EmployeeFiles"
+          },
+          {
+            "ParentDataModel": "Document",
+            "ChildDataModel": "DocumentFiles"
+          },
+          {
+            "ParentDataModel": "Document",
+            "ChildDataModel": "EntityTransitionHistory"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WorkflowPlugin",
+      "enabled": true,
+      "pluginSettings": {
+        "EntityStateColumn": "State",
+        "EntityLocalizedStateColumn": "StateName",
+        "EnableDeleteWorkflow": true,
+        "EnableInboxOutbox": true,
+        "EnableTansitionHistory": true,
+        "DeleteWorkflowDataModels": [
+          "BusinessTrip",
+          "Compensation",
+          "SickLeave",
+          "Vacation",
+          "Recruitment",
+          "Document"
+        ],
+        "TransitionHistoryModel": "EntityTransitionHistory",
+        "EnableTransitionHistory": true
+      }
+    },
+    {
+      "name": "NotificationPlugin",
+      "enabled": true,
+      "pluginSettings": {
+        "ObjectCountList": [
+          {
+            "Name": "businesstrip",
+            "DataModel": "BusinessTrip"
+          },
+          {
+            "Name": "sickleave",
+            "DataModel": "SickLeave"
+          },
+          {
+            "Name": "vacation",
+            "DataModel": "Vacation"
+          },
+          {
+            "Name": "compensation",
+            "DataModel": "Compensation"
+          },
+          {
+            "Name": "recruitment",
+            "DataModel": "Recruitment"
+          },
+          {
+            "Name": "employeecount",
+            "DataModel": "Employee",
+            "Filter": "FilterFields",
+            "Parameter": "{\n\t\"DateLeft\": {term:\"=\", value: null}\n}"
+          }
+        ]
+      }
+    }
+  ]
+}

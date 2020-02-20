@@ -1,0 +1,146 @@
+[
+  {
+    "key": "header_1",
+    "data-buildertype": "header",
+    "content": "Workflow Report",
+    "size": "huge"
+  },
+  {
+    "key": "form_1",
+    "data-buildertype": "form",
+    "children": [
+      {
+        "key": "formgroup_1",
+        "data-buildertype": "formgroup",
+        "widths": true,
+        "children": [
+          {
+            "key": "DateFrom",
+            "data-buildertype": "input",
+            "label": "From",
+            "fluid": true,
+            "onChangeTimeout": 200,
+            "type": "date",
+            "events": {},
+            "error": false
+          },
+          {
+            "key": "DateTo",
+            "data-buildertype": "input",
+            "label": "To",
+            "fluid": true,
+            "onChangeTimeout": 200,
+            "type": "date"
+          },
+          {
+            "key": "generate",
+            "data-buildertype": "button",
+            "content": "Generate",
+            "fluid": true,
+            "primary": true,
+            "style-marginTop": "18px",
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "WorkflowReport"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            }
+          }
+        ],
+        "widthsCustom": "1"
+      }
+    ]
+  },
+  {
+    "key": "grid",
+    "data-buildertype": "gridview",
+    "columns": [
+      {
+        "key": "Type",
+        "name": "Type",
+        "resizable": true,
+        "width": 150,
+        "sortable": true,
+        "filterable": false
+      },
+      {
+        "resizable": true,
+        "key": "Count",
+        "name": "Total",
+        "type": "number",
+        "width": 55,
+        "sortable": true,
+        "filterable": false
+      },
+      {
+        "key": "DraftDocCount",
+        "name": "Draft",
+        "resizable": true,
+        "type": "number",
+        "sortable": true,
+        "filterable": false,
+        "width": 50
+      },
+      {
+        "key": "OtherDocCount",
+        "name": "Others",
+        "type": "number",
+        "width": 50,
+        "resizable": true,
+        "sortable": true,
+        "filterable": false
+      },
+      {
+        "key": "FinalDocCount",
+        "name": "Final",
+        "resizable": true,
+        "type": "number",
+        "sortable": true,
+        "filterable": false,
+        "width": 50
+      },
+      {
+        "key": "MinApprovalStr",
+        "type": "",
+        "name": "Min Approval",
+        "resizable": true,
+        "sortable": true,
+        "filterable": false
+      },
+      {
+        "key": "AvrApprovalStr",
+        "type": "",
+        "name": "Avr Approval",
+        "resizable": true,
+        "sortable": true,
+        "filterable": false
+      },
+      {
+        "key": "MaxApprovalStr",
+        "type": "",
+        "name": "Max Approval",
+        "resizable": true,
+        "sortable": true,
+        "filterable": false
+      }
+    ],
+    "events": {
+      "onRowDblClick": {
+        "active": false,
+        "actions": [],
+        "targets": [],
+        "parameters": []
+      }
+    },
+    "style-hidden": false,
+    "editForm": "Employee",
+    "rowKey": "Id",
+    "editFormShowType": "",
+    "pagerType": "",
+    "multiselect": false
+  }
+]

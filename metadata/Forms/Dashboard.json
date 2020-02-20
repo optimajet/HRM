@@ -1,0 +1,251 @@
+[
+  {
+    "key": "header_1",
+    "data-buildertype": "header",
+    "content": "Dashboard",
+    "size": "huge",
+    "subheader": ""
+  },
+  {
+    "key": "container_7",
+    "data-buildertype": "container",
+    "style-customcss": "dwkit-blocks",
+    "children": [
+      {
+        "key": "container_4",
+        "data-buildertype": "container",
+        "style-customcss": "dwkit-block",
+        "children": [
+          {
+            "key": "statistics",
+            "data-buildertype": "staticcontent",
+            "content": "<h3>Documents in processing</h3>\n<table>\n<tr><td>Business Trip:</td><td>{BusinessTripCount}</td></tr>\n<tr><td>Sick Leave:</td><td>{SickLeaveCount}</td></tr>\n<tr><td>Vacation:</td><td>{VacationCount}</td></tr>\n<tr><td>Compensation:</td><td>{CompensationCount}</td></tr>\n<tr><td>Recruitment:</td><td>{RecruitmentCount}</td></tr>\n<tr><td>Business Trips:</td><td>{BusinessTripCount}</td></tr>\n</table>",
+            "isHtml": true,
+            "style-width": "",
+            "style-customcss": "dwkit-block"
+          }
+        ]
+      },
+      {
+        "key": "container_5",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "staticcontent_1",
+            "data-buildertype": "staticcontent",
+            "content": "<h3>Your Compenstation</h3>\n",
+            "isHtml": true,
+            "style-width": "100%"
+          },
+          {
+            "key": "compensationChart",
+            "data-buildertype": "doughnutchart",
+            "chartType": "doughnut",
+            "datasetLabel": "",
+            "responsive": true,
+            "datasetCustom": false,
+            "dataLabels": "",
+            "legendPosition": "bottom"
+          }
+        ],
+        "style-width": "300px",
+        "style-customcss": "dwkit-block",
+        "style-float": ""
+      },
+      {
+        "key": "container_6",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "staticcontent_3",
+            "data-buildertype": "staticcontent",
+            "content": "<h3>Your Business Trips</h3>\n",
+            "isHtml": true,
+            "style-width": ""
+          },
+          {
+            "key": "businessTripChart",
+            "data-buildertype": "doughnutchart",
+            "chartType": "doughnut",
+            "datasetLabel": "",
+            "responsive": true,
+            "legendPosition": "bottom"
+          }
+        ],
+        "style-width": "300px",
+        "style-customcss": "dwkit-block",
+        "style-float": ""
+      },
+      {
+        "key": "container_3",
+        "data-buildertype": "container",
+        "children": [
+          {
+            "key": "header_2",
+            "data-buildertype": "header",
+            "content": "Current business trips",
+            "size": "medium"
+          },
+          {
+            "key": "UserBusinessTrips",
+            "data-buildertype": "gridview",
+            "columns": [
+              {
+                "name": "#",
+                "key": "NumberId",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "Name",
+                "name": "Title",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "TransportType",
+                "name": "Transport",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "Address",
+                "name": "Address",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "StateName",
+                "name": "State",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "DateStart",
+                "name": "Start",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false,
+                "type": "date",
+                "width": 90
+              },
+              {
+                "key": "DateEnd",
+                "name": "End",
+                "sortable": true,
+                "filterable": false,
+                "resizable": false,
+                "type": "date",
+                "width": 90
+              }
+            ],
+            "editForm": "businesstrip",
+            "events": {
+              "onRowDblClick": {
+                "active": true,
+                "actions": [
+                  "gridEdit"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            },
+            "editFormShowType": "sidebar",
+            "style-adaptive": true,
+            "style-renderwhen": "desktop"
+          },
+          {
+            "key": "gridMobile",
+            "data-buildertype": "repeater",
+            "pagerType": "",
+            "pageSize": "",
+            "placeholders": {
+              "template": [
+                {
+                  "key": "card",
+                  "data-buildertype": "container",
+                  "style-customcss": "dwkit-card",
+                  "children": [
+                    {
+                      "key": "card-header",
+                      "data-buildertype": "container",
+                      "style-customcss": "dwkit-card-header",
+                      "children": [
+                        {
+                          "key": "staticcontent_4",
+                          "data-buildertype": "staticcontent",
+                          "content": "<span>#{row.NumberId} - {row.StateName}<span>",
+                          "isHtml": true,
+                          "events": {}
+                        }
+                      ]
+                    },
+                    {
+                      "key": "body",
+                      "data-buildertype": "container",
+                      "style-customcss": "dwkit-card-body",
+                      "children": [
+                        {
+                          "key": "body-text",
+                          "data-buildertype": "staticcontent",
+                          "content": "<div class=\"row\">\n\t<div class=\"key\">Name</div>\n\t<div class=\"value\"><a href=\"/form/businesstrip/{row.Id}\">{row.Name}</a></div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Transport Type</div>\n\t<div class=\"value\">{row.TransportType}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Amount</div>\n\t<div class=\"value\">{row.Amount:0,000.00}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Date Start</div>\n\t<div class=\"value\">{row.DateStart:DD.MM.YYYY}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Date End</div>\n\t<div class=\"value\">{row.DateEnd:DD.MM.YYYY}</div>\n</div>",
+                          "isHtml": true,
+                          "events": {}
+                        }
+                      ]
+                    },
+                    {
+                      "key": "buttons",
+                      "data-buildertype": "container",
+                      "style-customcss": "dwkit-card-buttons",
+                      "children": [
+                        {
+                          "key": "btnOpenCard",
+                          "data-buildertype": "button",
+                          "content": "Open",
+                          "primary": true,
+                          "secondary": false,
+                          "events": {
+                            "onClick": {
+                              "active": true,
+                              "actions": [
+                                "redirect"
+                              ],
+                              "targets": [],
+                              "parameters": [
+                                {
+                                  "__id": "CLIENT_c5b23590-d317-11e9-bea6-0dfe549105b1",
+                                  "name": "target",
+                                  "value": "/form/businesstrip/{row.Id}"
+                                }
+                              ]
+                            }
+                          },
+                          "icon": "",
+                          "style-marginLeft": "15px"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "style-adaptive": true,
+            "style-renderwhen": "mobile",
+            "propertyName": "UserBusinessTrips",
+            "events": {},
+            "style-customcss": "dwkit-cards",
+            "defaultSort": "NumberId DESC"
+          }
+        ],
+        "style-customcss": "dwkit-block",
+        "style-width": "100%"
+      }
+    ]
+  }
+]

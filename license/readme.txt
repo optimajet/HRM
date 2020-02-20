@@ -1,0 +1,1 @@
+Drop your license.key file to this folder.

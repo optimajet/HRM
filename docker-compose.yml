@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  db:
+     image: postgres:alpine
+     environment:
+       POSTGRES_DB: dwkit-hrm
+       POSTGRES_USER: dbuser
+       POSTGRES_PASSWORD: dbuserpassword
+     volumes:
+       - dbdata:/var/lib/postgresql/data
+     restart: always
+     ports:
+       - "5432"
+  start_db:
+    image: jbergknoff/postgresql-client
+    depends_on:
+       - db
+    volumes:
+       - ./docker-files:/home/.docker
+    entrypoint: /home/.docker/wait-for-postgres.sh db dbuser dbuserpassword dwkit-hrm
+  dwkit_starterpack:
+    depends_on:
+       - db
+    ports:
+       - "48800:80"
+    build: .
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__default: HOST=db;User ID=dbuser;Password=dbuserpassword;Database=dwkit-hrm;Port=5432
+      DWKit__MetadataPath: /home/metadata/
+      DWKit__LicensePath: /home/license/  
+      DWKit__CreateDatabaseObjects: "true"
+      DWKit__DatabaseScriptList: /home/sql/PostgreSQL/create_db.txt
+    volumes:
+      - ./sql:/home/sql
+      - ./metadata:/home/metadata
+      - ./aspnet-keys:/root/.aspnet/DataProtection-Keys
+      - ./license:/home/license
+volumes:
+    dbdata:

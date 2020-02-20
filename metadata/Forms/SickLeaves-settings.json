@@ -1,0 +1,191 @@
+{
+  "name": "SickLeaves",
+  "lastUpdate": "2020-02-19T16:11:27.6303988+00:00",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [
+    {
+      "id": "2b150830-1c0d-3213-60ca-0cb1f883dc3e",
+      "entityId": "61af645b-fed3-5d6c-29b0-60be8bddcb13",
+      "filter": "",
+      "parameter": "",
+      "dataMap": [
+        {
+          "id": "d4785f70-4e8d-20ef-4bc3-5c7d922e0d1e",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000001",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "f9d7ffc5-7e96-c0b6-e211-4cd589df4e3a",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000002",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "3948c072-2bc4-34c5-2618-e8bfdd2a6463",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000008",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "bfcc9467-a478-476c-9b42-807c4dc668dd",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000010",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "1fcdb9ce-39a7-1b57-f029-779d54c05cf5",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000011",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "3fe637e7-9502-1c71-e9c7-3af46f8e346f",
+          "attributeId": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "9bc55f04-bd96-8a83-6eac-e5ea653f7122",
+          "attributeId": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "49a19e3f-081d-fbe7-0d12-62ee866e2785",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000008",
+          "parentId": "9bc55f04-bd96-8a83-6eac-e5ea653f7122",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "147fc840-9bc8-4529-5f42-eef5d91b17e3",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000007",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "14091fd0-613b-ee05-2403-557c5bbdf44b",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000005",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "809f1925-ccd4-0d0a-f756-e55f6597e374",
+          "attributeId": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "bb3ab137-4442-7906-d234-645a52c05c29",
+          "attributeId": "76029a2b-635d-5ef5-f456-41d89fa4627b",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "0a44d33b-5792-db60-3001-8a2fbb9510f3",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000006",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "433314e3-38d7-5a8f-7aea-6dbf5feb5b1e",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000004",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "72a1f040-96d5-c664-faaf-81f255d37a9d",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000012",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "6bff095e-eee2-4c85-8c86-fe9538aa94ef",
+          "attributeId": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "91063b91-13bb-7329-1854-af28ab9113bd",
+          "attributeId": "a2aa2c51-ab0c-0317-8294-c1c92ba81b40",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "2ed6f93b-da63-ab52-8199-f72c5eacfa27",
+          "attributeId": "dae3c31f-044a-7caf-cee6-49f01e896283",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "d6a0bd51-d55d-171e-a3d8-38629114f372",
+          "attributeId": "11164f0d-97a0-a101-b370-6e6c8b8f72d8",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "019a2475-6677-79a9-afc7-f905014708ec",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000008",
+          "parentId": "d6a0bd51-d55d-171e-a3d8-38629114f372",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "d3aa08e9-29e6-265d-152e-cacea233c7d1",
+          "attributeId": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "20876209-3142-d65a-48f7-927994d94610",
+          "attributeId": "e413a24b-ca27-e0cd-f816-85db5afbd7d7",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "7b88af79-aef7-c81b-c4d6-a6aa4408aa2b",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000003",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "41b0d2f8-4f35-9b64-ff90-6a5f2f933b43",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000009",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        }
+      ],
+      "readOnly": false,
+      "triggers": []
+    }
+  ],
+  "securityGroup": "Documents",
+  "actionHandlers": []
+}

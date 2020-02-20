@@ -1,0 +1,168 @@
+{
+  "name": "Recruitments",
+  "lastUpdate": "2020-02-19T16:11:12.8033919+00:00",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [
+    {
+      "id": "2b150830-1c0d-3213-60ca-0cb1f883dc3e",
+      "entityId": "e7848d38-9622-415f-3ca6-694e3523d0f0",
+      "filter": "",
+      "parameter": "",
+      "dataMap": [
+        {
+          "id": "c717ef1e-708b-46bb-2296-d1e8334c39a9",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000001",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "6c2a4caf-1d8d-b2a8-faf4-4325ba71c3d8",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000002",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "9a23741d-e8b0-d5e1-780d-8b347c021705",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000008",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "c79dc01e-f572-b3a7-8b5f-365d93782a85",
+          "attributeId": "27ed6e00-4098-63e5-6ade-9b65678d6163",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "a0ec6a35-529a-3d6c-c515-4f3bc210f5cd",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000010",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "a9b734d6-df06-8e4f-247e-7d16863ed702",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000011",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "9df05e43-ea92-c505-afa2-58986cf46ec3",
+          "attributeId": "7404fb95-6dd9-4a3d-b600-bd38ee9d4dad",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "6b10eb5c-c4f7-d99e-aea2-a165acd9611d",
+          "attributeId": "de7b219c-eb4d-4fb8-a077-b251d5737648",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "f22cea59-28c6-b60c-4d76-fe55c0674799",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000007",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "5f2319d2-df6e-5f7c-2473-59f50784289f",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000005",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "01d14035-e78f-0ab8-5cdc-36757fec44e8",
+          "attributeId": "b92689f8-8e7f-4478-8bbd-8bdb5930a9e7",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "cbdc72c6-fb7e-5be2-9cc8-4c8b71a2d30b",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000006",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "c089b2b1-4073-989b-079b-7495f38e6fe0",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000004",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "6315ee26-28cc-b147-9ce2-1a4ba6210576",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000012",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "f6e07545-d36a-764b-21c9-61dce4b4da86",
+          "attributeId": "0f48bcf3-60a0-4c02-a34c-25e14d570fc7",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "17a9cfbc-59d8-b99d-7447-cc14af9c730f",
+          "attributeId": "1c079711-cce8-467c-906b-33ffe2377d69",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "fd0aa359-d6e0-d83c-6653-077ecfb6bd53",
+          "attributeId": "2dba076f-981f-4e69-9cd6-9268c817fdbf",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "c1607d28-07c9-59f9-626d-800952c5a2f3",
+          "attributeId": "cb140c29-2013-9a7a-5790-fc57c6d84064",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "665d32a6-66e4-4ad4-52bd-7f1aa22962d5",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000003",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        },
+        {
+          "id": "1077ce5f-aefa-65f3-e8aa-9f455b55b656",
+          "attributeId": "305db2e7-59cf-8556-5db8-6b2efbda5b2d",
+          "isEditable": true,
+          "isLoadable": true,
+          "attributeSource": 0
+        },
+        {
+          "id": "a5d333e7-8bcf-eff5-e6fc-b813b537265d",
+          "attributeId": "30f29868-2fdb-4b9c-a8df-000000000009",
+          "isEditable": false,
+          "isLoadable": true,
+          "attributeSource": 1
+        }
+      ],
+      "readOnly": false,
+      "triggers": []
+    }
+  ],
+  "securityGroup": "Documents",
+  "actionHandlers": []
+}

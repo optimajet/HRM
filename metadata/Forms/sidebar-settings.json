@@ -1,0 +1,13 @@
+{
+  "name": "sidebar",
+  "lastUpdate": "2020-02-19T15:56:54.1390571+00:00",
+  "dataGetAction": "",
+  "dataSourceType": "",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [],
+  "actionHandlers": [
+    "sidebarclick"
+  ]
+}

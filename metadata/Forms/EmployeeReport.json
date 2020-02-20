@@ -1,0 +1,174 @@
+[
+  {
+    "key": "header_1",
+    "data-buildertype": "header",
+    "content": "Employees Report",
+    "size": "huge"
+  },
+  {
+    "key": "form_1",
+    "data-buildertype": "form",
+    "children": [
+      {
+        "key": "formgroup_1",
+        "data-buildertype": "formgroup",
+        "widths": true,
+        "children": [
+          {
+            "key": "DateFrom",
+            "data-buildertype": "input",
+            "label": "From",
+            "fluid": true,
+            "onChangeTimeout": 200,
+            "type": "date",
+            "events": {},
+            "error": false,
+            "other-required": true
+          },
+          {
+            "key": "DateTo",
+            "data-buildertype": "input",
+            "label": "To",
+            "fluid": true,
+            "onChangeTimeout": 200,
+            "type": "date",
+            "other-required": true
+          },
+          {
+            "key": "Parameter",
+            "data-buildertype": "dropdown",
+            "label": "Parameter",
+            "fluid": false,
+            "selection": true,
+            "data-elements": [
+              {
+                "value": "totalamount",
+                "text": "Total amount"
+              },
+              {
+                "key": 1,
+                "value": "salary",
+                "text": "Salary"
+              },
+              {
+                "key": 2,
+                "value": "tax",
+                "text": "Tax"
+              },
+              {
+                "value": "compensation",
+                "text": "Compensation"
+              },
+              {
+                "value": "tripdays",
+                "text": "Business Trip Days"
+              },
+              {
+                "value": "sickleavedays",
+                "text": "Sick Leave Days"
+              },
+              {
+                "value": "vacationdays",
+                "text": "Vacantion Days"
+              }
+            ],
+            "defaultValue": "salary",
+            "style-width": "80px",
+            "events": {}
+          },
+          {
+            "key": "Period",
+            "data-buildertype": "dropdown",
+            "label": "Period",
+            "fluid": false,
+            "selection": true,
+            "data-elements": [
+              {
+                "key": 1,
+                "value": "0",
+                "text": "Month"
+              },
+              {
+                "key": 2,
+                "value": "1",
+                "text": "Year"
+              }
+            ],
+            "defaultValue": "0",
+            "style-width": "80px"
+          },
+          {
+            "key": "generate",
+            "data-buildertype": "button",
+            "content": "Generate",
+            "fluid": true,
+            "primary": true,
+            "style-marginTop": "18px",
+            "events": {
+              "onClick": {
+                "active": true,
+                "actions": [
+                  "validate",
+                  "generate"
+                ],
+                "targets": [],
+                "parameters": []
+              }
+            }
+          }
+        ],
+        "widthsCustom": "1"
+      },
+      {
+        "key": "filter",
+        "data-buildertype": "input",
+        "label": "Filter by Employee/Department/Location/Title",
+        "fluid": true,
+        "onChangeTimeout": 200,
+        "events": {
+          "onChange": {
+            "active": true,
+            "actions": [
+              "setFilter",
+              "applyFilter"
+            ],
+            "targets": [
+              "grid"
+            ],
+            "parameters": [
+              {
+                "name": "column",
+                "value": "name, department, location, title"
+              }
+            ]
+          }
+        },
+        "style-hidden": false
+      }
+    ],
+    "style-marginBottom": "10px"
+  },
+  {
+    "key": "grid",
+    "data-buildertype": "gridview",
+    "columns": [],
+    "events": {
+      "onRowDblClick": {
+        "active": true,
+        "actions": [
+          "edit"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    },
+    "style-hidden": false,
+    "editForm": "employee",
+    "rowKey": "Id",
+    "editFormShowType": "",
+    "pagerType": "",
+    "multiselect": false,
+    "autoHeight": true,
+    "offSet": "365px"
+  }
+]

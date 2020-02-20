@@ -1,0 +1,14 @@
+{
+  "name": "Dashboard",
+  "lastUpdate": "2020-02-12T15:52:36.090957+03:00",
+  "dataUrl": "",
+  "dataGetAction": "DashboardGenerate",
+  "dataSourceType": "action",
+  "isTemplate": false,
+  "triggers": [],
+  "dataMap": [],
+  "dataColl": [],
+  "actionHandlers": [
+    "opentrip"
+  ]
+}

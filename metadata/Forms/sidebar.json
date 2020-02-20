@@ -1,0 +1,128 @@
+[
+  {
+    "key": "menu",
+    "data-buildertype": "menu",
+    "items": [
+      {
+        "__id": "CLIENT_c9a4cad0-532f-11ea-8159-d15fa13d47f9",
+        "target": "/admin",
+        "visibleCondition": "DWKitApp.API.checkRole(\"Admins\")",
+        "title": "Admin Panel"
+      },
+      {
+        "target": "/form/dashboard",
+        "title": "Dashboard",
+        "children": []
+      },
+      {
+        "target": "/form/employees",
+        "title": "Employees <div class=\"ui label\">{employeecount}</div>",
+        "visibleCondition": ""
+      },
+      {
+        "target": "/form/documents",
+        "title": "Documents",
+        "children": [
+          {
+            "target": "/form/documents/inbox",
+            "title": "Inbox <div class=\"ui teal label\">{inbox}</div>"
+          },
+          {
+            "target": "/form/documents/outbox",
+            "title": "Outbox <div class=\"ui teal label\">{outbox}</div>"
+          },
+          {
+            "title": "Business trips <div class=\"ui label\">{businesstrip}</div>",
+            "target": "/form/businesstrips"
+          },
+          {
+            "title": "Sick leave <div class=\"ui label\">{sickleave}</div>",
+            "target": "/form/sickleaves"
+          },
+          {
+            "title": "Vacation <div class=\"ui label\">{vacation}</div>",
+            "target": "/form/vacations"
+          },
+          {
+            "title": "Compensation <div class=\"ui label\">{compensation}</div>",
+            "target": "/form/compensations"
+          },
+          {
+            "title": "Recruitment <div class=\"ui label\">{recruitment}</div>",
+            "target": "/form/recruitments"
+          }
+        ],
+        "visibleCondition": ""
+      },
+      {
+        "target": "",
+        "title": "Reports",
+        "children": [
+          {
+            "title": "Employees Report",
+            "target": "/form/employeereport",
+            "visibleCondition": ""
+          },
+          {
+            "target": "/form/workflowreport",
+            "title": "Workflow Report",
+            "children": [],
+            "visibleCondition": ""
+          }
+        ],
+        "visibleCondition": "DWKitApp.API.checkRole(\"Admins\") || DWKitApp.API.checkRole(\"HRDirectors\") || DWKitApp.API.checkRole(\"HRDirectors\")"
+      },
+      {
+        "__id": "CLIENT_8df34f90-434c-11ea-b533-2fe62a178316",
+        "title": "Dictionaries",
+        "children": [
+          {
+            "__id": "CLIENT_a00d1990-434c-11ea-b533-2fe62a178316",
+            "title": "Department",
+            "target": "/form/department/",
+            "children": []
+          },
+          {
+            "__id": "CLIENT_93f146e0-434c-11ea-b533-2fe62a178316",
+            "title": "Location",
+            "target": "/form/location/",
+            "children": []
+          }
+        ],
+        "visibleCondition": "DWKitApp.API.checkRole(\"Admins\")"
+      }
+    ],
+    "vertical": true,
+    "events": {
+      "onItemClick": {
+        "active": true,
+        "actions": [
+          "redirect"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    },
+    "link": true,
+    "style-customcss": "dwkit-sidebar huge"
+  },
+  {
+    "key": "button_1",
+    "data-buildertype": "button",
+    "content": "",
+    "style-customcss": "dwkit-sidebar-btn",
+    "events": {
+      "onClick": {
+        "active": true,
+        "actions": [
+          "sidebarclick"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    },
+    "icon": "",
+    "style-adaptive": true,
+    "style-renderwhen": "mobile"
+  }
+]

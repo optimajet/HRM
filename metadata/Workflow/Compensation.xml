@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Process Name="Compensation" CanBeInlined="false" Tags="">
+  <Designer />
+  <Actors>
+    <Actor Name="Author" Rule="CheckUser" Value="AuthorId" />
+    <Actor Name="HRManager" Rule="CheckRole" Value="HRManagers" />
+    <Actor Name="HRDirector" Rule="CheckRole" Value="HRDirectors" />
+    <Actor Name="Director" Rule="CheckRole" Value="Directors" />
+    <Actor Name="Accountant" Rule="CheckRole" Value="Accountants" />
+  </Actors>
+  <Parameters>
+    <Parameter Name="Comment" Type="String" Purpose="Persistence" />
+  </Parameters>
+  <Commands>
+    <Command Name="Start" />
+    <Command Name="Approve" />
+    <Command Name="Reject">
+      <InputParameters>
+        <ParameterRef Name="Comment" IsRequired="false" DefaultValue="" NameRef="Comment" />
+      </InputParameters>
+    </Command>
+    <Command Name="Paid" />
+  </Commands>
+  <Activities>
+    <Activity Name="Draft" State="Draft" IsInitial="True" IsFinal="False" IsForSetState="True" IsAutoSchemeUpdate="True">
+      <Implementation>
+        <ActionRef Order="1" NameRef="UpdateTransitionHistory" />
+      </Implementation>
+      <PreExecutionImplementation>
+        <ActionRef Order="1" NameRef="WriteTransitionHistory" />
+      </PreExecutionImplementation>
+      <Designer X="50" Y="180" />
+    </Activity>
+    <Activity Name="DirectorSigning" State="DirectorSigning" IsInitial="False" IsFinal="False" IsForSetState="True" IsAutoSchemeUpdate="True">
+      <Implementation>
+        <ActionRef Order="1" NameRef="UpdateTransitionHistory" />
+      </Implementation>
+      <PreExecutionImplementation>
+        <ActionRef Order="1" NameRef="WriteTransitionHistory" />
+      </PreExecutionImplementation>
+      <Designer X="420" Y="180" />
+    </Activity>
+    <Activity Name="Approved" State="Approved" IsInitial="False" IsFinal="True" IsForSetState="True" IsAutoSchemeUpdate="True">
+      <Implementation>
+        <ActionRef Order="1" NameRef="UpdateTransitionHistory" />
+      </Implementation>
+      <PreExecutionImplementation>
+        <ActionRef Order="1" NameRef="WriteTransitionHistory" />
+      </PreExecutionImplementation>
+      <Designer X="750" Y="370" />
+    </Activity>
+    <Activity Name="AccountantSigning" State="AccountantSigning" IsInitial="False" IsFinal="False" IsForSetState="True" IsAutoSchemeUpdate="True">
+      <Implementation>
+        <ActionRef Order="1" NameRef="UpdateTransitionHistory" />
+      </Implementation>
+      <PreExecutionImplementation>
+        <ActionRef Order="1" NameRef="WriteTransitionHistory" />
+      </PreExecutionImplementation>
+      <Designer X="760" Y="190" />
+    </Activity>
+  </Activities>
+  <Transitions>
+    <Transition Name="DirectorSigning_Activity_1_1" To="AccountantSigning" From="DirectorSigning" Classifier="Direct" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Director" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Approve" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" />
+      </Conditions>
+      <Designer />
+    </Transition>
+    <Transition Name="Draft_DirectorSigning_1" To="DirectorSigning" From="Draft" Classifier="Direct" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Author" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Start" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" />
+      </Conditions>
+      <Designer />
+    </Transition>
+    <Transition Name="DirectorSigning_Draft_1" To="Draft" From="DirectorSigning" Classifier="Reverse" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Director" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Reject" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" />
+      </Conditions>
+      <Designer X="340" Y="151" />
+    </Transition>
+    <Transition Name="Approved_Draft_1" To="Draft" From="Approved" Classifier="Reverse" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Accountant" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Reject" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" />
+      </Conditions>
+      <Designer X="232" Y="333" />
+    </Transition>
+    <Transition Name="AccountantSigning_Approved_1" To="Approved" From="AccountantSigning" Classifier="Direct" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Accountant" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Paid" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" NameRef="" ConditionInversion="false" />
+      </Conditions>
+      <Designer X="846" Y="316" />
+    </Transition>
+    <Transition Name="AccountantSigning_Draft_1" To="Draft" From="AccountantSigning" Classifier="Reverse" AllowConcatenationType="And" RestrictConcatenationType="And" ConditionsConcatenationType="And" IsFork="false" MergeViaSetState="false" DisableParentStateControl="false">
+      <Restrictions>
+        <Restriction Type="Allow" NameRef="Accountant" />
+      </Restrictions>
+      <Triggers>
+        <Trigger Type="Command" NameRef="Reject" />
+      </Triggers>
+      <Conditions>
+        <Condition Type="Always" />
+      </Conditions>
+      <Designer X="500" Y="113" />
+    </Transition>
+  </Transitions>
+  <CodeActions>
+    <CodeAction Name="CheckNoneAuthorManager" Type="Condition" IsGlobal="False" IsAsync="False">
+      <ActionCode><![CDATA[return true;]]></ActionCode>
+      <Usings><![CDATA[System.Collections;Microsoft.CSharp.RuntimeBinder;System.Collections.Generic;Microsoft.AspNetCore.Builder;System.Dynamic;OptimaJet.DWKit.Core.Metadata.CommandForms;Microsoft.CodeAnalysis;Microsoft.CSharp.RuntimeBinder.Errors;OptimaJet.DWKit.Core.Base;OptimaJet.DWKit.Core.Metadata.DbObjects;OptimaJet.DWKit.Core.Cors;OptimaJet.DWKit.Core.CodeActions;Microsoft.CSharp.RuntimeBinder.Syntax;OptimaJet.Workflow;System.Threading;OptimaJet.DWKit.Core.ORM;OptimaJet.DWKit.Core.ORM.Interceptors;OptimaJet.DWKit.Core.Exceptions;OptimaJet.DWKit.Core.Security;System.Linq;System.Threading.Tasks;OptimaJet.DWKit.Core.Utils;System.Runtime.CompilerServices;Microsoft.CSharp.RuntimeBinder.Semantics;OptimaJet.DWKit.Core.IntegrationApi;OptimaJet.DWKit.Core.View;OptimaJet.Workflow.Core.Model;OptimaJet.DWKit.Core.Metadata.DataModelGeneration;OptimaJet.DWKit.Core.Metadata;Microsoft.CSharp;OptimaJet.DWKit.Core.DataProvider;OptimaJet.DWKit.Core.Plugins;OptimaJet.DWKit.Core.Model;OptimaJet.DWKit.Core.DatabaseAnalyser;FxResources.Microsoft.CSharp;System;OptimaJet.DWKit.Core.License;OptimaJet.DWKit.Core;OptimaJet.DWKit.Core.Autocomplete;]]></Usings>
+    </CodeAction>
+  </CodeActions>
+</Process>

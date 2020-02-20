@@ -1,0 +1,217 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Compensation",
+        "url": "/form/compensations"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true,
+        "url": "/form/compensation/{Id}"
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "active": true,
+        "actions": [
+          "redirect"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentTemplate",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Name",
+              "data-buildertype": "input",
+              "label": "Title",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "type": "text",
+              "other-required": true
+            },
+            {
+              "key": "EmployeeId",
+              "data-buildertype": "dictionary",
+              "label": "Employee",
+              "fluid": true,
+              "selection": true,
+              "dataModel": "Employee",
+              "columns": "Name ASC",
+              "search": true,
+              "other-required": true
+            },
+            {
+              "key": "formgroup_1",
+              "data-buildertype": "formgroup",
+              "widths": "custom",
+              "children": [
+                {
+                  "key": "ExpenseDate",
+                  "data-buildertype": "input",
+                  "label": "Expense Date",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "Amount",
+                  "data-buildertype": "input",
+                  "label": "Amount",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "number",
+                  "other-required": true,
+                  "style-width": "150px"
+                }
+              ],
+              "widthsCustom": "26"
+            },
+            {
+              "key": "Comment",
+              "data-buildertype": "textarea",
+              "label": "Comment",
+              "fluid": true,
+              "autoHeight": true
+            }
+          ],
+          "style-width": ""
+        },
+        {
+          "key": "barButtons",
+          "data-buildertype": "container",
+          "children": [
+            {
+              "key": "Save",
+              "data-buildertype": "button",
+              "content": "Save",
+              "floated": "left",
+              "style-marginRight": "",
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save"
+                  ],
+                  "targets": [],
+                  "parameters": []
+                }
+              },
+              "primary": true,
+              "other-visibleConition": "",
+              "style-hidden": false
+            },
+            {
+              "key": "SaveExit",
+              "data-buildertype": "button",
+              "content": "Save & Exit",
+              "secondary": true,
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save",
+                    "exit"
+                  ],
+                  "targets": [],
+                  "parameters": [
+                    {
+                      "__id": "CLIENT_c24c6b40-4e5b-11ea-94e7-1f3ea624ef53",
+                      "name": "target",
+                      "value": "/form/compensations"
+                    }
+                  ]
+                }
+              },
+              "floated": "left",
+              "other-visibleConition": "",
+              "style-hidden": false
+            }
+          ],
+          "style-float": "",
+          "style-marginLeft": "",
+          "style-display": "flex",
+          "style-display-horizontalalign": "center",
+          "other-visibleConition": "",
+          "style-hidden": false,
+          "events": {},
+          "style-marginTop": "10px"
+        }
+      ],
+      "FirstBlockContent": [
+        {
+          "key": "titlecontent",
+          "data-buildertype": "staticcontent",
+          "content": "<div class=\"dwkit-block-title\">{State}</div>\n<div class=\"dwkit-block-image\"><img style=\"width:150px\" src=\"/images/compensation.svg\" alt title></div>\n<div class=\"dwkit-block-name\" style=\"width: unset\">{Name}</div>\n<div class=\"dwkit-block-info\">\n\t<p><span>Author:</span> {AuthorId_Name}</p>\n\t<p><span>Amount:</span> {Amount:0,000.00}</p>\n</div>",
+          "isHtml": true
+        }
+      ],
+      "CustomBlocks": [
+        {
+          "key": "filescontainer",
+          "data-buildertype": "container",
+          "style-customcss": "dwkit-block",
+          "children": [
+            {
+              "key": "files",
+              "data-buildertype": "files",
+              "idField": "Id",
+              "columns": [
+                {
+                  "title": "Name",
+                  "field": "Name",
+                  "property": "Name",
+                  "showcolumn": true
+                },
+                {
+                  "title": "Length",
+                  "field": "Length",
+                  "property": "Length",
+                  "showcolumn": false,
+                  "control": "span"
+                },
+                {
+                  "title": "Content Type",
+                  "field": "ContentType",
+                  "property": "ContentType",
+                  "showcolumn": false
+                },
+                {
+                  "title": "File",
+                  "field": "Token",
+                  "property": "Token",
+                  "showcolumn": true,
+                  "control": "file2"
+                }
+              ],
+              "useDropzone": true,
+              "autoProcessQueue": true,
+              "showFiletypeIcon": true,
+              "style-width": ""
+            }
+          ],
+          "style-width": "500px"
+        }
+      ]
+    }
+  }
+]

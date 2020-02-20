@@ -1,0 +1,289 @@
+[
+  {
+    "key": "blocks",
+    "data-buildertype": "container",
+    "children": [
+      {
+        "key": "infoblock",
+        "data-buildertype": "container",
+        "style-customcss": "dwkit-block",
+        "children": [
+          {
+            "key": "FirstBlockContent",
+            "data-buildertype": "customblock",
+            "sourceType": "placeholder"
+          },
+          {
+            "key": "workflowbuttonsDiv",
+            "data-buildertype": "container",
+            "children": [
+              {
+                "key": "workflowbar",
+                "data-buildertype": "workflowbar",
+                "events": {
+                  "onCommandClick": {
+                    "active": true,
+                    "actions": [
+                      "validate",
+                      "workflowShowCommandForm",
+                      "save",
+                      "workflowExecuteCommand",
+                      "refresh"
+                    ],
+                    "targets": [],
+                    "parameters": []
+                  },
+                  "onSetStateClick": {
+                    "active": true,
+                    "actions": [
+                      "validate",
+                      "save",
+                      "workflowSetState",
+                      "refresh"
+                    ],
+                    "targets": [],
+                    "parameters": []
+                  },
+                  "onSelectWorkflowScheme": {
+                    "active": true,
+                    "actions": [
+                      "selectWorkflowScheme"
+                    ]
+                  },
+                  "onSchemeSelected": {
+                    "active": true,
+                    "actions": [
+                      "workflowSelectScheme"
+                    ],
+                    "targets": [],
+                    "parameters": []
+                  },
+                  "onReceivedCommands": {
+                    "active": false,
+                    "actions": [],
+                    "targets": [],
+                    "parameters": []
+                  }
+                },
+                "blockSetState": true,
+                "style-marginTop": "10px",
+                "style-marginBottom": "10px",
+                "style-customcss": "",
+                "blockSelectScheme": false,
+                "blockLoadParameters": false
+              }
+            ],
+            "style-display": "flex",
+            "style-display-horizontalalign": "center"
+          }
+        ],
+        "style-width": "300px"
+      },
+      {
+        "key": "mainblock",
+        "data-buildertype": "container",
+        "style-customcss": "dwkit-block",
+        "children": [
+          {
+            "key": "header_3",
+            "data-buildertype": "header",
+            "content": "",
+            "size": "small",
+            "subheader": "GENERAL"
+          },
+          {
+            "key": "FormFields",
+            "data-buildertype": "customblock",
+            "sourceType": "placeholder",
+            "style-customcss": "",
+            "events": {}
+          }
+        ],
+        "style-width": "500px"
+      },
+      {
+        "key": "CustomBlocks",
+        "data-buildertype": "customblock",
+        "sourceType": "placeholder",
+        "style-customcss": "",
+        "events": {}
+      },
+      {
+        "key": "history",
+        "data-buildertype": "container",
+        "style-customcss": "dwkit-block",
+        "children": [
+          {
+            "key": "header_1",
+            "data-buildertype": "header",
+            "content": "",
+            "size": "small",
+            "subheader": "APPROVAL HISTORY"
+          },
+          {
+            "key": "workflowbar_setState",
+            "data-buildertype": "workflowbar",
+            "blockSetState": false,
+            "events": {
+              "onCommandClick": {
+                "active": false,
+                "actions": [
+                  "workflowExecuteCommand"
+                ],
+                "targets": [],
+                "parameters": []
+              },
+              "onSetStateClick": {
+                "active": true,
+                "actions": [
+                  "validate",
+                  "save",
+                  "workflowSetState",
+                  "refresh"
+                ],
+                "targets": [],
+                "parameters": []
+              },
+              "onSelectWorkflowScheme": {
+                "active": true,
+                "actions": [
+                  "selectWorkflowScheme"
+                ]
+              }
+            },
+            "blockCommands": true,
+            "blockLoadParameters": false,
+            "style-marginBottom": "10px",
+            "blockSelectScheme": true
+          },
+          {
+            "key": "gridHistory",
+            "data-buildertype": "gridview",
+            "columns": [
+              {
+                "key": "InitialState",
+                "name": "From",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": ""
+              },
+              {
+                "key": "ToDestinationState",
+                "name": "To",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "key": "Command",
+                "name": "Command",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "key": "ApproverName",
+                "name": "Executor",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              },
+              {
+                "__id": "CLIENT_621b11f0-3e92-11ea-95fa-1f378ce6811f",
+                "key": "Comment",
+                "name": "Comment",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false
+              },
+              {
+                "key": "TransitionTime",
+                "name": "Date",
+                "type": "datetime",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": 130
+              },
+              {
+                "name": "Availiable for",
+                "key": "AllowedToIdentityNames",
+                "sortable": false,
+                "filterable": false,
+                "resizable": false,
+                "width": null
+              }
+            ],
+            "rowKey": "Id",
+            "disableSort": true,
+            "autoHeight": true,
+            "resizecolumns": true,
+            "events": {},
+            "minHeight": "150px",
+            "offSet": "620px",
+            "defaultSort": "Order ASC",
+            "style-adaptive": true,
+            "style-renderwhen": "desktop",
+            "propertyName": "EntityTransitionHistory"
+          },
+          {
+            "key": "gridHistoryMobile",
+            "data-buildertype": "repeater",
+            "style-adaptive": true,
+            "style-renderwhen": "mobile",
+            "propertyName": "EntityTransitionHistory",
+            "placeholders": {
+              "template": [
+                {
+                  "key": "card",
+                  "data-buildertype": "container",
+                  "style-customcss": "dwkit-card",
+                  "children": [
+                    {
+                      "key": "header",
+                      "data-buildertype": "container",
+                      "style-customcss": "dwkit-card-header",
+                      "children": [
+                        {
+                          "key": "header-text",
+                          "data-buildertype": "staticcontent",
+                          "content": "{row.InitialState} -> {row.DestinationState}"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "body",
+                      "data-buildertype": "container",
+                      "style-customcss": "dwkit-card-body",
+                      "children": [
+                        {
+                          "key": "body-text",
+                          "data-buildertype": "staticcontent",
+                          "content": "<div class=\"row\">\n\t<div class=\"key\">Command</div>\n\t<div class=\"value\">{row.Command}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Executor</div>\n\t<div class=\"value\">{row.ApproverName} {row.Comment}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Date</div>\n\t<div class=\"value\">{row.TransitionTime:DD.MM.YYYY HH:mm:ss}</div>\n</div>\n<div class=\"row\">\n\t<div class=\"key\">Avaliable for</div>\n\t<div class=\"value\">{row.AllowedToIdentityNames}</div>\n</div>",
+                          "isHtml": true
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "slider": true,
+            "style-customcss": "dwkit-cards",
+            "defaultSort": "Order ASC"
+          }
+        ],
+        "style-width": "100%"
+      }
+    ],
+    "style-source": "",
+    "style-marginTop": "",
+    "style-marginBottom": "",
+    "style-marginLeft": "",
+    "style-customcss": "dwkit-blocks"
+  }
+]

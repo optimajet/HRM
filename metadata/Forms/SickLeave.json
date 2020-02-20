@@ -1,0 +1,202 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Sick Leaves",
+        "url": "/form/sickleaves"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true,
+        "url": "/form/sickleave/{Id}"
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "active": true,
+        "actions": [
+          "redirect"
+        ],
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentTemplate",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "Name",
+              "data-buildertype": "input",
+              "label": "Reason",
+              "fluid": true,
+              "onChangeTimeout": 200,
+              "readOnly": false,
+              "other-required": true,
+              "defaultValue": ""
+            },
+            {
+              "key": "EmployeeId",
+              "data-buildertype": "dictionary",
+              "label": "Employee",
+              "fluid": true,
+              "selection": true,
+              "dataModel": "Employee",
+              "columns": "Name ASC",
+              "search": true,
+              "other-required": true
+            },
+            {
+              "key": "CompensationType",
+              "data-buildertype": "dropdown",
+              "label": "Compensation Type",
+              "fluid": true,
+              "selection": true,
+              "data-elements": [
+                {
+                  "text": "...",
+                  "value": ""
+                },
+                {
+                  "key": 1,
+                  "value": "Paid",
+                  "text": "Paid"
+                },
+                {
+                  "key": 2,
+                  "value": "NoPaid",
+                  "text": "No paid"
+                },
+                {
+                  "key": 3,
+                  "value": "Vacation",
+                  "text": "Vacation"
+                }
+              ],
+              "other-required": false,
+              "events": {},
+              "defaultValue": "Paid"
+            },
+            {
+              "key": "formgroup_1",
+              "data-buildertype": "formgroup",
+              "widths": "equal",
+              "style-width": "400px",
+              "children": [
+                {
+                  "key": "DateStart",
+                  "data-buildertype": "input",
+                  "label": "Date Start",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "DateEnd",
+                  "data-buildertype": "input",
+                  "label": "Date End (Planned)",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                }
+              ]
+            }
+          ],
+          "style-width": ""
+        },
+        {
+          "key": "barButtons",
+          "data-buildertype": "container",
+          "children": [
+            {
+              "key": "Save",
+              "data-buildertype": "button",
+              "content": "Save",
+              "floated": "left",
+              "style-marginRight": "",
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save"
+                  ],
+                  "targets": [],
+                  "parameters": []
+                }
+              },
+              "primary": true,
+              "other-visibleConition": "",
+              "style-hidden": false
+            },
+            {
+              "key": "SaveExit",
+              "data-buildertype": "button",
+              "content": "Save & Exit",
+              "secondary": true,
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save",
+                    "exit"
+                  ],
+                  "targets": [],
+                  "parameters": [
+                    {
+                      "__id": "CLIENT_c24c6b40-4e5b-11ea-94e7-1f3ea624ef53",
+                      "name": "target",
+                      "value": "/form/sickleaves"
+                    }
+                  ]
+                }
+              },
+              "floated": "left",
+              "other-visibleConition": "",
+              "style-hidden": false
+            }
+          ],
+          "style-float": "",
+          "style-marginLeft": "",
+          "style-display": "flex",
+          "style-display-horizontalalign": "center",
+          "other-visibleConition": "",
+          "style-hidden": false,
+          "events": {},
+          "style-marginTop": "10px"
+        }
+      ],
+      "imagePlaceholder": [
+        {
+          "key": "image_1",
+          "data-buildertype": "image",
+          "src": "/images/sickleave.svg",
+          "style-width": "150px"
+        }
+      ],
+      "FirstBlockContent": [
+        {
+          "key": "titlecontent",
+          "data-buildertype": "staticcontent",
+          "content": "<div class=\"dwkit-block-title\">{State}</div>\n<div class=\"dwkit-block-image\"><img style=\"width:150px\" src=\"/images/sickleave.svg\" alt title></div>\n<div class=\"dwkit-block-name\" style=\"width: unset\">{Name}</div>\n<div class=\"dwkit-block-info\">\n\t<p><span>Author:</span> {AuthorId_Name}</p>\n</div>",
+          "isHtml": true
+        }
+      ]
+    }
+  }
+]

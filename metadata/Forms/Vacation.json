@@ -1,0 +1,185 @@
+[
+  {
+    "key": "breadcrumb_1",
+    "data-buildertype": "breadcrumb",
+    "items": [
+      {
+        "divider": "right angle",
+        "text": "Vacation",
+        "url": "/form/vacations"
+      },
+      {
+        "text": "{NumberId}",
+        "active": true,
+        "url": "/form/vacation/{Id}"
+      }
+    ],
+    "style-marginBottom": "5px",
+    "events": {
+      "onItemClick": {
+        "actions": [
+          "redirect"
+        ],
+        "active": true,
+        "targets": [],
+        "parameters": []
+      }
+    }
+  },
+  {
+    "key": "DocumentEdit_1",
+    "data-buildertype": "customblock",
+    "formname": "DocumentTemplate",
+    "sourceType": "form",
+    "placeholders": {
+      "FormFields": [
+        {
+          "key": "form_1",
+          "data-buildertype": "form",
+          "children": [
+            {
+              "key": "EmployeeId",
+              "data-buildertype": "dictionary",
+              "label": "Employee",
+              "fluid": true,
+              "selection": true,
+              "dataModel": "Employee",
+              "columns": "Name ASC",
+              "search": true,
+              "other-required": true
+            },
+            {
+              "key": "CompensationType",
+              "data-buildertype": "dropdown",
+              "label": "Compensation Type",
+              "fluid": true,
+              "selection": true,
+              "data-elements": [
+                {
+                  "text": "...",
+                  "value": ""
+                },
+                {
+                  "key": 1,
+                  "value": "Paid",
+                  "text": "Paid"
+                },
+                {
+                  "key": 2,
+                  "value": "NotPaid",
+                  "text": "Not paid"
+                }
+              ],
+              "other-required": true,
+              "events": {}
+            },
+            {
+              "key": "formgroup_1",
+              "data-buildertype": "formgroup",
+              "widths": "equal",
+              "style-width": "400px",
+              "children": [
+                {
+                  "key": "DateStart",
+                  "data-buildertype": "input",
+                  "label": "Date Start",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                },
+                {
+                  "key": "DateEnd",
+                  "data-buildertype": "input",
+                  "label": "Date End (Planned)",
+                  "fluid": true,
+                  "onChangeTimeout": 200,
+                  "type": "date",
+                  "other-required": true
+                }
+              ]
+            },
+            {
+              "key": "Comment",
+              "data-buildertype": "textarea",
+              "label": "Reason",
+              "fluid": true,
+              "autoHeight": true
+            }
+          ],
+          "style-width": ""
+        },
+        {
+          "key": "barButtons",
+          "data-buildertype": "container",
+          "children": [
+            {
+              "key": "Save",
+              "data-buildertype": "button",
+              "content": "Save",
+              "floated": "left",
+              "style-marginRight": "",
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save"
+                  ],
+                  "targets": [],
+                  "parameters": []
+                }
+              },
+              "primary": true,
+              "other-visibleConition": "",
+              "style-hidden": false
+            },
+            {
+              "key": "SaveExit",
+              "data-buildertype": "button",
+              "content": "Save & Exit",
+              "secondary": true,
+              "events": {
+                "onClick": {
+                  "active": true,
+                  "actions": [
+                    "validate",
+                    "save",
+                    "exit"
+                  ],
+                  "targets": [],
+                  "parameters": [
+                    {
+                      "__id": "CLIENT_c24c6b40-4e5b-11ea-94e7-1f3ea624ef53",
+                      "name": "target",
+                      "value": "/form/vacations"
+                    }
+                  ]
+                }
+              },
+              "floated": "left",
+              "other-visibleConition": "",
+              "style-hidden": false
+            }
+          ],
+          "style-float": "",
+          "style-marginLeft": "",
+          "style-display": "flex",
+          "style-display-horizontalalign": "center",
+          "other-visibleConition": "",
+          "style-hidden": false,
+          "events": {},
+          "style-marginTop": "10px"
+        }
+      ],
+      "FirstBlockContent": [
+        {
+          "key": "titlecontent",
+          "data-buildertype": "staticcontent",
+          "content": "<div class=\"dwkit-block-title\">{State}</div>\n<div class=\"dwkit-block-image\"><img style=\"width:150px\" src=\"/images/vacation.svg\" alt title></div>\n<div class=\"dwkit-block-name\" style=\"width: unset\"><p style=\"font-size: medium;\">{DateStart:local} - {DateEnd:local}</p></div>\n<div class=\"dwkit-block-info\">\n\t<p><span>Author:</span> {AuthorId_Name}</p>\n\t<p><span>Created:</span> {Created:local}</p>\n</div>",
+          "isHtml": true
+        }
+      ]
+    }
+  }
+]
