@@ -23,7 +23,7 @@ Besides, it enables employees to create and manage dynamic events and view infor
     border: 1px solid;
     border-color: #3e4d5c;">
 </td><td>
-<img src="https://github.com/optimajet/HRM/blob/master/Resources/Businesstrip.png" alt="Business Trip" width="200" style="
+<img src="https://github.com/optimajet/HRM/blob/master/Resources/BusinessTrip.png" alt="Business Trip" width="200" style="
 	    border: 1px solid;
 	    border-color: #3e4d5c;">
 		</td><td>
