@@ -1613,10 +1613,10 @@
       "pluginSettings": {
         "MailServerPort": 25,
         "MailServerSsl": true,
-        "MailServer": "smtp.yandex.ru",
-        "MailServerLogin": "dmelnikov@theopenbanking.com",
-        "MailServerFrom": "dmelnikov@theopenbanking.com",
-        "MailServerPass": "destre19",
+        "MailServer": "",
+        "MailServerLogin": "",
+        "MailServerFrom": "",
+        "MailServerPass": "",
         "DeleteCascadeList": [
           {
             "ParentDataModel": "Employee",
