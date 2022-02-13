@@ -12,7 +12,7 @@
   "author": "OptimaJet",
   "license": "SEE LICENSE IN eula.txt",
   "dependencies": {
-    "ajv": "^5.5.2",
+    "ajv": "^6.12.3",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
