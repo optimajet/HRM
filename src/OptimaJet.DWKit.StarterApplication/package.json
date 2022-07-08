@@ -52,7 +52,7 @@
     "babel-polyfill": "^6.26.0",
     "react-datepicker": "1.6.0",
     "react-dropzone-component": "^3.2.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "@aspnet/signalr": "^1.0.3",
     "react-fast-compare": "^2.0.4",
     "react-modal": "3.8.1",
